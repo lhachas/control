@@ -1,0 +1,2 @@
+EXTRAER PRIVATEKEY: openssl pkey -in foo.pem -out foo.key
+EXTRAER BEGIN CERTIFICATE : x509 -in "C:\Program Files\OpenSSL-Win64\LLAMA.pem" -out D:\foo-cert.crt
