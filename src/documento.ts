@@ -11,8 +11,8 @@ export const Documento = {
     Emisor: {
         NroDocumento: '20553510661',
         TipoDocumento: '01',
-        NombreLegal: 'LLAMA.PE SA',
-        NombreComercial: 'LLAMA.PE SA',
+        NombreLegal: 'CONTROL S.A.',
+        NombreComercial: 'CONTROL S.A.',
         Ubigeo: '020102',
         Direccion: 'AV. LOS NOGALES S/N.',
         Urbanizacion: 'URB. MIRAFLORES.',
@@ -42,7 +42,7 @@ export const Documento = {
     DescuentoGlobal: 0,
     Items: [{
         Id: 1,
-        Cantidad: 100,
+        Cantidad: 2.00,
         UnidadMedida: 'NIU',
         CodigoItem: 'GLG199',
         Descripcion: 'Grabadora LG Externo Modelo: GE20LU10',
@@ -74,7 +74,7 @@ export const Documento = {
     MontoAnticipo: 0,
     DatosGuiaTransportista: {},
     Relacionados: [{
-        NroDocumento: 'FC01-4355',
+        NroDocumento: 'F001-00000093',
         TipoDocumento: '01',
     } as DocumentoRelacionado],
     OtrosDocumentosRelacionados: [{
@@ -82,7 +82,7 @@ export const Documento = {
         TipoDocumento: '01',
     } as DocumentoRelacionado],
     Discrepancias: [{
-        NroReferencia: 'F002-00000036',
+        NroReferencia: 'F001-00000093',
         Tipo: '01',
         Descripcion: 'Unidades defectuosas, no leen CD que contengan archivos MP3',
     } as Discrepancia],

@@ -1,5 +1,3 @@
-import { xml } from 'xml-serializer-ts';
-import * as fs from 'fs';
 import {
     DiscrepancyResponse,
     UblExtensions,
@@ -32,7 +30,10 @@ import {
     Price,
     PostalAddress,
     Country,
-} from '@estructuras';
+    TaxExemptionReasonCode,
+    PriceTypeCode,
+    DocumentTypeCode,
+} from '@structures';
 import { 
     DocumentoRelacionado,
     DocumentoElectronico, 
@@ -40,29 +41,31 @@ import {
     DetalleDocumento,
     IEstructuraXml, 
     IDocumentoXml,
-} from '@comun';
-import { CreditNote } from '@estandarUBL';
+} from 'src/cpe/common';
+import { CreditNote } from '@standard';
 
 export class NotaCredito implements IDocumentoXml {
     public Generar(documento: DocumentoElectronico): IEstructuraXml {
         const creditNote = new CreditNote();
         creditNote.UBLVersionID = '2.1';
         creditNote.CustomizationID = '2.0';
-        creditNote.ID = 'F001-1';
-        creditNote.IssueDate = '2019-07-05';
+        creditNote.ID = 'F001-00000025';
+        creditNote.IssueDate = '2019-07-07';
         creditNote.DocumentCurrencyCode = documento.Moneda;
         creditNote.UBLExtensions = new UblExtensions();
         documento.Discrepancias.forEach((discrepancia: Discrepancia) => {
             creditNote.DiscrepancyResponses.push(new DiscrepancyResponse({
-                ReferenceID: 'FC01-4355',
-                ResponseCode: '07',
+                ReferenceID: discrepancia.NroReferencia,
+                ResponseCode: discrepancia.Tipo,
                 Description: discrepancia.Descripcion,
             }));
         });
         documento.Relacionados.forEach((relacionado: DocumentoRelacionado) => {
             creditNote.BillingReferences.push(new BillingReference(new InvoiceDocumentReference({
                 ID: relacionado.NroDocumento,
-                DocumentTypeCode: relacionado.TipoDocumento,
+                DocumentTypeCode: new DocumentTypeCode({
+                    Value: relacionado.TipoDocumento,
+                }),
             })));
         });
         // documento.OtrosDocumentosRelacionados.forEach((relacionado: DocumentoRelacionado) => {
@@ -161,16 +164,16 @@ export class NotaCredito implements IDocumentoXml {
         creditNote.TaxTotals.push(new TaxTotal({
             TaxAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 9.92,
+                Value: 26.69,
             }),
             TaxSubtotal: new TaxSubtotal({
                 TaxableAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 55.01,
+                    Value: 148.31,
                 }),
                 TaxAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 9.92,
+                    Value: 26.69,
                 }),
                 TaxCategory: new TaxCategory({
                     TaxScheme: new TaxScheme({
@@ -188,15 +191,15 @@ export class NotaCredito implements IDocumentoXml {
         creditNote.LegalMonetaryTotal = new LegalMonetaryTotal({
             LineExtensionAmount: new PayableAmount({
                 currencyID: 'PEN',
-                Value: 55.01,
+                Value: 148.31,
             }),
             TaxInclusiveAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 65.01,
+                Value: 175.01,
             }),
             PayableAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 65.01,
+                Value: 175.01,
             }),
         });
         documento.Items.forEach((detalleDocumento: DetalleDocumento) => {
@@ -208,15 +211,17 @@ export class NotaCredito implements IDocumentoXml {
                 }),
                 LineExtensionAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 16.95,
+                    Value: 84.75,
                 }),
                 PricingReference: new PricingReference({
                     AlternativeConditionPrices: [new AlternativeConditionPrice({
                         PriceAmount: new PayableAmount({
                             currencyID: documento.Moneda,
-                            Value: 20.01,
+                            Value: 50.01,
                         }),
-                        PriceTypeCode: detalleDocumento.TipoPrecio,
+                        PriceTypeCode: new PriceTypeCode({
+                            Value: detalleDocumento.TipoPrecio,
+                        }),
                     })],
                 }),
                 Item: new Item({
@@ -228,27 +233,29 @@ export class NotaCredito implements IDocumentoXml {
                 Price: new Price({
                     PriceAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 16.95,
+                        Value: 42.37,
                     }),
                 }),
             });
             linea.TaxTotals.push(new TaxTotal({
                 TaxAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 3.05,
+                    Value: 15.25,
                 }),
                 TaxSubtotal: new TaxSubtotal({
                     TaxableAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 16.95,
+                        Value: 84.75,
                     }),
                     TaxAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 3.05,
+                        Value: 15.75,
                     }),
                     TaxCategory: new TaxCategory({
                         Percent: '18.00',
-                        TaxExemptionReasonCode: detalleDocumento.TipoImpuesto,
+                        TaxExemptionReasonCode: new TaxExemptionReasonCode({
+                            Value: detalleDocumento.TipoImpuesto,
+                        }),
                         TaxScheme: new TaxScheme({
                             ID: new TaxSchemeId({
                                 schemeID: 'UN/ECE 5153',
@@ -263,12 +270,6 @@ export class NotaCredito implements IDocumentoXml {
             }));
             creditNote.CreditNoteLines.push(linea);
         });       
-        const serializado = xml.serialize(creditNote);
-        fs.writeFile('./leo.xml', serializado, error => {
-            if (!error) {
-                console.log(error);
-            }
-        });
         return creditNote;
     }   
 }

@@ -17,7 +17,10 @@
     "no-console": false,
     "no-trailing-whitespace": false,
     "whitespace": false,
-    "no-angle-bracket-type-assertion": false
+    "no-angle-bracket-type-assertion": false,
+    "prefer-for-of": false,
+    "no-namespace": false,
+    "no-reference": false
   },
   "rulesDirectory": []
 }

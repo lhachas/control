@@ -1,8 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from './config/config.service';
-import { NotaCredito, FirmadoRequest } from '@cpe';
-import { Documento } from './documento';
-import { Certificador, Serializador } from '@cpe';
 
 @Injectable()
 export class AppService {

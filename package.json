@@ -24,6 +24,7 @@
     "@nestjs/core": "^6.0.0",
     "@nestjs/platform-express": "^6.0.0",
     "asn1js": "^2.0.22",
+    "control-consultas-doc": "^1.0.0",
     "dotenv": "^8.0.0",
     "joi": "^14.3.1",
     "jsontoxml": "^1.0.1",
@@ -79,12 +80,12 @@
   },
   "_moduleAliases": {
     "@cpe": "dist/cpe/",
-    "@certificados": "dist/cpe/certificados/",
-    "@comun": "dist/cpe/comun/",
-    "@estandarUBL": "dist/cpe/estandarUBL/",
-    "@estructuras": "dist/cpe/estructuras/",
-    "@firmado": "dist/cpe/firmado/",
-    "@prefix": "dist/cpe/prefix/",
+    "@common": "dist/cpe/common/",
+    "@standard": "dist/cpe/standard/",
+    "@structures": "dist/cpe/structures/",
+    "@utils": "dist/cpe/utils",
+    "@signed": "dist/cpe/signed/",
+    "@ws": "dist/cpe/ws/",
     "@xml": "dist/cpe/xml/",
     "@config": "dist/config/config.service.js"
   }

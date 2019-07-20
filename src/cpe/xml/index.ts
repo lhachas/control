@@ -1,1 +1,2 @@
-export * from './NotaCredito';
+export * from './notaCredito';
+export * from './factura';

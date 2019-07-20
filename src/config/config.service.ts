@@ -23,12 +23,36 @@ export class ConfigService {
         return String(this.envConfig.RUTA_OPENSSL);
     }
 
-    get RutaCertificado(): string {
-        return String(path.join(__dirname, `../cpe/certificados/${this.envConfig.CERTIFICADO}`));
+    get Certificado(): string {
+        return String(this.envConfig.CERTIFICADO);
     }
 
     get ClaveCertificado(): string {
         return String(this.envConfig.CLAVE_CERTIFICADO);
+    }
+
+    get RutaXML(): string {
+        return String(this.envConfig.RUTA_XML);
+    }
+
+    get RutaCDR(): string {
+        return String(this.envConfig.RUTA_CDR);
+    }
+
+    get RutaDocs(): string {
+        return String(this.envConfig.RutaDocs);
+    }
+
+    get RutaWS(): string {
+        return String(this.envConfig.RUTA_WS);
+    }
+
+    get WSDemo(): string {
+        return String(this.envConfig.WS_DEMO);
+    }
+    
+    get WSProduccion(): string {
+        return String(this.envConfig.WS_PRODUCCION);
     }
 
     private validateInput(envConfig: EnvConfig): EnvConfig {
@@ -41,6 +65,12 @@ export class ConfigService {
             RUTA_OPENSSL: Joi.string(),
             CERTIFICADO: Joi.string(),
             CLAVE_CERTIFICADO: Joi.string(),
+            RUTA_XML:Joi.string(),
+            RUTA_CDR: Joi.string(),
+            RUTA_DOCS: Joi.string(),
+            RUTA_WS: Joi.string(),
+            WS_DEMO: Joi.string(),
+            WS_PRODUCCION: Joi.string(),
         });
 
         const { error, value: validatedEnvConfig } = Joi.validate(
