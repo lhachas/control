@@ -1,5 +1,6 @@
 import { Controller, Get, Res } from '@nestjs/common';
-import { Factura, CDR } from '@cpe';
+import { CDR } from '@cpe/common';
+import { Factura } from '@cpe/xml';
 import { Contribuyente } from 'control-consultas-doc';
 import { Documento } from '../../services/documento/documento.service';
 

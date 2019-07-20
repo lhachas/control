@@ -51,19 +51,21 @@ export class Factura implements IDocumentoXml {
         invoice.UBLExtensions = new UblExtensions();
         invoice.UBLVersionID = '2.1';
         invoice.CustomizationID = '2.0';
-        invoice.ID = 'F001-00000125';
+        invoice.ID = 'F001-00000127';
         invoice.IssueDate = '2019-07-07';
         invoice.DueDate = '2019-07-07';
         invoice.InvoiceTypeCode = new InvoiceTypeCode({
             listID: '0101',
             listAgencyName: 'PE:SUNAT',
-            listName: 'SUNAT:Identificador de Tipo de Documento',
+            listName: 'Tipo de Documento',
             listURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01',
+            name: 'Tipo de Operacion',
+            listSchemeURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51',
             Value: '01',
         });
         invoice.Note = new Note({
             languageLocaleID: '1000',
-            Value: 'SETENTA Y UN MIL TRESCIENTOS CINCUENTICUATRO Y 99/100',
+            Value: 'SETECIENTOS OCHO CON 00/100 SOLES',
         });
         invoice.DocumentCurrencyCode = new DocumentCurrencyCode({
             listID: 'ISO 4217',
@@ -181,20 +183,23 @@ export class Factura implements IDocumentoXml {
         invoice.TaxTotals.push(new TaxTotal({
             TaxAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 26.69,
+                Value: 108.00,
             }),
             TaxSubtotal: new TaxSubtotal({
                 TaxableAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 148.31,
+                    Value: 600.00,
                 }),
                 TaxAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 26.69,
+                    Value: 108.00,
                 }),
                 TaxCategory: new TaxCategory({
                     TaxScheme: new TaxScheme({
                         ID: new TaxSchemeId({
+                            schemeName: 'Codigo de tributos',
+                            schemeAgencyName: 'PE:SUNAT',
+                            schemeURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05',
                             schemeID: 'UN/ECE 5153',
                             schemeAgencyID: '6',
                             Value: 1000,
@@ -208,36 +213,39 @@ export class Factura implements IDocumentoXml {
         invoice.LegalMonetaryTotal = new LegalMonetaryTotal({
             LineExtensionAmount: new PayableAmount({
                 currencyID: 'PEN',
-                Value: 148.31,
+                Value: 600.00,
             }),
             TaxInclusiveAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 175.01,
+                Value: 708.00,
             }),
             PayableAmount: new PayableAmount({
                 currencyID: documento.Moneda,
-                Value: 175.01,
+                Value: 708.00,
             }),
         });
         documento.Items.forEach((detalleDocumento: DetalleDocumento) => {
             const linea = new InvoiceLine({
                 ID: detalleDocumento.Id.toString(),
                 InvoicedQuantity: new InvoicedQuantity({
-                    unitCode: detalleDocumento.UnidadMedida,
-                    Value: detalleDocumento.Cantidad,
+                    unitCode: 'NIU',
+                    Value: 1.0,
                 }),
                 LineExtensionAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 84.75,
+                    Value: 500.00,
                 }),
                 PricingReference: new PricingReference({
                     AlternativeConditionPrices: [new AlternativeConditionPrice({
                         PriceAmount: new PayableAmount({
                             currencyID: documento.Moneda,
-                            Value: 50.01,
+                            Value: 590.00,
                         }),
                         PriceTypeCode: new PriceTypeCode({
-                            Value: detalleDocumento.TipoPrecio,
+                            listAgencyName: 'PE:SUNAT',
+                            listName: 'Tipo de Precio',
+                            listURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16',
+                            Value: '01',
                         }),
                     })],
                 }),
@@ -250,31 +258,37 @@ export class Factura implements IDocumentoXml {
                 Price: new Price({
                     PriceAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 42.37,
+                        Value: 500.0,
                     }),
                 }),
             });
             linea.TaxTotals.push(new TaxTotal({
                 TaxAmount: new PayableAmount({
                     currencyID: documento.Moneda,
-                    Value: 15.25,
+                    Value: 90.00,
                 }),
                 TaxSubtotal: new TaxSubtotal({
                     TaxableAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 84.75,
+                        Value: 500.00,
                     }),
                     TaxAmount: new PayableAmount({
                         currencyID: documento.Moneda,
-                        Value: 15.75,
+                        Value: 90.00,
                     }),
                     TaxCategory: new TaxCategory({
                         Percent: '18.00',
                         TaxExemptionReasonCode: new TaxExemptionReasonCode({
-                            Value: detalleDocumento.TipoImpuesto,
+                            listAgencyName: 'PE:SUNAT',
+                            listName: 'Afectacion del IGV',
+                            listURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07',
+                            Value: '10',
                         }),
                         TaxScheme: new TaxScheme({
                             ID: new TaxSchemeId({
+                                schemeName: 'Codigo de tributos',
+                                schemeAgencyName: 'PE:SUNAT',
+                                schemeURI: 'urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05',
                                 schemeID: 'UN/ECE 5153',
                                 schemeAgencyID: '6',
                                 Value: 1000,

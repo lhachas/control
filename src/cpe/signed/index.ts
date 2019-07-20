@@ -34,7 +34,7 @@ export class Certificador implements ICertificador {
                 throw new Error('No Existe Certificado Digital.');
             }
             const certFile = fs.readFileSync(firma.CertificadoDigital);
-            const xmlDoc = Parse(firma.TramaXmlSinFirma);
+            const xmlDoc = Parse(firma.DocumentoXml);
             
             const certificate = await pem.readPkcs12(certFile, { p12Password: firma.ClaveCertificado });
             const certificateInfo = await pem.readCertificateInfo(certificate.cert);

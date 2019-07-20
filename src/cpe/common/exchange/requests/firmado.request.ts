@@ -1,7 +1,7 @@
 export class PFirmado {
     protected certificadoDigital?: string;
     protected claveCertificado?: string;
-    protected tramaXmlSinFirma?: string;
+    protected documentoXml?: string;
     protected unSoloNodoExtension?: boolean;
     protected rutaOpenSSL?: string;
 
@@ -19,11 +19,11 @@ export class PFirmado {
         this.claveCertificado = claveCertificado;
     }
 
-    get TramaXmlSinFirma(): string {
-        return this.tramaXmlSinFirma;
+    get DocumentoXml(): string {
+        return this.documentoXml;
     }
-    set TramaXmlSinFirma(tramaXmlSinFirma: string) {
-        this.tramaXmlSinFirma = tramaXmlSinFirma;
+    set DocumentoXml(documentoXml: string) {
+        this.documentoXml = documentoXml;
     }
 
     get UnSoloNodoExtension(): boolean {

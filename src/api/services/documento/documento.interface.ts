@@ -1,4 +1,4 @@
-import { CDR, IDocumentoXml } from '@cpe';
+import { CDR, IDocumentoXml } from '@cpe/common';
 
 export interface IDocumento {
 

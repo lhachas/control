@@ -1,5 +1,6 @@
 import { Client, createClientAsync , WSSecurity } from 'soap';
-import { ConexionWS, RespuestaWS, PDocumento, Utils, ErrorWS, PEstadoCDR } from '@common';
+import { ConexionWS, RespuestaWS, PDocumento, ErrorWS, PEstadoCDR } from '@common';
+import { Utils } from '@utils';
 
 export class WS {
     protected client: Client;

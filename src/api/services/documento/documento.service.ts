@@ -3,15 +3,10 @@ import { ConfigService } from '@config';
 import { IDocumento } from './documento.interface';
 import * as fs from 'fs';
 import { Documento as Datos } from '../../../documento';
-import { 
-    Certificador,
-    Serializador,
-    IDocumentoXml,
-    CDR,
-    WS,
-    PDocumento,
-    ConexionWS,
-} from '@cpe';
+import { ConexionWS, IDocumentoXml, CDR, PDocumento } from '@cpe/common';
+import { Serializador } from '@cpe/utils';
+import { WS } from '@cpe/ws';
+import {  Certificador } from '@cpe/signed';
 import { Sunat, Contribuyente } from 'control-consultas-doc';
 
 @Injectable()
@@ -23,7 +18,7 @@ export class Documento implements IDocumento {
     private ws: WS;
 
     constructor(private readonly config: ConfigService) {
-        this.nombreArchivo = '20553510661-01-F001-00000125';
+        this.nombreArchivo = '20553510661-01-F001-00000127';
         this.certificador = new Certificador();
         this.serializador = new Serializador();
         this.ws = new WS();
@@ -61,7 +56,7 @@ export class Documento implements IDocumento {
                     RutaOpenSSL: this.config.RutaOpenSSL,
                     CertificadoDigital: this.config.Certificado,
                     ClaveCertificado: this.config.ClaveCertificado,
-                    TramaXmlSinFirma: xml.TramaXmlSinFirma,
+                    DocumentoXml: xml.DocumentoXml,
                     UnSoloNodoExtension: true,
                 });
                 if (firma.Exito) {
@@ -87,7 +82,7 @@ export class Documento implements IDocumento {
                 fs.writeFileSync(`${this.config.RutaCDR}${cdr.NombreArchivo}.zip`, respuestaWS.ConstanciaDeRecepcion, { encoding: 'base64' });
                 return cdr;
             } else {
-                throw new Error(respuestaWS.MensajeError);
+                throw respuestaWS;
             }
         } catch (e) {
             throw new HttpException(e, HttpStatus.CONFLICT);

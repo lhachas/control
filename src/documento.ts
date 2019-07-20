@@ -1,9 +1,9 @@
-import {DocumentoElectronico } from '@cpe';
-import { Contribuyente } from '@cpe';
-import { DetalleDocumento } from '@cpe';
-import { DatoAdicional } from '@cpe';
-import { DocumentoRelacionado } from '@cpe';
-import { Discrepancia } from '@cpe';
+import {DocumentoElectronico } from '@cpe/common';
+import { Contribuyente } from '@cpe/common';
+import { DetalleDocumento } from '@cpe/common';
+import { DatoAdicional } from '@cpe/common';
+import { DocumentoRelacionado } from '@cpe/common';
+import { Discrepancia } from '@cpe/common';
 
 export const Documento = {
     IdDocumento: '07',

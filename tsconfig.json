@@ -14,7 +14,7 @@
     "incremental": true, 
     "pretty": true,
     "paths": {
-      "@cpe": ["./src/cpe/"],
+      "@cpe/*": ["./src/cpe/*"],
       "@common": ["./src/cpe/common/"],
       "@standard": ["./src/cpe/standard/"],
       "@structures": ["./src/cpe/structures/"],

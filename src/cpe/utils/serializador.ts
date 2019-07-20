@@ -1,6 +1,7 @@
 import { xml } from 'xml-serializer-ts';
 import * as jszip from 'jszip';
-import { Utils, Documento, CDR, ISerializador, IEstructuraXml } from '@common';
+import {Documento, CDR, ISerializador, IEstructuraXml } from '@common';
+import { Utils } from '@utils';
 
 export class Serializador implements ISerializador {
     private readonly utils: Utils;
@@ -18,7 +19,7 @@ export class Serializador implements ISerializador {
     public GenerarXml(estructuraXml: IEstructuraXml): Documento {
         const documento = new Documento();
         try {
-            documento.TramaXmlSinFirma = xml.serialize(estructuraXml);
+            documento.DocumentoXml = xml.serialize(estructuraXml);
             documento.Exito = true;
             return documento;
         } catch (e) {

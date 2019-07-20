@@ -1,12 +1,12 @@
 import { Comun } from './comun';
 
 export class Documento extends Comun {
-    private tramaXmlSinFirma: string;
+    private documentoXml: string;
 
-    get TramaXmlSinFirma(): string {
-        return this.tramaXmlSinFirma;
+    get DocumentoXml(): string {
+        return this.documentoXml;
     }
-    set TramaXmlSinFirma(tramaXmlSinFirma: string) {
-        this.tramaXmlSinFirma = tramaXmlSinFirma;
+    set DocumentoXml(documentoXml: string) {
+        this.documentoXml = documentoXml;
     }
 }
