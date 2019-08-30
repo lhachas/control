@@ -1,37 +1,36 @@
-# compiled output
-/dist
-/node_modules
+# dependencies
+node_modules
+package.lock
+tsconfig.tsbuildinfo
 
-# packages
-package-lock.json
+# IDE
+/.idea
+/.awcache
 
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
+#environment config
+.env
 
-# OS
-.DS_Store
+# misc
+npm-debug.log
+lerna-debug.log
 
-# Tests
+# example
+/quick-start
+
+# tests
+/test
 /coverage
 /.nyc_output
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# dist
+/dist
+/public/lib
+/src/secretKeys.ts
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+#cli symlink in root
+/cli.ts
+
+#logs
+**/logs/*.log
+**/logs/*.audit.json
+**/*error.log

@@ -1,0 +1,82 @@
+﻿[
+	{
+        "medio": "DEPÓSITO EN CUENTA",
+		"descripcion": "DEPÓSITO EN CUENTA"
+	},
+	{
+        "medio": "GIRO",
+		"descripcion": "GIRO"
+	},
+	{
+        "medio": "TRANSFERENCIA DE FONDOS",
+		"descripcion": "TRANSFERENCIA DE FONDOS"
+	},
+	{
+        "medio": "ORDEN DE PAGO",
+		"descripcion": "ORDEN DE PAGO"
+	},
+	{
+        "medio": "TARJETA DE DÉBITO",
+		"descripcion": "TARJETA DE DÉBITO"
+	},
+	{
+        "medio": "TARJETA DE CRÉDITO",
+		"descripcion": "TARJETA DE CRÉDITO"
+	},
+	{
+        "medio": "CHEQUE",
+		"descripcion": "CHEQUES CON LA CLÁUSULA DE 'NO NEGOCIABLE', 'INTRANSFERIBLES, 'NO A LA ORDEN' U OTRA EQUIVALENTE, A QUE SE REFIERE EL INCISO F) DEL ARTICULO 5° DEL DECRETO"
+	},
+	{
+        "medio": "EFECTIVO",
+		"descripcion": "EFECTIVO, POR OPERACIONES EN LAS QUE NO EXISTE OBLIGACIÓN DE UTILIZAR MEDIOS DE PAGO"
+	},
+	{
+        "medio": "EFECTIVO, EN LOS DEMÁS CASOS",
+		"descripcion": "EFECTIVO, EN LOS DEMÁS CASOS"
+	},
+	{
+        "medio": "MEDIOS DE PAGO DE COMERCIO EXTERIOR",
+		"descripcion": "MEDIOS DE PAGO DE COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "LETRAS DE CAMBIO",
+		"descripcion": "LETRAS DE CAMBIO"
+	},
+	{
+        "medio": "TRANSFERENCIAS",
+		"descripcion": "TRANSFERENCIAS - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "CHEQUES BANCARIOS",
+		"descripcion": "CHEQUES BANCARIOS - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "ORDEN DE PAGO SIMPLE",
+		"descripcion": "ORDEN DE PAGO SIMPLE - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "ORDEN DE PAGO DOCUMENTARIO",
+		"descripcion": "ORDEN DE PAGO DOCUMENTARIO - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "REMESA SIMPLE",
+		"descripcion": "REMESA SIMPLE - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "REMESA DOCUMENTARIA",
+		"descripcion": "REMESA DOCUMENTARIA - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "CARTA DE CRÉDITO SIMPLE",
+		"descripcion": "CARTA DE CRÉDITO SIMPLE - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "CARTA DE CRÉDITO DOCUMENTARIO",
+		"descripcion": "CARTA DE CRÉDITO DOCUMENTARIO - COMERCIO EXTERIOR"
+	},
+	{
+        "medio": "OTROS",
+		"descripcion": "OTROS MEDIOS DE PAGO (ESPECIFICAR)"
+	}
+]

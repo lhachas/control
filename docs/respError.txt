@@ -1,0 +1,25 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" 
+    xmlns:ns0=\"http://service.gem.factura.comppago.registro.servicio.sunat.gob.pe/\" 
+    xmlns:ns1=\"http://service.sunat.gob.pe\" 
+    xmlns:tns=\"http://service.sunat.gob.pe\" 
+    xmlns:xsns=\"http://service.sunat.gob.pe\">
+    <soap:Header>
+        <o:Security soap:mustUnderstand=\"1\" 
+            xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" 
+            xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">
+            <u:Timestamp u:Id=\"_0\">
+                <u:Created>2019-07-10T22:34:27Z</u:Created>
+                <u:Expires>2019-07-10T22:44:27Z</u:Expires>
+            </u:Timestamp>
+        </o:Security>\n</soap:Header>
+    <soap:Body>
+        <soap:Fault>
+            <faultcode>soap:Server</faultcode>
+            <faultstring>0161</faultstring>
+            <detail>
+                <message>El nombre del archivo CPE XML no coincide con el nombre del archivo ZIP</message>
+            </detail>
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>

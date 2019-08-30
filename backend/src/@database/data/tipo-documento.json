@@ -1,0 +1,38 @@
+[
+    {
+        "codigo": "0",
+        "descripcion": "DOC.TRIB.NO.DOM.SIN.RUC",
+        "abreviatura": "DOC.TRIB.NO.DOM.SIN.RUC",
+        "estado": "ACTIVO"
+    },
+    {
+        "codigo": "1",
+        "descripcion": "DOC. NACIONAL DE IDENTIDAD",
+        "abreviatura": "DNI",
+        "estado": "ACTIVO"
+    },
+    {
+        "codigo": "4",
+        "descripcion": "CARNET DE EXTRANJERIA",
+        "abreviatura": "CARNET DE EXTRANJERIA",
+        "estado": "ACTIVO"
+    },
+    {
+        "codigo": "6",
+        "descripcion": "REG. UNICO DE CONTRIBUYENTES",
+        "abreviatura": "RUC",
+        "estado": "ACTIVO"
+    },
+    {
+        "codigo": "7",
+        "descripcion": "PASAPORTE",
+        "abreviatura": "PASAPORTE",
+        "estado": "ACTIVO"
+    },
+    {
+        "codigo": "A",
+        "descripcion": "CED. DIPLOMATICA DE IDENTIDAD",
+        "abreviatura": "CDD",
+        "estado": "ACTIVO"
+    }
+]

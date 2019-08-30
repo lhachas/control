@@ -1,0 +1,190 @@
+<div class="dialog-content-wrapper">
+    <mat-toolbar matDialogTitle class="mat-accent m-0">
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="title dialog-title">{{dialogTitle}}</span>
+            <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row class="toolbar-bottom py-16" fxLayout="column" fxLayoutAlign="center center">
+            <img [src]="contact.avatar" class="avatar contact-avatar huge m-0" [alt]="contact.razonSocial" />
+            <div class="contact-name mt-8">{{contact.razonSocial}}</div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div mat-dialog-content class="p-24 pb-0 m-0" fusePerfectScrollbar>
+
+        <form [formGroup]="contactForm" fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto">
+            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                <!-- Tipo Documento -->
+                <mat-form-field appearance="outline" fxFlex="40" class="pr-16">
+                    <mat-label>Tipo de documento</mat-label>
+                    <mat-select  formControlName="tipoDocumento" required>
+                        <mat-option *ngFor="let tipo of tipoDocumentos" [value]="tipo.codigo">
+                            {{tipo.abreviatura}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix class="secondary-text">portrait</mat-icon>
+                    <mat-error>Country is required!</mat-error>
+                </mat-form-field>
+
+                <!-- Nro. de documento -->
+                <mat-form-field appearance="outline" fxFlex="40" class="pr-16">
+                    <mat-label>Nro. Documento</mat-label>
+                    <mat-icon matSuffix class="secondary-text">person_pin</mat-icon>
+                    <input name="nroDocumento" formControlName="nroDocumento" matInput required>
+                </mat-form-field>
+
+                <!-- Consulta Documento -->
+                <button mat-raised-button color="accent" fxFlex="20" class="pr-16"
+                    [ngStyle]="{'margin-bottom': '2.5%'}" (click)="consultaRuc()">
+                    Consulta Documento
+                </button>
+            </div>
+
+            <!-- Razon Social -->
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Razon Social</mat-label>
+                    <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                    <input name="razonSocial" formControlName="razonSocial" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Nombre Comercial -->
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Nombre Comercial</mat-label>
+                    <mat-icon matSuffix class="secondary-text">contacts</mat-icon>
+                    <input name="nombreComercial" formControlName="nombreComercial" matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <!-- Tipo -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Tipo</mat-label>
+                    <mat-icon matSuffix class="secondary-text">nature_people</mat-icon>
+                    <input formControlName="tipo" matInput>
+                </mat-form-field>
+
+                <!-- Condición -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Condición</mat-label>
+                    <mat-icon matSuffix class="secondary-text">how_to_reg</mat-icon>
+                    <input formControlName="condicion" matInput>
+                </mat-form-field>
+
+                <!-- Ubigeo -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Ubigeo</mat-label>
+                    <mat-icon matSuffix class="secondary-text">control_point</mat-icon>
+                    <input formControlName="ubigeo" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Dirección -->
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Dirección</mat-label>
+                    <mat-icon matSuffix class="secondary-text">person_pin_circle</mat-icon>
+                    <input name="direccion" formControlName="direccion" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Urbanización -->
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Urbanización</mat-label>
+                    <mat-icon matSuffix class="secondary-text">home</mat-icon>
+                    <input name="urbanizacion" formControlName="urbanizacion" matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <!-- Departamento -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Departamento</mat-label>
+                    <mat-icon matSuffix class="secondary-text">my_location</mat-icon>
+                    <input formControlName="departamento" matInput>
+                </mat-form-field>
+
+                <!-- Provincia -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Provinvia</mat-label>
+                    <mat-icon matSuffix class="secondary-text">my_location</mat-icon>
+                    <input formControlName="provincia" matInput>
+                </mat-form-field>
+
+                <!-- Distrito -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Distrito</mat-label>
+                    <mat-icon matSuffix class="secondary-text">my_location</mat-icon>
+                    <input formControlName="distrito" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Email -->
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Email</mat-label>
+                    <mat-icon matSuffix class="secondary-text">contact_mail</mat-icon>
+                    <input name="email" formControlName="email" matInput type="email">
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <!-- Telf. Fijo -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Telf. Fijo</mat-label>
+                    <mat-icon matSuffix class="secondary-text">contact_phone</mat-icon>
+                    <input formControlName="telfFijo" matInput>
+                </mat-form-field>
+
+                <!-- Telf. Movil -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Telf. Movil</mat-label>
+                    <mat-icon matSuffix class="secondary-text">contact_phone</mat-icon>
+                    <input formControlName="telfMovil" matInput>
+                </mat-form-field>
+
+                <!-- Estado -->
+                <mat-form-field appearance="outline" fxFlex class="pr-16">
+                    <mat-label>Estado</mat-label>
+                    <mat-icon matSuffix class="secondary-text">how_to_vote</mat-icon>
+                    <input formControlName="estado" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Obervaciones -->
+            <div fxLayout="row" class="textarea-wrapper" fxLayoutAlign="start start">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Observaciones</mat-label>
+                    <textarea name="observaciones" formControlName="observaciones" matInput type="text"
+                        max-rows="4"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+
+        <button *ngIf="action === 'edit'" mat-button class="mr-8" (click)="matDialogRef.close(['delete',contactForm])"
+            aria-label="Delete" matTooltip="Delete">
+            ELIMINAR
+        </button>
+
+        <button *ngIf="action !== 'edit'" mat-button class="save-button" (click)="matDialogRef.close(contactForm)"
+            [disabled]="contactForm.invalid" aria-label="SAVE">
+            AGREGAR
+        </button>
+
+        <button *ngIf="action === 'edit'" mat-button class="save-button"
+            (click)="matDialogRef.close(['save',contactForm])" [disabled]="contactForm.invalid" aria-label="SAVE">
+            GUARDAR
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent><ds:Signature Id="SignatureSP"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>Pgc0RKU6zDjVnJ9L77lNfusstsUc7dmvYk2U/99XUYQ=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>EJyhMbXMyaDgBaHAy2RW4Fb2kHdHFniJC1rPtlGCKcDl4MZ3epgcPnehZNrA1pJQne8iMCFOX+mKHtN5aByD7SvEhP5iP06OpkM/qeiMepRptEhm42z9C++uOgzFMk7OBZUYd4xZvdpsM0wd2eFAMbfEjwgi2b1vjDm3VrDbnKgm6zas7h4EFEoD92TahBtmb35h54h1nJ6SatBZMCmCdTf85/HI9A2jzIwcrSyu0usqkxF/GHNDzI0wqMsQAWjg4mRPiSWDP8QNEFmlLVf/ots2RrsiIExLmMtnEhlqYuoB0ftlLv1qBslVtbRiqBDtSWrGJiZJ2qmZSMtIy2SDTw==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509SubjectName>DC=LLAMA.PE SA, C=PE, ST=LIMA, L=LIMA, O=TU EMPRESA S.A., OU=DNI 9999999 RUC 20553510661 - CERTIFICADO PARA DEMOSTRACIÓN, CN=NOMBRE REPRESENTANTE LEGAL - CERTIFICADO PARA DEMOSTRACIÓN, E=demo@llama.pe</ds:X509SubjectName><ds:X509Certificate>MIIE+DCCA+CgAwIBAgIJANre61kK/uhqMA0GCSqGSIb3DQEBBQUAMIIBDTEbMBkGCgmSJomT8ixkARkWC0xMQU1BLlBFIFNBMQswCQYDVQQGEwJQRTENMAsGA1UECAwETElNQTENMAsGA1UEBwwETElNQTEYMBYGA1UECgwPVFUgRU1QUkVTQSBTLkEuMUUwQwYDVQQLDDxETkkgOTk5OTk5OSBSVUMgMjA1NTM1MTA2NjEgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xRDBCBgNVBAMMO05PTUJSRSBSRVBSRVNFTlRBTlRFIExFR0FMIC0gQ0VSVElGSUNBRE8gUEFSQSBERU1PU1RSQUNJw5NOMRwwGgYJKoZIhvcNAQkBFg1kZW1vQGxsYW1hLnBlMB4XDTE5MDcwMTE3NDkyMVoXDTIxMDYzMDE3NDkyMVowggENMRswGQYKCZImiZPyLGQBGRYLTExBTUEuUEUgU0ExCzAJBgNVBAYTAlBFMQ0wCwYDVQQIDARMSU1BMQ0wCwYDVQQHDARMSU1BMRgwFgYDVQQKDA9UVSBFTVBSRVNBIFMuQS4xRTBDBgNVBAsMPEROSSA5OTk5OTk5IFJVQyAyMDU1MzUxMDY2MSAtIENFUlRJRklDQURPIFBBUkEgREVNT1NUUkFDScOTTjFEMEIGA1UEAww7Tk9NQlJFIFJFUFJFU0VOVEFOVEUgTEVHQUwgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xHDAaBgkqhkiG9w0BCQEWDWRlbW9AbGxhbWEucGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDE006rAEJotm4t23ZCzBR9+/fAs/3GITXtZSbImj36L+x5Vvv3w6nLOVgOhzFczEwLCAby6TE7cKm+C4HfWfolYQuEYUwvazC9nBPuu2t/55yTW4ME/aEoxSD7uxrtFxt0F14ZjLP/t1Zv/N53yNUxmOPFnE/Vfwc55HHxtL/b8Cztmn1n55+O1+2aHu95taXOV63M8M6XiYtUNzg0qW1omzf5lg5x8oxUT86+YQkTS49AwWzY/b8lumhA8r+IhhttkPVwdbTlRUXu0TCKJz3HAomhgokCmHrubTeMaQGJO2av7xVuFnO8uyg8F9k6AOkevLZGydin91F+x2rcCRLjAgMBAAGjVzBVMB0GA1UdDgQWBBTr7u3T0dN1Dr28AC8vW9y/jXdiezAfBgNVHSMEGDAWgBTr7u3T0dN1Dr28AC8vW9y/jXdiezATBgNVHSUEDDAKBggrBgEFBQcDATANBgkqhkiG9w0BAQUFAAOCAQEARXZ0pq5jmZi5YozHhBPYcXWZvZ+tq/WOPKN7uwTTvPKixvfP22DV+XZgGDValMI6s2FVx35UBrgG1aJngU89z9gw4kFO7ToJG+1q2MV2dJBHHQ8xL2YtMJPCUZtfvnJabj2d7Cfjy4JLE4/WSvtpOGnEaR5IAsc0MqyADmz3bD686RePH9D5SDIFE+qlOMpaIDaCJ7M6vXgQ8i8IXrhJVyPevV95fGwE5I+X2BAkZm9NHsAk2/D9vN+I6pbH0Uz2gZN7d4fjEsliu2XMWNscKjU2HpS/lrz1IBVyvJPC83QlAhRSF+U8MNWMi08XtqYpMPHMqzqfXZv62Mv+C4bc8g==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>2.0</cbc:CustomizationID>
+    <cbc:ID>F001-00000135</cbc:ID>
+    <cbc:IssueDate>2019-07-07</cbc:IssueDate>
+    <cbc:DueDate>2019-07-07</cbc:DueDate>
+    <cbc:InvoiceTypeCode listID="0101" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01" name="Tipo de Operacion" listSchemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51">01</cbc:InvoiceTypeCode>
+    <cbc:Note languageLocaleID="1000">SETECIENTOS OCHO CON 00/100 SOLES</cbc:Note>
+    <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listName="Currency" listAgencyName="United Nations Economic Commission for Europe">PEN</cbc:DocumentCurrencyCode>
+    <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+    <cac:AdditionalDocumentReference>
+        <cbc:ID>FC01-4355</cbc:ID>
+        <cbc:DocumentTypeCode listName="Tipo de Documento" listAgencyName="PE:SUNAT" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo12">01</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:Signature>
+        <cbc:ID>20553510661</cbc:ID>
+        <cac:SignatoryParty>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="6" schemeName="Documento de Identidad" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20553510661</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>CONTROL S.A.</cbc:Name>
+            </cac:PartyName>
+        </cac:SignatoryParty>
+        <cac:DigitalSignatureAttachment>
+            <cac:ExternalReference>
+                <cbc:URI>#SignatureSP</cbc:URI>
+            </cac:ExternalReference>
+        </cac:DigitalSignatureAttachment>
+    </cac:Signature>
+    <cac:AccountingSupplierParty>
+        <cbc:CustomerAssignedAccountID>20553510661</cbc:CustomerAssignedAccountID>
+        <cbc:AdditionalAccountID>01</cbc:AdditionalAccountID>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="6" schemeName="Documento de Identidad" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20553510661</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>CONTROL S.A.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:ID>020102</cbc:ID>
+                <cbc:StreetName>AV. LOS NOGALES S/N.</cbc:StreetName>
+                <cbc:CitySubdivisionName>URB. MIRAFLORES.</cbc:CitySubdivisionName>
+                <cbc:CityName>LIMA</cbc:CityName>
+                <cbc:District>LIMITA</cbc:District>
+                <cac:Country>
+                    <cbc:IdentificationCode>PE</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>CONTROL S.A.</cbc:RegistrationName>
+                <cac:RegistrationAddress>
+                    <cbc:AddressTypeCode listAgencyName="PE:SUNAT" listName="Establecimientos anexos">0001</cbc:AddressTypeCode>
+                </cac:RegistrationAddress>
+            </cac:PartyLegalEntity>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cbc:CustomerAssignedAccountID>20261295246</cbc:CustomerAssignedAccountID>
+        <cbc:AdditionalAccountID>01</cbc:AdditionalAccountID>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="6" schemeName="Documento de Identidad" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20261295246</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>FM CONTRATISTAS GENERALES S.R.L</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:ID>020102</cbc:ID>
+                <cbc:StreetName>AV. LOS INKAS S/N.</cbc:StreetName>
+                <cbc:CitySubdivisionName>URB. SAN JUAN.</cbc:CitySubdivisionName>
+                <cbc:CityName>CUSCO</cbc:CityName>
+                <cbc:District>WANCHAQ</cbc:District>
+                <cac:Country>
+                    <cbc:IdentificationCode>PE</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>FM CONTRATISTAS GENERALES S.R.L</cbc:RegistrationName>
+            </cac:PartyLegalEntity>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="PEN">108</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="PEN">600</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="PEN">108</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeName="Codigo de tributos" schemeAgencyID="6" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05">1000</cbc:ID>
+                    <cbc:Name>IGV</cbc:Name>
+                    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="PEN">600</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveAmount currencyID="PEN">708</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="PEN">708</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="NIU">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="PEN">500</cbc:LineExtensionAmount>
+        <cac:PricingReference>
+            <cac:AlternativeConditionPrice>
+                <cbc:PriceAmount currencyID="PEN">590</cbc:PriceAmount>
+                <cbc:PriceTypeCode listName="Tipo de Precio" listAgencyName="PE:SUNAT" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+            </cac:AlternativeConditionPrice>
+        </cac:PricingReference>
+        <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="PEN">90</cbc:TaxAmount>
+            <cac:TaxSubtotal>
+                <cbc:TaxableAmount currencyID="PEN">500</cbc:TaxableAmount>
+                <cbc:TaxAmount currencyID="PEN">90</cbc:TaxAmount>
+                <cac:TaxCategory>
+                    <cbc:Percent>18.00</cbc:Percent>
+                    <cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+                    <cac:TaxScheme>
+                        <cbc:ID schemeName="Codigo de tributos" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05">1000</cbc:ID>
+                        <cbc:Name>IGV</cbc:Name>
+                        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                    </cac:TaxScheme>
+                </cac:TaxCategory>
+            </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:Item>
+            <cbc:Description>Grabadora LG Externo Modelo: GE20LU10</cbc:Description>
+            <cac:SellersItemIdentification>
+                <cbc:ID>GLG199</cbc:ID>
+            </cac:SellersItemIdentification>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="PEN">500</cbc:PriceAmount>
+        </cac:Price>
+    </cac:InvoiceLine>
+</Invoice>

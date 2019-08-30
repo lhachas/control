@@ -1,0 +1,30 @@
+[
+    {
+        "codigo": "PEN",
+        "descripcion": "NUEVOS SOLES",
+        "simbolo": "S/",
+        "pais": "PERÚ",
+        "tipoCambio": 1.00
+    },
+    {
+        "codigo": "USD",
+        "descripcion": "DÓLARES AMERICANOS",
+        "simbolo": "$",
+        "pais": "ESTADO UNIDOS (EEUU)",
+        "tipoCambio": 3.30
+    },
+    {
+        "codigo": "EUR",
+        "descripcion": "EURO",
+        "simbolo": "€",
+        "pais": "UNIÓN EUROPEA",
+        "tipoCambio": 3.67
+    },
+    {
+        "codigo": "OTRO",
+        "descripcion": "OTRA MONEDA (ESPECIFICAR)",
+        "simbolo": "OTR0",
+        "pais": "",
+        "tipoCambio": 0.00
+    }
+]

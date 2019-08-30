@@ -1,0 +1,70 @@
+[
+    {
+        "codigo": "10",
+        "descripcion": "GRAVADO - OPERACIÓN ONEROSA"
+    },
+    {
+        "codigo": "11",
+        "descripcion": "GRAVADO - RETIRO POR PREMIO"
+    },
+    {
+        "codigo": "12",
+        "descripcion": "GRAVADO - RETIRO POR DONACIÓN"
+    },
+    {
+        "codigo": "13",
+        "descripcion": "GRAVADO - RETIRO"
+    },
+    {
+        "codigo": "14",
+        "descripcion": "GRAVADO - RETIRO POR PUBLICIDAD"
+    },
+    {
+        "codigo": "15",
+        "descripcion": "GRAVADO - BONIFICACIONES"
+    },
+    {
+        "codigo": "16",
+        "descripcion": "GRAVADO - RETIRO POR ENTREGA A TRABAJADORES"
+    },
+    {
+        "codigo": "20",
+        "descripcion": "EXONERADO - OPERACIÓN ONEROSA"
+    },
+    {
+        "codigo": "21",
+        "descripcion": "EXONERADO - TRANSFERENCIA GRATUITA"
+    },
+    {
+        "codigo": "30",
+        "descripcion": "INAFECTO - OPERACIÓN ONEROSA"
+    },
+    {
+        "codigo": "31",
+        "descripcion": "INAFECTO - RETIRO POR BONIFICACIÓN"
+    },
+    {
+        "codigo": "32",
+        "descripcion": "INAFECTO - RETIRO"
+    },
+    {
+        "codigo": "33",
+        "descripcion": "INAFECTO - RETIRO POR MUESTRAS MÉDICAS"
+    },
+    {
+        "codigo": "34",
+        "descripcion": "INAFECTO - RETIRO POR CONVENIO COLECTIVO"
+    },
+    {
+        "codigo": "35",
+        "descripcion": "INAFECTO - RETIRO POR PREMIO"
+    },
+    {
+        "codigo": "36",
+        "descripcion": "INAFECTO - RETIRO POR PUBLICIDAD"
+    },
+    {
+        "codigo": "40",
+        "descripcion": "EXPORTACIÓN"
+    }
+]

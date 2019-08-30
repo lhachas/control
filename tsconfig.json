@@ -1,38 +1,8 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "lib": ["es2016", "es6", "es2015"],
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "incremental": true, 
-    "pretty": true,
-    "paths": {
-      "@cpe/*": ["./src/cpe/*"],
-      "@common": ["./src/cpe/common/"],
-      "@standard": ["./src/cpe/standard/"],
-      "@structures": ["./src/cpe/structures/"],
-      "@utils": ["./src/cpe/utils/"],
-      "@signed": ["./src/cpe/signed/"],
-      "@ws": ["./src/cpe/ws/"],
-      "@xml": ["./src/cpe/xml/"],
-      "@config": ["./src/config/config.service.ts"],
-    },
-    "rootDirs": [
-      "src/cpe", 
-      "src/cpe/common", 
-      "src/cpe/standard",
-      "src/cpe/structures",
-      "src/cpe/signed",
-      "src/cpe/xml",    
-    ],
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
+    "files": [],
+    "include": [],
+    "references": [
+        {"path": "frontend"},
+        {"path": "backend"}
+    ]
 }

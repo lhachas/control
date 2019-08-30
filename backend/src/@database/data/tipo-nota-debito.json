@@ -1,0 +1,14 @@
+[
+    {
+        "codigo": "01",
+        "descripcion": "INTERESES POR MORA"
+    },
+    {
+        "codigo": "02",
+        "descripcion": "AUMENTO EN EL VALOR"
+    },
+    {
+        "codigo": "03",
+        "descripcion": "PENALIDADES"
+    }
+]
