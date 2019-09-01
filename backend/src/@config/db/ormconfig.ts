@@ -2,6 +2,7 @@ import { ConnectionOptions } from 'typeorm';
 import { join } from 'path';
 
 const configDB: ConnectionOptions = {
+
     /**
      * @description
      * Tipo de base de datos. Debe especificar qué motor de base de datos utiliza.
@@ -77,6 +78,14 @@ const configDB: ConnectionOptions = {
 
     /**
      * @description
+     * Permitir conectarse a instancias de MySQL que soliciten
+     * el antiguo método de autenticación [inseguro].
+     * por defecto [false]
+     */
+    insecureAuth: true,
+
+    /**
+     * @description
      * Entidades a cargar y utilizar para esta conexión.
      * Acepta tanto las clases de entidad como las rutas
      * de directorios para cargar.
@@ -132,9 +141,9 @@ const configDB: ConnectionOptions = {
      * "consola avanzada", "consola simple" y "archivo".
      * El valor predeterminado es "consola avanzada".
      * También puede especificar una clase de registrador que implementa
-     * la Loggerinterfaz. Aprenda más sobre el registro .
+     * la Logger interfaz. Aprenda más sobre el registro .
      */
-    logger: 'file',
+    logger: 'advanced-console',
 
     /**
      * @description
@@ -143,8 +152,8 @@ const configDB: ConnectionOptions = {
      * deben ser creadas por defecto por CLI.
      */
     cli: {
-        entitiesDir: 'src/database/entities',
-        migrationsDir: 'src/database/migrations',
+        entitiesDir: 'src/@database/entities',
+        migrationsDir: 'src/@database/migrations',
     },
 };
 

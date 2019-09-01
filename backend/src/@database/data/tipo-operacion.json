@@ -76,7 +76,7 @@
 		"descripcion": "ENTRADA DE PRODUCCIÓN"
 	},
 	{
-        "operacion": "ENTR/DEV",
+        "operacion": "ENTR/DEV/PROD",
 		"descripcion": "ENTRADA POR DEVOLUCIÓN DE PRODUCCIÓN"
 	},
 	{
@@ -92,7 +92,7 @@
 		"descripcion": "SALIDA POR IDENTIFICACIÓN ERRONEA"
 	},
 	{
-        "operacion": "ENTR/DEV",
+        "operacion": "ENTR/DEV/CLIENT",
 		"descripcion": "ENTRADA POR DEVOLUCIÓN DEL CLIENTE"
 	},
 	{
@@ -112,7 +112,7 @@
 		"descripcion": "AJUSTE POR DIFERENCIA DE INVENTARIO"
 	},
 	{
-        "operacion": "ENTR/BIENES",
+        "operacion": "ENTR/BIENES/PRES",
 		"descripcion": "ENTRADA DE BIENES EN PRÉSTAMO"
     },
 	{
@@ -120,7 +120,7 @@
 		"descripcion": "SALIDA DE BIENES EN PRÉSTAMO"
 	},
 	{
-        "operacion": "ENTR/BIENES",
+        "operacion": "ENTR/BIENES/CUST",
 		"descripcion": "ENTRADA DE BIENES EN CUSTODIA"
 	},
 	{

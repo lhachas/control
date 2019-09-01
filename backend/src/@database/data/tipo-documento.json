@@ -3,7 +3,7 @@
         "codigo": "0",
         "descripcion": "DOC.TRIB.NO.DOM.SIN.RUC",
         "abreviatura": "DOC.TRIB.NO.DOM.SIN.RUC",
-        "estado": "ACTIVO"
+        "estado": "INACTIVO"
     },
     {
         "codigo": "1",
@@ -15,7 +15,7 @@
         "codigo": "4",
         "descripcion": "CARNET DE EXTRANJERIA",
         "abreviatura": "CARNET DE EXTRANJERIA",
-        "estado": "ACTIVO"
+        "estado": "INACTIVO"
     },
     {
         "codigo": "6",
@@ -27,12 +27,12 @@
         "codigo": "7",
         "descripcion": "PASAPORTE",
         "abreviatura": "PASAPORTE",
-        "estado": "ACTIVO"
+        "estado": "INACTIVO"
     },
     {
         "codigo": "A",
         "descripcion": "CED. DIPLOMATICA DE IDENTIDAD",
         "abreviatura": "CDD",
-        "estado": "ACTIVO"
+        "estado": "INACTIVO"
     }
 ]

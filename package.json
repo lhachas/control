@@ -16,7 +16,7 @@
     "url": "https://github.com/ZMALIM/control.git"
   },
   "scripts": {
-    "booststrap": "npm install && npm run build && lerna run docker-pull", 
+    "booststrap": "npm install && npm run build && lerna run docker-pull",
     "build": "tsc --build tsconfig.json --verbose",
     "rebuild": "npm run build --force",
     "start": "concurrently --kill-others \"lerna run start:dev --stream --scope @control/backend\" \"lerna run start --stream --scope @control/frontend\"",

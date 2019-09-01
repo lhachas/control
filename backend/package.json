@@ -1,6 +1,7 @@
 {
   "name": "@control/backend",
   "version": "1.0.1",
+  "private": true,
   "description": "",
   "author": "",
   "license": "MIT",

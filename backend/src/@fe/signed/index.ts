@@ -1,5 +1,6 @@
 import * as CryptoOSSL from 'node-webcrypto-ossl';
 import * as pem from 'pem-promise';
+import * as fs from 'fs';
 import {
     Parse,
     SignedXml,
@@ -9,7 +10,6 @@ import {
     Reference,
     X509Certificate,
 } from 'xmldsigjs';
-import * as fs from 'fs';
 import { ConfigFirma, RFirma } from '@fe/common/exchange';
 import { EspacioNombres } from '@fe/common/constants';
 import { IFirmador } from '@fe/common/interfaces';
@@ -54,7 +54,7 @@ export class Firmador implements IFirmador {
         this.config = config;
     }
 
-    private ConfigOpenSSL(): void {
+    private configOpenSSL(): void {
         pem.config({
             pathOpenSSL: this.Config.RutaOpenSSL,
         });
@@ -68,7 +68,7 @@ export class Firmador implements IFirmador {
      */
     private async getCertificado(): Promise<Certificate> {
         const certificado = fs.readFileSync(this.Config.CertificadoDigital);
-        this.ConfigOpenSSL();
+        this.configOpenSSL();
         return await pem.readPkcs12(certificado, { p12Password: this.Config.ClaveCertificado });
     }
 
@@ -112,7 +112,7 @@ export class Firmador implements IFirmador {
      * @ejemplo [Factura][Boleta][NotaCredito][NotaDebito]
      * @return XmlFirmado {RFirma}
      */
-    public async Xml(): Promise<RFirma> {
+    public async xml(): Promise<RFirma> {
         const firma = new  RFirma();
         try {
             if(!fs.existsSync(this.Config.CertificadoDigital)) throw new Error('No Existe Certificado Digital.');

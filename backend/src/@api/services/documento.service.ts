@@ -89,7 +89,7 @@ export class DocumentoService implements IDocumento {
                 ClaveCertificado: this.config.ClaveCertificado,
                 DocumentoXml: documentoXml,
             } as ConfigFirma;
-            return await this.firmador.Xml();
+            return await this.firmador.xml();
         } catch (e) {
             throw new HttpException(e, HttpStatus.CONFLICT);
         }
@@ -112,7 +112,7 @@ export class DocumentoService implements IDocumento {
                     ClaveCertificado: this.config.ClaveCertificado,
                     DocumentoXml: xml.DocumentoXml,
                 } as ConfigFirma;
-                const firma = await this.firmador.Xml();
+                const firma = await this.firmador.xml();
                 if (firma.Exito) {
                     const zip = await this.serializador.GenerarZip(firma.DocumentoXmlFirmado, documento.NombreArchivo());
                     fs.writeFileSync(this.config.RutaXML.concat(documento.NombreArchivo(), '.zip'), zip, 'base64');

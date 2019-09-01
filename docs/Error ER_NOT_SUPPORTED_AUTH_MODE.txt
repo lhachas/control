@@ -1,0 +1,3 @@
+MySQL y TypeORM.
+Error: ER_NOT_SUPPORTED_AUTH_MODE:
+- http://nicholaspretorius.github.io/til0054/
