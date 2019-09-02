@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import { ControlSharedModule } from '@control/shared.module';
 
 import { ContactsModule } from 'app/main/contacts/contacts.module';
 
@@ -15,7 +15,7 @@ const routes = [
 @NgModule({
     imports: [
         RouterModule.forChild(routes),
-        FuseSharedModule,
+        ControlSharedModule,
     ]
 })
 export class AppsModule 

@@ -5,8 +5,8 @@ import { DataSource } from '@angular/cdk/collections';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FuseConfirmDialogComponent } from '@fuse/components/confirm-dialog/confirm-dialog.component';
+import { controlAnimations } from '@control/animations';
+import { ControlConfirmDialogComponent } from '@control/components/confirm-dialog/confirm-dialog.component';
 
 import { ContactsService } from 'app/main/contacts/contacts.service';
 import { ContactsContactFormDialogComponent } from 'app/main/contacts/contact-form/contact-form.component';
@@ -16,7 +16,7 @@ import { ContactsContactFormDialogComponent } from 'app/main/contacts/contact-fo
     templateUrl  : './contact-list.component.html',
     styleUrls    : ['./contact-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations   : controlAnimations
 })
 export class ContactsContactListComponent implements OnInit, OnDestroy
 {
@@ -30,7 +30,7 @@ export class ContactsContactListComponent implements OnInit, OnDestroy
     selectedContacts: any[];
     checkboxes: {};
     dialogRef: any;
-    confirmDialogRef: MatDialogRef<FuseConfirmDialogComponent>;
+    confirmDialogRef: MatDialogRef<ControlConfirmDialogComponent>;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -164,7 +164,7 @@ export class ContactsContactListComponent implements OnInit, OnDestroy
      */
     deleteContact(contact): void
     {
-        this.confirmDialogRef = this._matDialog.open(FuseConfirmDialogComponent, {
+        this.confirmDialogRef = this._matDialog.open(ControlConfirmDialogComponent, {
             disableClose: false
         });
 

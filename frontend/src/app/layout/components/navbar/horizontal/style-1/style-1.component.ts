@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import { ControlConfigService } from '@control/services/config.service';
+import { ControlNavigationService } from '@control/components/navigation/navigation.service';
+import { ControlSidebarService } from '@control/components/sidebar/sidebar.service';
 
 @Component({
     selector     : 'navbar-horizontal-style-1',
@@ -14,7 +14,7 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 })
 export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy
 {
-    fuseConfig: any;
+    controlConfig: any;
     navigation: any;
 
     // Private
@@ -23,14 +23,14 @@ export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FuseNavigationService} _fuseNavigationService
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {ControlConfigService} _controlConfigService
+     * @param {ControlNavigationService} _controlNavigationService
+     * @param {ControlSidebarService} _controlSidebarService
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
-        private _fuseNavigationService: FuseNavigationService,
-        private _fuseSidebarService: FuseSidebarService
+        private _controlConfigService: ControlConfigService,
+        private _controlNavigationService: ControlNavigationService,
+        private _controlSidebarService: ControlSidebarService
     )
     {
         // Set the private defaults
@@ -47,20 +47,20 @@ export class NavbarHorizontalStyle1Component implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Get current navigation
-        this._fuseNavigationService.onNavigationChanged
+        this._controlNavigationService.onNavigationChanged
             .pipe(
                 filter(value => value !== null),
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                this.navigation = this._fuseNavigationService.getCurrentNavigation();
+                this.navigation = this._controlNavigationService.getCurrentNavigation();
             });
 
         // Subscribe to the config changes
-        this._fuseConfigService.config
+        this._controlConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config) => {
-                this.fuseConfig = config;
+                this.controlConfig = config;
             });
     }
 

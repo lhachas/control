@@ -1,4 +1,4 @@
-import { FuseUtils } from '@fuse/utils';
+import { ControlUtils } from '@control/utils';
 
 export class Contact
 {

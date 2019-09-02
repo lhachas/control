@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
+import { ControlTranslationLoaderService } from '@control/services/translation-loader.service';
 
 import { locale as english } from './i18n/en';
 import { locale as turkish } from './i18n/tr';
@@ -15,12 +15,12 @@ export class SampleComponent
     /**
      * Constructor
      *
-     * @param {FuseTranslationLoaderService} _fuseTranslationLoaderService
+     * @param {ControlTranslationLoaderService} _controlTranslationLoaderService
      */
     constructor(
-        private _fuseTranslationLoaderService: FuseTranslationLoaderService
+        private _controlTranslationLoaderService: ControlTranslationLoaderService
     )
     {
-        this._fuseTranslationLoaderService.loadTranslations(english, turkish);
+        this._controlTranslationLoaderService.loadTranslations(english, turkish);
     }
 }

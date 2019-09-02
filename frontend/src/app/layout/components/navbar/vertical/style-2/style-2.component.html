@@ -1,8 +1,8 @@
-<div class="navbar-header" [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
+<div class="navbar-header" [ngClass]="controlConfig.layout.navbar.secondaryBackground">
 
     <div class="logo">
-        <img class="logo-icon" src="assets/images/logos/fuse.svg">
-        <span class="logo-text">FUSE</span>
+        <img class="logo-icon" src="assets/images/logos/control.svg">
+        <span class="logo-text">CONTROL</span>
     </div>
 
     <button mat-icon-button class="toggle-sidebar-folded"
@@ -17,7 +17,7 @@
 
 </div>
 
-<div class="navbar-content" fusePerfectScrollbar [fusePerfectScrollbarOptions]="{suppressScrollX: true}"
-     [ngClass]="fuseConfig.layout.navbar.primaryBackground">
-    <fuse-navigation layout="vertical"></fuse-navigation>
+<div class="navbar-content" controlPerfectScrollbar [controlPerfectScrollbarOptions]="{suppressScrollX: true}"
+     [ngClass]="controlConfig.layout.navbar.primaryBackground">
+    <control-navigation layout="vertical"></control-navigation>
 </div>

@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import { controlAnimations } from '@control/animations';
+import { ControlSidebarService } from '@control/components/sidebar/sidebar.service';
 
 import { ContactsService } from 'app/main/contacts/contacts.service';
 import { ContactsContactFormDialogComponent } from 'app/main/contacts/contact-form/contact-form.component';
@@ -15,7 +15,7 @@ import { ContactsContactFormDialogComponent } from 'app/main/contacts/contact-fo
     templateUrl  : './contacts.component.html',
     styleUrls    : ['./contacts.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations   : controlAnimations
 })
 export class ContactsComponent implements OnInit, OnDestroy
 {
@@ -30,12 +30,12 @@ export class ContactsComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {ContactsService} _contactsService
-     * @param {FuseSidebarService} _fuseSidebarService
+     * @param {ControlSidebarService} _controlSidebarService
      * @param {MatDialog} _matDialog
      */
     constructor(
         private _contactsService: ContactsService,
-        private _fuseSidebarService: FuseSidebarService,
+        private _controlSidebarService: ControlSidebarService,
         private _matDialog: MatDialog
     )
     {
@@ -117,6 +117,6 @@ export class ContactsComponent implements OnInit, OnDestroy
      */
     toggleSidebar(name): void
     {
-        this._fuseSidebarService.getSidebar(name).toggleOpen();
+        this._controlSidebarService.getSidebar(name).toggleOpen();
     }
 }

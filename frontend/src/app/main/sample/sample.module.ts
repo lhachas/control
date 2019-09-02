@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { FuseSharedModule } from '@fuse/shared.module';
+import { ControlSharedModule } from '@control/shared.module';
 
 import { SampleComponent } from './sample.component';
 
@@ -22,7 +22,7 @@ const routes = [
 
         TranslateModule,
 
-        FuseSharedModule
+        ControlSharedModule
     ],
     exports     : [
         SampleComponent

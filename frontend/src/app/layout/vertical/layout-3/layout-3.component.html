@@ -1,5 +1,5 @@
 <!-- SIDE PANEL -->
-<ng-container *ngIf="!fuseConfig.layout.sidepanel.hidden && fuseConfig.layout.sidepanel.position === 'left'">
+<ng-container *ngIf="!controlConfig.layout.sidepanel.hidden && controlConfig.layout.sidepanel.position === 'left'">
 
     <!-- PANEL CONTENT -->
 
@@ -9,16 +9,16 @@
 <div id="main">
 
     <!-- TOOLBAR: Above fixed -->
-    <ng-container *ngIf="fuseConfig.layout.toolbar.position === 'above-fixed'">
+    <ng-container *ngIf="controlConfig.layout.toolbar.position === 'above-fixed'">
         <ng-container *ngTemplateOutlet="toolbar"></ng-container>
     </ng-container>
     <!-- / TOOLBAR: Above fixed -->
 
-    <div id="container-1" class="container" fusePerfectScrollbar
-         [fusePerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+    <div id="container-1" class="container" controlPerfectScrollbar
+         [controlPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
         <!-- TOOLBAR: Above static -->
-        <ng-container *ngIf="fuseConfig.layout.toolbar.position === 'above-static'">
+        <ng-container *ngIf="controlConfig.layout.toolbar.position === 'above-static'">
             <ng-container *ngTemplateOutlet="toolbar"></ng-container>
         </ng-container>
         <!-- / TOOLBAR: Above static -->
@@ -26,19 +26,19 @@
         <div id="container-2" class="container">
 
             <!-- NAVBAR: Left -->
-            <ng-container *ngIf="fuseConfig.layout.navbar.position === 'left'">
+            <ng-container *ngIf="controlConfig.layout.navbar.position === 'left'">
                 <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
             </ng-container>
             <!-- / NAVBAR: Left -->
 
             <!-- CONTENT -->
             <content
-                [ngClass]="{'ml-32':fuseConfig.layout.navbar.position === 'left', 'mr-32':fuseConfig.layout.navbar.position === 'right'}">
+                [ngClass]="{'ml-32':controlConfig.layout.navbar.position === 'left', 'mr-32':controlConfig.layout.navbar.position === 'right'}">
             </content>
             <!-- / CONTENT -->
 
             <!-- NAVBAR: Right -->
-            <ng-container *ngIf="fuseConfig.layout.navbar.position === 'right'">
+            <ng-container *ngIf="controlConfig.layout.navbar.position === 'right'">
                 <ng-container *ngTemplateOutlet="rightNavbar"></ng-container>
             </ng-container>
             <!-- / NAVBAR: Right -->
@@ -46,7 +46,7 @@
         </div>
 
         <!-- FOOTER: Above static -->
-        <ng-container *ngIf="fuseConfig.layout.footer.position === 'above-static'">
+        <ng-container *ngIf="controlConfig.layout.footer.position === 'above-static'">
             <ng-container *ngTemplateOutlet="footer"></ng-container>
         </ng-container>
         <!-- FOOTER: Above static -->
@@ -54,7 +54,7 @@
     </div>
 
     <!-- FOOTER: Above fixed -->
-    <ng-container *ngIf="fuseConfig.layout.footer.position === 'above-fixed'">
+    <ng-container *ngIf="controlConfig.layout.footer.position === 'above-fixed'">
         <ng-container *ngTemplateOutlet="footer"></ng-container>
     </ng-container>
     <!-- FOOTER: Above fixed -->
@@ -62,7 +62,7 @@
 </div>
 
 <!-- SIDE PANEL -->
-<ng-container *ngIf="!fuseConfig.layout.sidepanel.hidden && fuseConfig.layout.sidepanel.position === 'right'">
+<ng-container *ngIf="!controlConfig.layout.sidepanel.hidden && controlConfig.layout.sidepanel.position === 'right'">
 
     <!-- PANEL CONTENT -->
 
@@ -70,9 +70,9 @@
 <!-- / SIDE PANEL -->
 
 <!-- QUICK PANEL -->
-<fuse-sidebar name="quickPanel" position="right" class="quick-panel">
+<control-sidebar name="quickPanel" position="right" class="quick-panel">
     <quick-panel></quick-panel>
-</fuse-sidebar>
+</control-sidebar>
 <!-- / QUICK PANEL -->
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
@@ -81,38 +81,38 @@
 
 <!-- TOOLBAR -->
 <ng-template #toolbar>
-    <toolbar *ngIf="!fuseConfig.layout.toolbar.hidden"
-             [ngClass]="fuseConfig.layout.toolbar.customBackgroundColor === true ? fuseConfig.layout.toolbar.position + ' ' + fuseConfig.layout.toolbar.background : fuseConfig.layout.toolbar.position">
+    <toolbar *ngIf="!controlConfig.layout.toolbar.hidden"
+             [ngClass]="controlConfig.layout.toolbar.customBackgroundColor === true ? controlConfig.layout.toolbar.position + ' ' + controlConfig.layout.toolbar.background : controlConfig.layout.toolbar.position">
     </toolbar>
 </ng-template>
 <!-- / TOOLBAR -->
 
 <!-- FOOTER -->
 <ng-template #footer>
-    <footer *ngIf="!fuseConfig.layout.footer.hidden"
-            [ngClass]="fuseConfig.layout.footer.customBackgroundColor === true ? fuseConfig.layout.footer.position + ' ' + fuseConfig.layout.footer.background : fuseConfig.layout.footer.position">
+    <footer *ngIf="!controlConfig.layout.footer.hidden"
+            [ngClass]="controlConfig.layout.footer.customBackgroundColor === true ? controlConfig.layout.footer.position + ' ' + controlConfig.layout.footer.background : controlConfig.layout.footer.position">
     </footer>
 </ng-template>
 <!-- / FOOTER -->
 
 <!-- LEFT NAVBAR -->
 <ng-template #leftNavbar>
-    <fuse-sidebar name="navbar" class="navbar-fuse-sidebar"
-                  [folded]="fuseConfig.layout.navbar.folded"
+    <control-sidebar name="navbar" class="navbar-control-sidebar"
+                  [folded]="controlConfig.layout.navbar.folded"
                   lockedOpen="gt-md"
-                  *ngIf="!fuseConfig.layout.navbar.hidden">
-        <navbar [variant]="fuseConfig.layout.navbar.variant" class="left-navbar"></navbar>
-    </fuse-sidebar>
+                  *ngIf="!controlConfig.layout.navbar.hidden">
+        <navbar [variant]="controlConfig.layout.navbar.variant" class="left-navbar"></navbar>
+    </control-sidebar>
 </ng-template>
 <!-- / LEFT NAVBAR -->
 
 <!-- RIGHT NAVBAR -->
 <ng-template #rightNavbar>
-    <fuse-sidebar name="navbar" position="right" class="navbar-fuse-sidebar"
-                  [folded]="fuseConfig.layout.navbar.folded"
+    <control-sidebar name="navbar" position="right" class="navbar-control-sidebar"
+                  [folded]="controlConfig.layout.navbar.folded"
                   lockedOpen="gt-md"
-                  *ngIf="!fuseConfig.layout.navbar.hidden">
-        <navbar [variant]="fuseConfig.layout.navbar.variant" class="right-navbar"></navbar>
-    </fuse-sidebar>
+                  *ngIf="!controlConfig.layout.navbar.hidden">
+        <navbar [variant]="controlConfig.layout.navbar.variant" class="right-navbar"></navbar>
+    </control-sidebar>
 </ng-template>
 <!-- / RIGHT NAVBAR -->

@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
-import { FuseSharedModule } from '@fuse/shared.module';
+import { ControlSearchBarModule, ControlShortcutsModule } from '@control/components';
+import { ControlSharedModule } from '@control/shared.module';
 
 import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.component';
 
@@ -21,9 +21,9 @@ import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.componen
         MatMenuModule,
         MatToolbarModule,
 
-        FuseSharedModule,
-        FuseSearchBarModule,
-        FuseShortcutsModule
+        ControlSharedModule,
+        ControlSearchBarModule,
+        ControlShortcutsModule
     ],
     exports     : [
         ToolbarComponent

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import { FuseSidebarModule, FuseThemeOptionsModule } from '@fuse/components';
-import { FuseSharedModule } from '@fuse/shared.module';
+import { ControlSidebarModule, ControlThemeOptionsModule } from '@control/components';
+import { ControlSharedModule } from '@control/shared.module';
 
 import { ContentModule } from 'app/layout/components/content/content.module';
 import { FooterModule } from 'app/layout/components/footer/footer.module';
@@ -19,9 +19,9 @@ import { HorizontalLayout1Component } from 'app/layout/horizontal/layout-1/layou
     imports     : [
         MatSidenavModule,
 
-        FuseSharedModule,
-        FuseSidebarModule,
-        FuseThemeOptionsModule,
+        ControlSharedModule,
+        ControlSidebarModule,
+        ControlThemeOptionsModule,
 
         ContentModule,
         FooterModule,

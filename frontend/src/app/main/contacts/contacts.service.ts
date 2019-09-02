@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Contribuyente } from 'control-consultas-doc';
 
-import { FuseUtils } from '@fuse/utils';
+import { ControlUtils } from '@control/utils';
 
 import { Contact } from 'app/main/contacts/contact.model';
 import { TipoDocumento } from 'app/main/tipo-documento/tipo-documento.model';
@@ -131,7 +131,7 @@ export class ContactsService implements Resolve<any>
 
                         if ( this.searchText && this.searchText !== '' )
                         {
-                            this.contacts = FuseUtils.filterArrayByString(this.contacts, this.searchText);
+                            this.contacts = ControlUtils.filterArrayByString(this.contacts, this.searchText);
                         }
 
                         this.contacts = this.contacts.map(contact => {

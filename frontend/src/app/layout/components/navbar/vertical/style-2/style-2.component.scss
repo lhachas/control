@@ -1,8 +1,8 @@
-@import "src/@fuse/scss/fuse";
+@import "src/@control/scss/control";
 
-fuse-sidebar {
+control-sidebar {
 
-    &.navbar-fuse-sidebar {
+    &.navbar-control-sidebar {
         overflow: hidden;
 
         &.folded:not(.unfolded) {
