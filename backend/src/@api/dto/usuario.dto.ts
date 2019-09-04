@@ -1,12 +1,16 @@
-import { IsNotEmpty, IsEmail, IsString, Length, MinLength } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsEmail, IsString, Length, MinLength } from 'class-validator';
 
 export class UsuarioDto {
+
+    @IsNumber()
+    public idPersonal: number;
+
     @IsNotEmpty()
     @IsString()
     @MinLength(4, {
         message: 'Tu nombre de usuario debe tener al menos 4 caracteres.',
     })
-    readonly nombreUsuario?: string;
+    readonly usuario?: string;
 
     @Length(1, 8, {
         message: 'Su contraseña debe tener entre 1 y 8 caracteres.',

@@ -7,9 +7,9 @@ export class ContactoDto {
     public readonly nombreComercial: string;
     public readonly tipo: string;
     public readonly condicion: string;
-    public readonly tipoDocumento: TipoDocumentoDto;
+    public readonly tipoDocumento: string;
     public readonly nroDocumento: string;
-    public readonly ubigeo: UbigeoDto;
+    public readonly ubigeo: string;
     public readonly direccion: string;
     public readonly urbanizacion: string;
     public readonly departamento: string;
@@ -21,8 +21,8 @@ export class ContactoDto {
     public readonly observaciones: string;
     public readonly estado: string;
 
-    constructor() {
-        this.ubigeo = new UbigeoDto();
-        this.tipoDocumento = new TipoDocumentoDto();
-    }
+    // constructor() {
+    //     this.ubigeo = new UbigeoDto();
+    //     this.tipoDocumento = new TipoDocumentoDto();
+    // }
 }

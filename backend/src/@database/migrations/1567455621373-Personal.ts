@@ -1,37 +1,40 @@
-import { MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
 import * as DateFormat from 'dateformat';
 
-export class MedioPago1564516519248 implements MigrationInterface {
+export class Personal1567455621373 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.createTable(
             new Table({
-                name: 'medio_pago',
+                name: 'personal',
                 columns: [
                     {
                         name: 'id',
                         type: 'integer',
-                        isPrimary: true,
                         isGenerated: true,
                         generationStrategy: 'increment',
+                        isPrimary: true,
                         isNullable: false,
                     },
                     {
-                        name: 'medio',
-                        type: 'varchar',
-                        length: '100',
+                        name: 'id_perfil',
+                        type: 'integer',
                         isNullable: false,
                     },
                     {
-                        name: 'descripcion',
-                        type: 'varchar',
-                        length: '1000',
+                        name: 'id_contacto',
+                        type: 'integer',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'id_empresa',
+                        type: 'integer',
                         isNullable: false,
                     },
                     {
                         name: 'estado',
                         type: 'char',
-                        length: '11',
+                        length: '10',
                         comment: 'ACTIVO/INACTIVO',
                         isNullable: false,
                     },
@@ -64,13 +67,38 @@ export class MedioPago1564516519248 implements MigrationInterface {
                         isNullable: false,
                     },
                 ],
+                foreignKeys: [
+                    new TableForeignKey({
+                        name: 'FK_PERFIL',
+                        columnNames: ['id_perfil'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'perfil',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                    new TableForeignKey({
+                        name: 'FK_CONTACTO',
+                        columnNames: ['id_contacto'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'contacto',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                    new TableForeignKey({
+                        name: 'FK_EMPRESA',
+                        columnNames: ['id_empresa'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'empresa',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                ],
             }),
             true,
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.dropTable('medio_pago', true);
+        await queryRunner.dropTable('personal', true);
     }
-
 }

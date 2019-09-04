@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Put, Param, Delete, HttpCode, HttpStatus } from '@nestjs/common';
 import { TipoDocumentoService } from '@control/api/services/tipo-documento.service';
-import { TipoDocumentoEntity } from '@control/db/entities/tipo-documento.entity';
+import { TipoDocumentoModel } from '@control/api/models/tipo-documento.model';
 import { ContactoDto } from '@control/api/dto/contacto.dto';
 
 @Controller('tipo-documento')
@@ -9,7 +9,7 @@ export class TipoDocumentoController {
 
     @Get()
     @HttpCode(HttpStatus.OK)
-    async Listar(): Promise<TipoDocumentoEntity[]> {
+    async Listar(): Promise<TipoDocumentoModel[]> {
         return await this.tipoDocumentoService.Listar();
     }
 }

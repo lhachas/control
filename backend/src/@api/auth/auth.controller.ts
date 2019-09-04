@@ -1,19 +1,19 @@
-import { Get, Post, Body, Put, Delete,Request, Param, UseGuards, Controller, UsePipes } from '@nestjs/common';
+import { Get, Post, Body, Request, UseGuards, Controller, UsePipes } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ValidationPipe } from '@control/common/pipes/validation.pipe';
-import { AutenticacionService } from '@control/api/services/autenticacion.service';
+import { AuthService } from '@control/api/auth/auth.service';
 import { AutenticacionDto } from '@control/api/dto/autenticacion.dto';
 import { IAutenticacion } from '@control/api/interfaces/autenticacion.interface';
 
 @Controller('autenticacion')
-export class AutenticacionController {
-    constructor(private readonly autenticacionService: AutenticacionService) {}
+export class AuthController {
+    constructor(private readonly authService: AuthService) {}
 
     @UseGuards(AuthGuard('local'))
     @UsePipes(new ValidationPipe())
     @Post('iniciarSesion')
-    async autenticacion(@Body() autenticacionDto: AutenticacionDto): Promise<IAutenticacion> {
-        return await this.autenticacionService.generarToken(autenticacionDto);
+    async auth(@Request() req): Promise<IAutenticacion> {
+        return req;
     }
 
     @UseGuards(AuthGuard('jwt'))

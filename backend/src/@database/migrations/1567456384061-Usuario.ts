@@ -1,37 +1,49 @@
-import { MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
 import * as DateFormat from 'dateformat';
 
-export class MedioPago1564516519248 implements MigrationInterface {
-
+export class Usuario1567456384061 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.createTable(
             new Table({
-                name: 'medio_pago',
+                name: 'usuario',
                 columns: [
                     {
                         name: 'id',
                         type: 'integer',
-                        isPrimary: true,
                         isGenerated: true,
                         generationStrategy: 'increment',
+                        isPrimary: true,
                         isNullable: false,
                     },
                     {
-                        name: 'medio',
-                        type: 'varchar',
-                        length: '100',
+                        name: 'id_personal',
+                        type: 'integer',
                         isNullable: false,
                     },
                     {
-                        name: 'descripcion',
+                        name: 'usuario',
+                        type: 'char',
+                        isUnique: true,
+                        length: '50',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'clave',
                         type: 'varchar',
-                        length: '1000',
+                        length: '255',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'token',
+                        type: 'varchar',
+                        length: '500',
+                        comment: 'TOKEN GENERADO JWT',
                         isNullable: false,
                     },
                     {
                         name: 'estado',
                         type: 'char',
-                        length: '11',
+                        length: '10',
                         comment: 'ACTIVO/INACTIVO',
                         isNullable: false,
                     },
@@ -64,13 +76,22 @@ export class MedioPago1564516519248 implements MigrationInterface {
                         isNullable: false,
                     },
                 ],
+                foreignKeys: [
+                    new TableForeignKey({
+                        name: 'FK_PERSONAL_USUARIO',
+                        columnNames: ['id_personal'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'personal',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                ],
             }),
             true,
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.dropTable('medio_pago', true);
+        await queryRunner.dropTable('usuario', true);
     }
-
 }

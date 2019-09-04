@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TipoDocumentoEntity } from '@control/db/entities/tipo-documento.entity';
+import { TipoDocumentoModel } from '@control/api/models/tipo-documento.model';
 
 @Injectable()
 export class TipoDocumentoService {
 
-    constructor(@InjectRepository(TipoDocumentoEntity) private readonly tipoDocumentoRepository: Repository<TipoDocumentoEntity>) {}
+    constructor(@InjectRepository(TipoDocumentoModel) private readonly tipoDocumentoRepository: Repository<TipoDocumentoModel>) {}
 
-    public async Listar(): Promise<TipoDocumentoEntity[]> {
+    public async Listar(): Promise<TipoDocumentoModel[]> {
         try {
             return await this.tipoDocumentoRepository.find({
                 where: {

@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import * as DateFormat from 'dateformat';
 
 export class UnidadMedida1564516310810 implements MigrationInterface {
 
@@ -8,10 +9,17 @@ export class UnidadMedida1564516310810 implements MigrationInterface {
                 name: 'unidad_medida',
                 columns: [
                     {
+                        name: 'id',
+                        type: 'integer',
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: 'increment',
+                        isNullable: false,
+                    },
+                    {
                         name: 'unidad',
                         type: 'char',
                         length: '20',
-                        isPrimary: true,
                         isNullable: false,
                     },
                     {
@@ -25,6 +33,34 @@ export class UnidadMedida1564516310810 implements MigrationInterface {
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'id_usuario_registrado',
+                        type: 'integer',
+                        default: '0',
+                        comment: 'ID USUARIO REGISTRADO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'id_usuario_modificado',
+                        type: 'integer',
+                        default: '0',
+                        comment: 'ID USUARIO MODIFICADO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'registrado',
+                        type: 'datetime',
+                        default: 'CURRENT_TIMESTAMP',
+                        comment: 'FECHA DE REGISTRO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'modificado',
+                        type: 'datetime',
+                        default: 'CURRENT_TIMESTAMP',
+                        comment: 'FECHA DE MODIFICACIÓN',
                         isNullable: false,
                     },
                 ],

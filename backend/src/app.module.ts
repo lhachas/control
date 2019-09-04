@@ -1,29 +1,21 @@
 import { Module } from '@nestjs/common';
-import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@control/config/config.module';
-import { JwtModule } from '@nestjs/jwt';
 import { DatabaseModule } from '@control/db/database.module';
 import { ControlControllers } from '@control/api/controllers';
 import { ControlServices } from '@control/api/services';
-import { ControlEntities } from '@control/db/entities';
-import { ControlPassport } from '@control/common/passport';
+import { ControlEntities } from '@control/api/models';
+import { AuthModule } from '@control/api/auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule,
     DatabaseModule,
-    PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-        secret: 'leonelhs',
-        signOptions: {
-            expiresIn: '10d',
-        },
-    }),
+    AuthModule,
     TypeOrmModule.forFeature([ ...ControlEntities ]),
   ],
   controllers: [ ...ControlControllers ],
-  providers: [  ...ControlServices, ...ControlPassport ],
+  providers: [  ...ControlServices ],
   exports: [ ...ControlServices ],
 })
 export class AppModule {}

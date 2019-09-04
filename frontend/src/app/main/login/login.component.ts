@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
+import { ControlConfigService } from '@control/services/config.service';
+import { controlAnimations } from '@control/animations';
 
 @Component({
     selector     : 'login',
     templateUrl  : './login.component.html',
     styleUrls    : ['./login.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations   : controlAnimations
 })
 export class LoginComponent implements OnInit
 {
@@ -18,16 +18,16 @@ export class LoginComponent implements OnInit
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
+     * @param {ControlConfigService} _controlConfigService
      * @param {FormBuilder} _formBuilder
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
+        private _controlConfigService: ControlConfigService,
         private _formBuilder: FormBuilder
     )
     {
         // Configure the layout
-        this._fuseConfigService.config = {
+        this._controlConfigService.config = {
             layout: {
                 navbar   : {
                     hidden: true
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
-
+    
     /**
      * On init
      */

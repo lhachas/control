@@ -1,7 +1,7 @@
 import { Factory, times } from 'typeorm-seeding';
 import { Connection, Repository, EntityRepository } from 'typeorm';
 import { OrmRepository } from 'typeorm-typedi-extensions';
-import { UbigeoEntity as Ubigeo } from '@control/db/entities/ubigeo.entity';
+import { UbigeoModel as Ubigeo } from '@control/api/models/ubigeo.model';
 
 @EntityRepository(Ubigeo)
 export class UbigeoRepo extends Repository<Ubigeo> {}

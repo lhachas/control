@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UbigeoEntity } from '@control/db/entities/ubigeo.entity';
+import { UbigeoModel } from '@control/api/models/ubigeo.model';
 
 @Injectable()
 export class UbigeoService {
-    constructor(@InjectRepository(UbigeoEntity) private readonly ubigeoRepository: Repository<UbigeoEntity>) {}
+    constructor(@InjectRepository(UbigeoModel) private readonly ubigeoRepository: Repository<UbigeoModel>) {}
 
-    public async create(): Promise<UbigeoEntity> {
-        const geo = new UbigeoEntity();
+    public async create(): Promise<UbigeoModel> {
+        const geo = new UbigeoModel();
         geo.codigoPais = '2';
         geo.departamento = 'Cusco';
         geo.distrito = 'Cusco';

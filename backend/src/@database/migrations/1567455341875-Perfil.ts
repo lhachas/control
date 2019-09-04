@@ -1,12 +1,12 @@
-import { MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 import * as DateFormat from 'dateformat';
 
-export class MedioPago1564516519248 implements MigrationInterface {
+export class Perfil1567455341875 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.createTable(
             new Table({
-                name: 'medio_pago',
+                name: 'perfil',
                 columns: [
                     {
                         name: 'id',
@@ -17,21 +17,21 @@ export class MedioPago1564516519248 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'medio',
-                        type: 'varchar',
-                        length: '100',
+                        name: 'perfil',
+                        type: 'char',
+                        length: '50',
                         isNullable: false,
                     },
                     {
-                        name: 'descripcion',
+                        name: 'imagen',
                         type: 'varchar',
-                        length: '1000',
+                        length: '500',
                         isNullable: false,
                     },
                     {
                         name: 'estado',
                         type: 'char',
-                        length: '11',
+                        length: '10',
                         comment: 'ACTIVO/INACTIVO',
                         isNullable: false,
                     },
@@ -70,7 +70,7 @@ export class MedioPago1564516519248 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.dropTable('medio_pago', true);
+        await queryRunner.dropTable('perfil', true);
     }
 
 }

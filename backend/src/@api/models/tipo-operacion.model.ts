@@ -1,9 +1,10 @@
-import { Column, Entity, PrimaryColumn, BeforeInsert } from 'typeorm';
+import { Column, Entity, BeforeInsert } from 'typeorm';
 import { IsString } from 'class-validator';
+import { BaseModel } from '@control/api/models/base/base.model';
 
 @Entity({ name: 'tipo_operacion' })
-export class TipoOperacionEntity {
-    @PrimaryColumn()
+export class TipoOperacionModel extends BaseModel {
+    @Column()
     public operacion: string;
 
     @Column()

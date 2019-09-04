@@ -1,6 +1,6 @@
 import { define } from 'typeorm-seeding';
 import * as Faker from 'faker';
-import { UbigeoEntity as Ubigeo } from '@control/db/entities/ubigeo.entity';
+import { UbigeoModel as Ubigeo } from '@control/api/models/ubigeo.model';
 
 define(Ubigeo, (faker: typeof Faker, settings: { role: string }) => {
     const ubigeo = new Ubigeo();

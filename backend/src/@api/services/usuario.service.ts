@@ -1,32 +1,21 @@
-import { Injectable, HttpException, NotFoundException, HttpStatus } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UsuarioEntity } from '@control/db/entities/usuario.entity';
-import { UsuarioDto } from '@control/api/dto/usuario.dto';
+import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
+import { UsuarioModel } from '@control/api/models/usuario.model';
 
 @Injectable()
-export class UsuarioService {
-    constructor(@InjectRepository(UsuarioEntity) private readonly usuarioRepository: Repository<UsuarioEntity>) {}
+export class UsuarioService extends TypeOrmCrudService<UsuarioModel> {
 
-    async getUsuario(usuarioDto: UsuarioDto): Promise<UsuarioEntity> {
-        const { email } = usuarioDto;
-        try {
-            return await this.usuarioRepository.findOne({ email });
-        } catch (error) {
-            throw new NotFoundException(`El usuario con el email ${ email } no se econtró.`);
-        }
+    constructor(@InjectRepository(UsuarioModel) private readonly usuarioRepository: Repository<UsuarioModel>) {
+        super(usuarioRepository);
     }
 
-    async Nuevo(usuarioDto: UsuarioDto): Promise<UsuarioEntity> {
+    async getUsuario(usuario: string): Promise<UsuarioModel> {
         try {
-            const usuario = new UsuarioEntity();
-            usuario.nombreUsuario = usuarioDto.nombreUsuario;
-            usuario.email = usuarioDto.email;
-            usuario.clave = usuarioDto.clave;
-            usuario.rol = usuarioDto.rol;
-            return await this.usuarioRepository.save(usuario);
+            return await this.usuarioRepository.findOneOrFail({ usuario });
         } catch (error) {
-            throw new NotFoundException(error);
+            throw new NotFoundException(`El usuario ${usuario} no se encontró.`);
         }
     }
 }

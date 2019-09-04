@@ -1,26 +1,14 @@
 import { Column, Entity, PrimaryColumn, BeforeInsert } from 'typeorm';
 import { IsString } from 'class-validator';
 
-@Entity({ name: 'moneda' })
-export class MonedaEntity {
+@Entity({ name: 'unidad_medida' })
+export class UnidadMedidaModel {
     @PrimaryColumn()
-    public codigo: string;
+    public unidad: string;
 
     @Column()
     @IsString()
     public descripcion: string;
-
-    @Column()
-    @IsString()
-    public simbolo: string;
-
-    @Column()
-    @IsString()
-    public pais: string;
-
-    @Column({ name: 'tipo_cambio' })
-    @IsString()
-    public tipoCambio: number;
 
     @Column()
     @IsString()

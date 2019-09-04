@@ -1,10 +1,11 @@
-import { Column, Entity, PrimaryColumn, BeforeInsert } from 'typeorm';
+import { Column, Entity, BeforeInsert } from 'typeorm';
 import { IsString } from 'class-validator';
+import { BaseModel } from '@control/api/models/base/base.model';
 
-@Entity({ name: 'medio_pago' })
-export class MedioPagoEntity {
-    @PrimaryColumn()
-    public medio: string;
+@Entity({ name: 'tipo_nota_credito' })
+export class TipoNotaCreditoModel extends BaseModel {
+    @Column()
+    public codigo: string;
 
     @Column()
     @IsString()

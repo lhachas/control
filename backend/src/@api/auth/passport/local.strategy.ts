@@ -1,22 +1,22 @@
 import { Injectable, HttpException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { Strategy } from 'passport-local';
-import { AutenticacionService } from '@control/api/services/autenticacion.service';
+import { AuthService } from '@control/api/auth/auth.service';
 import { AutenticacionDto } from '@control/api/dto/autenticacion.dto';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
-    constructor(private readonly autenticacionService: AutenticacionService) {
+    constructor(private readonly autenticacionService: AuthService) {
         super({
-            usernameField: 'email',
+            usernameField: 'usuario',
             passwordField: 'clave',
             passReqToCallback: false,
         });
     }
 
-    public async validate(email: string, clave: string) {
+    public async validate(usuario: string, clave: string) {
         return await this.autenticacionService.iniciarSesion({
-            email,
+            usuario,
             clave,
         } as AutenticacionDto);
     }

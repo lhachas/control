@@ -1,4 +1,5 @@
-import {MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import * as DateFormat from 'dateformat';
 
 export class Ubigeo1564427948311 implements MigrationInterface {
 
@@ -8,10 +9,17 @@ export class Ubigeo1564427948311 implements MigrationInterface {
                 name: 'ubigeo',
                 columns: [
                     {
+                        name: 'id',
+                        type: 'integer',
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: 'increment',
+                        isNullable: false,
+                    },
+                    {
                         name: 'ubigeo',
                         type: 'char',
                         length: '20',
-                        isPrimary: true,
                         isNullable: false,
                     },
                     {
@@ -38,18 +46,34 @@ export class Ubigeo1564427948311 implements MigrationInterface {
                         length: '2',
                         isNullable: false,
                     },
-                    // {
-                    //     name: 'registrado',
-                    //     type: queryRunner.connection.driver.mappedDataTypes.createDate.toString(),
-                    //     default: queryRunner.connection.driver.mappedDataTypes.createDateDefault,
-                    //     isNullable: false,
-                    // },
-                    // {
-                    //     name: 'modificado',
-                    //     type: queryRunner.connection.driver.mappedDataTypes.createDate.toString(),
-                    //     default: queryRunner.connection.driver.mappedDataTypes.createDateDefault,
-                    //     isNullable: false,
-                    // },
+                    {
+                        name: 'id_usuario_registrado',
+                        type: 'integer',
+                        default: '0',
+                        comment: 'ID USUARIO REGISTRADO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'id_usuario_modificado',
+                        type: 'integer',
+                        default: '0',
+                        comment: 'ID USUARIO MODIFICADO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'registrado',
+                        type: 'datetime',
+                        default: 'CURRENT_TIMESTAMP',
+                        comment: 'FECHA DE REGISTRO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'modificado',
+                        type: 'datetime',
+                        default: 'CURRENT_TIMESTAMP',
+                        comment: 'FECHA DE MODIFICACIÓN',
+                        isNullable: false,
+                    },
                 ],
             }),
             true,

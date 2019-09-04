@@ -91,7 +91,7 @@ const configDB: ConnectionOptions = {
      * de directorios para cargar.
      * Los directorios soportan patrones globales.
      */
-    entities: [join(__dirname, '../../@database/entities/*.entity{.ts,.js}')],
+    entities: [join(__dirname, '../../@api/models/*.model{.ts,.js}')],
 
     /**
      * @description
@@ -152,7 +152,7 @@ const configDB: ConnectionOptions = {
      * deben ser creadas por defecto por CLI.
      */
     cli: {
-        entitiesDir: 'src/@database/entities',
+        entitiesDir: 'src/@api/models',
         migrationsDir: 'src/@database/migrations',
     },
 };

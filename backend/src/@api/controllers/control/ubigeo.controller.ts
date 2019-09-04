@@ -1,13 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 import { UbigeoService } from '@control/api/services/ubigeo.service';
-import { UbigeoEntity } from '@control/db/entities/ubigeo.entity';
+import { UbigeoModel } from '@control/api/models/ubigeo.model';
 
 @Controller('ubigeo')
 export class UbigeoController {
   constructor(private readonly ubigeoService: UbigeoService) {}
 
   @Get()
-  findAll(): Promise<UbigeoEntity> {
+  findAll(): Promise<UbigeoModel> {
     return this.ubigeoService.create();
   }
 }

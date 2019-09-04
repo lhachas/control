@@ -1,20 +1,26 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
 import * as DateFormat from 'dateformat';
 
-export class Contacto1564428311705 implements MigrationInterface {
+export class Empresa1567453908450 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.createTable(
             new Table({
-                name: 'contacto',
+                name: 'empresa',
                 columns: [
                     {
                         name: 'id',
                         type: 'integer',
-                        isPrimary: true,
-                        isNullable: false,
                         isGenerated: true,
                         generationStrategy: 'increment',
+                        isPrimary: true,
+                        isNullable: false,
+                    },
+                    {
+                        name: 'ruc',
+                        type: 'char',
+                        length: '11',
+                        isNullable: false,
                     },
                     {
                         name: 'razon_social',
@@ -29,31 +35,34 @@ export class Contacto1564428311705 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'tipo',
-                        type: 'varchar',
-                        length: '150',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'condicion',
-                        type: 'varchar',
-                        length: '150',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'id_tipo_documento',
+                        name: 'representante',
                         type: 'integer',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'nro_documento',
-                        type: 'char',
-                        length: '11',
                         isNullable: false,
                     },
                     {
                         name: 'id_ubigeo',
                         type: 'integer',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'arigv',
+                        type: 'char',
+                        length: '2',
+                        comment: 'Agente Retencion IGV | SI/NO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'apvi',
+                        type: 'char',
+                        length: '2',
+                        comment: 'Agente Percepcion Venta Interna | SI/NO',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'apcl',
+                        type: 'char',
+                        length: '2',
+                        comment: 'Agente Percepcion Combustible Liquido | SI/NO',
                         isNullable: false,
                     },
                     {
@@ -65,59 +74,38 @@ export class Contacto1564428311705 implements MigrationInterface {
                     {
                         name: 'urbanizacion',
                         type: 'varchar',
-                        length: '100',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'departamento',
-                        type: 'varchar',
-                        length: '100',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'provincia',
-                        type: 'varchar',
-                        length: '100',
-                        isNullable: false,
-                    },
-                    {
-                        name: 'distrito',
-                        type: 'varchar',
                         length: '255',
                         isNullable: false,
                     },
                     {
                         name: 'telf_fijo',
-                        type: 'char',
-                        length: '20',
+                        type: 'varchar',
+                        length: '50',
                         isNullable: false,
                     },
                     {
                         name: 'telf_movil',
-                        type: 'char',
-                        length: '15',
+                        type: 'varchar',
+                        length: '50',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'actividad',
+                        type: 'varchar',
+                        length: '250',
                         isNullable: false,
                     },
                     {
                         name: 'email',
                         type: 'varchar',
-                        length: '100',
-                        isUnique: true,
+                        length: '250',
                         isNullable: false,
                     },
                     {
-                        name: 'observaciones',
+                        name: 'logo',
                         type: 'varchar',
-                        length: '255',
+                        length: '500',
                         isNullable: false,
-                    },
-                    {
-                        name: 'estado',
-                        type: 'char',
-                        length: '10',
-                        default: 'ACTIVO',
-                        isNullable: false,
-                        comment: 'ACTIVO/INACTIVO',
                     },
                     {
                         name: 'id_usuario_registrado',
@@ -148,42 +136,30 @@ export class Contacto1564428311705 implements MigrationInterface {
                         isNullable: false,
                     },
                 ],
+                foreignKeys: [
+                    new TableForeignKey({
+                        name: 'FK_UBIGEO_EMPRESA',
+                        columnNames: ['id_ubigeo'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'ubigeo',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                    new TableForeignKey({
+                        name: 'FK_REPRESENTANTE_EMPRESA',
+                        columnNames: ['representante'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'contacto',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                ],
             }),
             true,
-        );
-
-        await queryRunner.createForeignKeys(
-            'contacto',
-            [
-                new TableForeignKey({
-                    name: 'FK_TIPO_DOCUMENTO',
-                    columnNames: ['id_tipo_documento'],
-                    referencedColumnNames: ['id'],
-                    referencedTableName: 'tipo_documento',
-                    onDelete: 'CASCADE',
-                    onUpdate: 'CASCADE',
-                }),
-                new TableForeignKey({
-                    name: 'FK_UBIGEO',
-                    columnNames: ['id_ubigeo'],
-                    referencedColumnNames: ['id'],
-                    referencedTableName: 'ubigeo',
-                    onDelete: 'CASCADE',
-                    onUpdate: 'CASCADE',
-                }),
-            ],
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        const tipoDocumento = await queryRunner.getTable('tipo-documento');
-        const fkTipoDocumento = tipoDocumento.foreignKeys.find(fk => fk.columnNames.indexOf('id') !== -1);
-
-        const ubigeo = await queryRunner.getTable('ubigeo');
-        const fkUbigeo = await ubigeo.foreignKeys.find(fk => fk.columnNames.indexOf('id') !== -1);
-
-        await queryRunner.dropForeignKey('tipo_documento', fkTipoDocumento);
-        await queryRunner.dropForeignKey('ubigeo', fkUbigeo);
-        await queryRunner.dropTable('contactos', true);
+        await queryRunner.dropTable('empresa', true);
     }
 }
