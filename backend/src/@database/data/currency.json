@@ -1,0 +1,30 @@
+[
+    {
+        "code": "PEN",
+        "description": "NUEVOS SOLES",
+        "symbol": "S/",
+        "country": "PERÚ",
+        "exchangeRate": 1.00
+    },
+    {
+        "code": "USD",
+        "description": "DÓLARES AMERICANOS",
+        "symbol": "$",
+        "country": "ESTADO UNIDOS (EEUU)",
+        "exchangeRate": 3.30
+    },
+    {
+        "code": "EUR",
+        "description": "EURO",
+        "symbol": "€",
+        "country": "UNIÓN EUROPEA",
+        "exchangeRate": 3.67
+    },
+    {
+        "code": "OTRO",
+        "description": "OTRA MONEDA (ESPECIFICAR)",
+        "symbol": "OTR0",
+        "country": "",
+        "exchangeRate": 0.00
+    }
+]

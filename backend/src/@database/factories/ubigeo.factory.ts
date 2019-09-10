@@ -6,9 +6,9 @@ define(Ubigeo, (faker: typeof Faker, settings: { role: string }) => {
     const ubigeo = new Ubigeo();
     const gender = faker.random.number(1);
     ubigeo.ubigeo = faker.address.zipCode();
-    ubigeo.departamento = faker.address.country();
-    ubigeo.provincia = faker.address.city();
-    ubigeo.distrito = faker.address.state();
-    ubigeo.codigoPais = faker.address.countryCode();
+    ubigeo.departament = faker.address.country();
+    ubigeo.province = faker.address.city();
+    ubigeo.district = faker.address.state();
+    ubigeo.countryCode = faker.address.countryCode();
     return ubigeo;
 });

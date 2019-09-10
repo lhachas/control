@@ -1,16 +1,21 @@
 import { Module, Global } from '@nestjs/common';
-import { ConfigService } from './config.service';
+import { MailerModule } from '@nest-modules/mailer';
 import { CacheModule } from './cache/cache.module';
+import { AppConfig } from '@control/config/app.config';
+import { MailConfig } from '@control/config/mail.config';
 
 @Global()
 @Module({
-    imports: [CacheModule],
+    imports: [
+        CacheModule,
+        MailerModule.forRoot(MailConfig),
+    ],
     providers: [
         {
-            provide: ConfigService,
-            useValue: new ConfigService(),
+            provide: 'APP.CONFIG',
+            useValue: AppConfig,
         },
     ],
-    exports: [ConfigService],
+    exports: ['APP.CONFIG'],
 })
 export class ConfigModule {}

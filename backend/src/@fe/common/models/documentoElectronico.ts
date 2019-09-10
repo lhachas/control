@@ -352,7 +352,7 @@ export class DocumentoElectronico {
         this.MontoEnLetras = '';
     }
 
-    public NombreArchivo(): string {
+    public fileName(): string {
         const nombre: string[] = [
             this.Emisor.NroDocumento,
             this.TipoDocumento,

@@ -1,0 +1,67 @@
+[
+    {
+        "code": "00",
+        "description": "OTROS",
+        "abbreviation": "OTROS"
+    },
+    {
+        "code": "01",
+        "description": "FACTURA",
+        "abbreviation": "FACT"
+    },
+    {
+        "code": "02",
+        "description": "RECIBO POR HONORARIOS",
+        "abbreviation": "R/H"
+    },
+    {
+        "code": "03",
+        "description": "BOLETA DE VENTA",
+        "abbreviation": "B/V"
+    },
+    {
+        "code": "04",
+        "description": "LIQUIDACIÓN DE COMPRA",
+        "abbreviation": "LIQ"
+    },
+    {
+        "code": "05",
+        "description": "BOLETOS DE TRANSPORTE AÉREO QUE EMITEN LAS COMPAÑIAS DE AVIACIÓN COMERCIAL POR EL SERVICIO DE TRANSPORTE AÉREO REGULAR DE PASAJEROS, EMITIDOS DE MANER MANUAL, MECANIZADA O POR MEDIOS ELECTRÓNICOS (BME)",
+        "abbreviation": "BOL"
+    },
+    {
+        "code": "06",
+        "description": "CARTA DE PORTE AÉREO POR EL SERVICIO DE TRANSPORTE DE CARGA AÉREA",
+        "abbreviation": "CAR"
+    },
+    {
+        "code": "07",
+        "description": "NOTA DE CRÉDITO",
+        "abbreviation": "N/C"
+    },
+    {
+        "code": "08",
+        "description": "NOTA DE DÉBITO",
+        "abbreviation": "N/D"
+    },
+    {
+        "code": "09",
+        "description": "GUÍA DE REMISIÓN - REMITENTE",
+        "abbreviation": "GUI"
+    },
+    {
+        "code": "10",
+        "description": "RECIBO POR ARRENDAMIENTO",
+        "abbreviation": "R/A"
+    },
+    {
+        "code": "11",
+        "description": "PÓLIZA",
+        "abbreviation": "POL"
+    },
+    {
+        "code": "12",
+        "description": "TICKET",
+        "abbreviation": "TICK"
+    }
+]

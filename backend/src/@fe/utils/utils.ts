@@ -4,14 +4,14 @@ import { CDR, ErrorWS } from '@fe/common/exchange';
 
 export class Utils {
 
-    Procesado(codigo: string): boolean {
-        let estado: boolean = true;
-        if(codigo === '0' || codigo === '99') {
-            estado = true;
-        } else if(codigo === '98') {
-            estado = false;
+    processed(code: string): boolean {
+        let status: boolean = true;
+        if(code === '0' || code === '99') {
+            status = true;
+        } else if(code === '98') {
+            status = false;
         }
-        return estado;
+        return status;
     }
 
     getResponseCDR(doc: string): CDR {
@@ -23,18 +23,18 @@ export class Utils {
                             .getElementsByTagName('cac:DocumentResponse').item(0)
                             .getElementsByTagName('cac:Response');
 
-        cdr.Fecha = applicationResponse.getElementsByTagName('cbc:ResponseDate').item(0).textContent;
-        cdr.Hora = applicationResponse.getElementsByTagName('cbc:ResponseTime').item(0).textContent;
+        cdr.date = applicationResponse.getElementsByTagName('cbc:ResponseDate').item(0).textContent;
+        cdr.time = applicationResponse.getElementsByTagName('cbc:ResponseTime').item(0).textContent;
 
         for (let i = 0; i < response.length; i++) {
-            cdr.Codigo = response[i].getElementsByTagName('cbc:ResponseCode').item(0).textContent;
-            cdr.Descripcion = response[i].getElementsByTagName('cbc:Description').item(0).textContent;
+            cdr.code = response[i].getElementsByTagName('cbc:ResponseCode').item(0).textContent;
+            cdr.description = response[i].getElementsByTagName('cbc:Description').item(0).textContent;
             const status = response[i].getElementsByTagName('cac:Status');
             if (status.length > 0) {
                 for (let e = 0; e < status.length; e++) {
-                    cdr.Estado.push({
-                        Codigo: status[e].getElementsByTagName('cbc:StatusReasonCode').item(0).textContent,
-                        Razon: status[e].getElementsByTagName('cbc:StatusReason').item(0).textContent,
+                    cdr.status.push({
+                        code: status[e].getElementsByTagName('cbc:StatusReasonCode').item(0).textContent,
+                        reason: status[e].getElementsByTagName('cbc:StatusReason').item(0).textContent,
                     });
                 }
             }
@@ -67,11 +67,11 @@ export class Utils {
         return array;
     }
 
-    ErrorWS(error: any): ErrorWS {
+    errorWS(error: any): ErrorWS {
         const { root: { Envelope: { Body: { Fault } } } } = error;
         return {
-            Codigo: Fault.detail ? Fault.faultstring : Fault.faultcode,
-            Descripcion: Fault.detail ? Fault.detail.message : Fault.faultstring,
+            code: Fault.detail ? Fault.faultstring : Fault.faultcode,
+            description: Fault.detail ? Fault.detail.message : Fault.faultstring,
         } as ErrorWS;
     }
 }

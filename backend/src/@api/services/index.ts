@@ -1,15 +1,15 @@
-import { ContactoService } from './contacto.service';
-import { DocumentoService } from './documento.service';
+import { ContactService } from './contact.service';
+import { CPEService } from './cpe.service';
 import { SunatService } from './ruc.service';
-import { TipoDocumentoService } from './tipo-documento.service';
+import { DocumentTypeService } from './document-type.service';
 import { UbigeoService } from './ubigeo.service';
-import { UsuarioService } from './usuario.service';
+import { UserService } from './user.service';
 
 export const ControlServices = [
-    ContactoService,
-    DocumentoService,
+    ContactService,
+    CPEService,
     SunatService,
-    TipoDocumentoService,
     UbigeoService,
-    UsuarioService,
+    DocumentTypeService,
+    UserService,
 ];

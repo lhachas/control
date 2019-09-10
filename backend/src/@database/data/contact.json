@@ -1,0 +1,31 @@
+[
+    {
+        "businessName": "CARLOS MENDEZ PACHECO",
+        "tradeName": "CARLOS MENDEZ PACHECO",
+        "type": "PERSONAL NATURAL",
+        "condition": "HABIDO",
+        "documentType": {
+            "id": 1,
+            "code": "0",
+            "description": "DOC.TRIB.NO.DOM.SIN.RUC",
+            "abbreviation": "DOC.TRIB.NO.DOM.SIN.RUC",
+            "state": "INACTIVO"
+        },
+        "documentNumber": "12345678912",
+        "ubigeo": {
+            "id": 1,
+            "ubigeo": "010000",
+            "departament": "AMAZONAS",
+            "province": "",
+            "district": "",
+            "countryCode": "PE"
+        },
+        "address": "AV. LOS NOGALES S/N.",
+        "urbanization": "URB. LOS ROMALAES",
+        "phoneFixed": "984256352",
+        "movilePhone": "974856245",
+        "email": "CARLITOS@GOOGLE.COM",
+        "observations": "SIN OBSERVACIONES",
+        "state": "ACTIVO"
+    }
+]

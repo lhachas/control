@@ -1,0 +1,101 @@
+[
+    {
+        "perfil": {
+            "id": 1,
+            "perfil": "Admin",
+            "imagen": "",
+            "estado": "ACTIVO"
+        },
+        "contacto": {
+            "id": 1,
+            "razonSocial": "CARLOS MENDEZ PACHECO",
+            "nombreComercial": "CARLOS MENDEZ PACHECO",
+            "tipo": "PERSONAL NATURAL",
+            "condicion": "HABIDO",
+            "tipoDocumento": {
+                "id": 1,
+                "codigo": "0",
+                "descripcion": "DOC.TRIB.NO.DOM.SIN.RUC",
+                "abreviatura": "DOC.TRIB.NO.DOM.SIN.RUC",
+                "estado": "INACTIVO"
+            },
+            "nroDocumento": "12345678912",
+            "ubigeo": {
+                "id": 1,
+                "ubigeo": "010000",
+                "departamento": "AMAZONAS",
+                "provincia": "",
+                "distrito": "",
+                "codigoPais": "PE"
+            },
+            "direccion": "AV. LOS NOGALES S/N.",
+            "urbanizacion": "URB. LOS ROMALAES",
+            "departamento": "CUSCO",
+            "provincia": "CUSCO",
+            "distrito": "WANCHAQ",
+            "telfFijo": "984256352",
+            "telfMovil": "974856245",
+            "email": "CARLITOS@GOOGLE.COM",
+            "observaciones": "SIN OBSERVACIONES",
+            "estado": "ACTIVO"
+        },
+        "empresa": {
+            "id": 1,
+            "ruc": "20553510661",
+            "razonSocial": "CONTROL S.A.",
+            "nombreComercial": "CONTROL S.A.",
+            "representante": {
+                "id": 1,
+                "razonSocial": "CARLOS MENDEZ PACHECO",
+                "nombreComercial": "CARLOS MENDEZ PACHECO",
+                "tipo": "PERSONAL NATURAL",
+                "condicion": "HABIDO",
+                "tipoDocumento": {
+                    "id": 1,
+                    "codigo": "0",
+                    "descripcion": "DOC.TRIB.NO.DOM.SIN.RUC",
+                    "abreviatura": "DOC.TRIB.NO.DOM.SIN.RUC",
+                    "estado": "INACTIVO"
+                },
+                "nroDocumento": "12345678912",
+                "ubigeo": {
+                    "id": 1,
+                    "ubigeo": "010000",
+                    "departamento": "AMAZONAS",
+                    "provincia": "",
+                    "distrito": "",
+                    "codigoPais": "PE"
+                },
+                "direccion": "AV. LOS NOGALES S/N.",
+                "urbanizacion": "URB. LOS ROMALAES",
+                "departamento": "CUSCO",
+                "provincia": "CUSCO",
+                "distrito": "WANCHAQ",
+                "telfFijo": "984256352",
+                "telfMovil": "974856245",
+                "email": "CARLITOS@GOOGLE.COM",
+                "observaciones": "SIN OBSERVACIONES",
+                "estado": "ACTIVO"
+            },
+            "ubigeo": {
+                "id": 1,
+                "ubigeo": "010000",
+                "departamento": "AMAZONAS",
+                "provincia": "",
+                "distrito": "",
+                "codigoPais": "PE"
+            },
+            "arigv": "NO",
+            "apvi": "NO",
+            "apcl": "NO",
+            "direccion": "AV. LOS INKAS S/N",
+            "urbanizacion": "URB. LOS ANGELES.",
+            "telfFijo": "084789632",
+            "telfMovil": "944859678",
+            "actividad": "VENTA",
+            "email": "GALINDO@GOO.COM",
+            "logo": ""
+        },
+        "estado": "ACTIVO"
+    }
+]

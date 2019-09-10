@@ -1,13 +1,13 @@
-import { ContactoController } from './control/contacto.controller';
+import { ContactController } from './control/contact.controller';
 import { SunatController } from './control/ruc.controller';
 import { UbigeoController } from './control/ubigeo.controller';
-import { UsuarioController } from './control/usuario.controller';
-import { TipoDocumentoController } from './control/tipo-documento.controller';
+import { UserController } from './control/user.controller';
+import { DocumenTypeController } from './control/document-type.controller';
 
 export const ControlControllers = [
-    ContactoController,
+    ContactController,
     SunatController,
     UbigeoController,
-    UsuarioController,
-    TipoDocumentoController,
+    UserController,
+    DocumenTypeController,
 ];

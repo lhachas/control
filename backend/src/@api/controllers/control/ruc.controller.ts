@@ -10,7 +10,7 @@ export class SunatController {
 
     // @UseGuards(AuthGuard('jwt'))
     @Get(':ruc')
-    async ConsultaDoc(@Param('ruc') ruc): Promise<Contribuyente> {
-        return await this.sunat.consultaRuc(ruc);
+    async consultDocument(@Param('ruc') ruc): Promise<Contribuyente> {
+        return await this.sunat.consultRuc(ruc);
     }
 }

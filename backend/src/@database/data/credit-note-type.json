@@ -1,0 +1,38 @@
+[
+    {
+        "code": "01",
+        "description": "ANULACIÓN DE LA OPERACIÓN"
+    },
+    {
+        "code": "02",
+        "description": "ANULACIÓN POR ERROR EL RUC"
+    },
+    {
+        "code": "03",
+        "description": "CORRECCIÓN POR ERROR EN LA DESCIPCIÓN"
+    },
+    {
+        "code": "04",
+        "description": "DESCUENTO GLOBAL"
+    },
+    {
+        "code": "05",
+        "description": "DESCUENTO POR ITEM"
+    },
+    {
+        "code": "06",
+        "description": "DEVOLUCIÓN TOTAL"
+    },
+    {
+        "code": "07",
+        "description": "DEVOLUCIÓN POR ITEM"
+    },
+    {
+        "code": "08",
+        "description": "BONIFICACIÓN"
+    },
+    {
+        "code": "09",
+        "description": "DISMINUCIÓN EN EL VALOR"
+    }
+]

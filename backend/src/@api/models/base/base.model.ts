@@ -2,51 +2,70 @@ import {
     Column,
     PrimaryGeneratedColumn,
     BeforeInsert,
-    BeforeUpdate,
+    BeforeRemove,
     CreateDateColumn,
     UpdateDateColumn,
 } from 'typeorm';
-import { IsNumber, IsInt, IsDate } from 'class-validator';
-import * as DateFormat from 'dateformat';
+import { IsNumber, IsInt, IsOptional, IsNotEmpty, IsDate, IsString } from 'class-validator';
+import { CrudValidationGroups } from '@nestjsx/crud';
+
+const { CREATE, UPDATE } = CrudValidationGroups;
 
 export abstract class BaseModel {
 
     @PrimaryGeneratedColumn()
     public id: number;
 
-    @IsInt()
-    @IsNumber()
-    @Column({
-        name: 'id_usuario_registrado',
-        type: 'integer',
-        default: 0,
-    })
-    public idUsuarioRegistrado: number;
+    @Column({ default: 'ACTIVO' })
+    @IsOptional({ groups: [UPDATE] })
+    @IsNotEmpty({ groups: [CREATE] })
+    @IsString()
+    @IsNotEmpty()
+    public state: string;
 
     @IsInt()
     @IsNumber()
     @Column({
-        name: 'id_usuario_modificado',
+        name: 'created_user_id',
         type: 'integer',
         default: 0,
     })
-    public idUsuarioModificado: number;
+    public createdUserId: number;
+
+    @IsInt()
+    @IsNumber()
+    @Column({
+        name: 'modified_user_id',
+        type: 'integer',
+        default: 0,
+    })
+    public modifiedUserId: number;
 
     @IsDate()
-    @CreateDateColumn({ precision: null, type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-    public registrado: Date;
+    @CreateDateColumn({
+        name: 'created_at',
+        precision: null,
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP',
+    })
+    public createdAt: Date;
 
     @IsDate()
-    @UpdateDateColumn({ precision: null, type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-    public modificado: Date;
+    @UpdateDateColumn({
+        name: 'modified_at',
+        precision: null,
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP',
+    })
+    public modifiedAt: Date;
 
-    // @BeforeInsert()
-    // async defaultInsert(): Promise<void> {
-    //     this.registrado = await DateFormat(new Date(), 'yyyy-mm-dd HH:MM:ss');
-    // }
+    @BeforeInsert()
+    async default(): Promise<void> {
+        this.state = await 'ACTIVO';
+    }
 
-    // @BeforeUpdate()
-    // async defaultUpdate(): Promise<void> {
-    //     this.modificado = await DateFormat(new Date(), 'yyyy-mm-dd HH:MM:ss');
-    // }
+    @BeforeRemove()
+    async b4block() {
+        this.state = 'INACTIVO';
+    }
 }

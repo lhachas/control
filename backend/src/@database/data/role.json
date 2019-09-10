@@ -1,0 +1,12 @@
+[
+    {
+        "rolename": "ADMIN",
+        "image": "",
+        "state": "ACTIVO"
+    },
+    {
+        "rolename": "INVITADO",
+        "image": "",
+        "state": "ACTIVO"
+    }
+]

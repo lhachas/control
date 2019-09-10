@@ -1,36 +1,36 @@
 import { ErrorWS } from './errorWS';
 
 export class Comun {
-    private exito?: boolean;
-    private mensajeError?: string;
-    private errorWS: ErrorWS;
-    private origen?: string;
+    private _success?: boolean;
+    private _message?: string;
+    private _errorWS: ErrorWS;
+    private _origin?: string;
 
-    get Exito(): boolean {
-        return this.exito;
+    get success(): boolean {
+        return this._success;
     }
-    set Exito(exito: boolean) {
-        this.exito = exito;
-    }
-
-    get MensajeError(): string {
-        return this.mensajeError;
-    }
-    set MensajeError(mensajeError: string) {
-        this.mensajeError = mensajeError;
+    set success(_success: boolean) {
+        this._success = _success;
     }
 
-    get ErrorWS(): ErrorWS {
-        return this.errorWS;
+    get message(): string {
+        return this._message;
     }
-    set ErrorWS(errorWS: ErrorWS) {
-        this.errorWS = errorWS;
+    set message(_message: string) {
+        this._message = _message;
     }
 
-    get Origen(): string {
-        return this.origen;
+    get errorWS(): ErrorWS {
+        return this._errorWS;
     }
-    set Origen(origen: string) {
-        this.origen = origen;
+    set errorWS(_errorWS: ErrorWS) {
+        this._errorWS = _errorWS;
+    }
+
+    get origin(): string {
+        return this._origin;
+    }
+    set origin(_origin: string) {
+        this._origin = _origin;
     }
 }

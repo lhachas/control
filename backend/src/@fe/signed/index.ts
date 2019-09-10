@@ -10,9 +10,9 @@ import {
     Reference,
     X509Certificate,
 } from 'xmldsigjs';
-import { ConfigFirma, RFirma } from '@fe/common/exchange';
+import { SignatureConfig, RSign } from '@fe/common/exchange';
 import { EspacioNombres } from '@fe/common/constants';
-import { IFirmador } from '@fe/common/interfaces';
+import { ISigner } from '@fe/common/interfaces';
 import { Utils } from '@fe/utils';
 import { Convert } from 'xml-core';
 import { Certificate } from './certificate';
@@ -20,18 +20,18 @@ import { Algorithm } from './algorithm';
 
 const crypto = new CryptoOSSL();
 
-export class Firmador implements IFirmador {
-    private utils: Utils;
-    private algorithm: Algorithm;
-    private config: ConfigFirma;
+export class Signer implements ISigner {
+    private _utils: Utils;
+    private _algorithm: Algorithm;
+    private _config: SignatureConfig;
 
     constructor() {
-        this.utils = new Utils();
-        this.algorithm = new Algorithm();
-        this.Config = new ConfigFirma();
+        this._utils = new Utils();
+        this._algorithm = new Algorithm();
+        this._config = new SignatureConfig();
         Application.setEngine('OpenSSL', crypto);
-        this.algorithm.name = 'RSASSA-PKCS1-v1_5';
-        this.algorithm.hash = 'SHA-256';
+        this._algorithm.name = 'RSASSA-PKCS1-v1_5';
+        this._algorithm.hash = 'SHA-256';
     }
 
     /**
@@ -40,8 +40,8 @@ export class Firmador implements IFirmador {
      * @class [ConfigFirma]
      *
      */
-    public get Config(): ConfigFirma {
-        return this.config;
+    public get config(): SignatureConfig {
+        return this._config;
     }
 
     /**
@@ -50,26 +50,26 @@ export class Firmador implements IFirmador {
      * @class [ConfigFirma]
      *
      */
-    public set Config(config: ConfigFirma) {
-        this.config = config;
+    public set config(_config: SignatureConfig) {
+        this._config = _config;
     }
 
     private configOpenSSL(): void {
         pem.config({
-            pathOpenSSL: this.Config.RutaOpenSSL,
+            pathOpenSSL: this.config.openSSL,
         });
     }
 
     /**
      * @description Lee Un certificado en formado [.PFX]
-     * @param CertificadoDigital {string}
+     * @param certificate {string}
      * @return certificado {Certificate}
      *
      */
-    private async getCertificado(): Promise<Certificate> {
-        const certificado = fs.readFileSync(this.Config.CertificadoDigital);
+    private async getCertificate(): Promise<Certificate> {
+        const certificado = fs.readFileSync(this.config.certificate);
         this.configOpenSSL();
-        return await pem.readPkcs12(certificado, { p12Password: this.Config.ClaveCertificado });
+        return await pem.readPkcs12(certificado, { p12Password: this.config.certificate });
     }
 
     /**
@@ -78,9 +78,9 @@ export class Firmador implements IFirmador {
      * @return clave certificado {CryptoKey}
      *
      */
-    private async getClaveCertificado(): Promise<CryptoKey> {
-        const { key } = await this.getCertificado();
-        return await crypto.subtle.importKey('pkcs8', this.utils.crytoKey(key), this.algorithm, false, ['sign']);
+    private async getCertificatePassword(): Promise<CryptoKey> {
+        const { key } = await this.getCertificate();
+        return await crypto.subtle.importKey('pkcs8', this._utils.crytoKey(key), this._algorithm, false, ['sign']);
     }
 
     /**
@@ -89,13 +89,13 @@ export class Firmador implements IFirmador {
      * @return cuerpo del certificado {Body}
      *
      */
-    private async getDetalleCertificado(): Promise<string> {
-        const { cert } = await this.getCertificado();
-        return this.utils.formatCert(cert);
+    private async getCertificateDetail(): Promise<string> {
+        const { cert } = await this.getCertificate();
+        return this._utils.formatCert(cert);
     }
 
-    private get DocumentoXml(): Document {
-        return Parse(this.Config.DocumentoXml);
+    private get xmlDocument(): Document {
+        return Parse(this.config.xmlDocument);
     }
 
     /**
@@ -103,8 +103,8 @@ export class Firmador implements IFirmador {
      * @description para posteriormente agregar la Firma
      * @return ExtensionContent {Element}
      */
-    private get NodoFirma(): Element {
-        return this.DocumentoXml.getElementsByTagNameNS(EspacioNombres.ext, 'ExtensionContent').item(0);
+    private get signNode(): Element {
+        return this.xmlDocument.getElementsByTagNameNS(EspacioNombres.ext, 'ExtensionContent').item(0);
     }
 
     /**
@@ -112,18 +112,18 @@ export class Firmador implements IFirmador {
      * @ejemplo [Factura][Boleta][NotaCredito][NotaDebito]
      * @return XmlFirmado {RFirma}
      */
-    public async xml(): Promise<RFirma> {
-        const firma = new  RFirma();
+    public async xml(): Promise<RSign> {
+        const sign = new  RSign();
         try {
-            if(!fs.existsSync(this.Config.CertificadoDigital)) throw new Error('No Existe Certificado Digital.');
-            if(this.NodoFirma === null) throw new Error('No se pudo encontrar el nodo ExtensionContent en el XML');
-            if(!this.config.DocumentoXml) throw new Error('Documento XML esta vació');
-            const documentoXml = Parse(this.Config.DocumentoXml);
+            if(!fs.existsSync(this.config.certificate)) throw new Error('No Existe Certificado Digital.');
+            if(this.signNode === null) throw new Error('No se pudo encontrar el nodo ExtensionContent en el XML');
+            if(!this.config.xmlDocument) throw new Error('Documento XML esta vació');
+            const documentoXml = Parse(this.config.xmlDocument);
             const nodoFirma = documentoXml.getElementsByTagNameNS(EspacioNombres.ext, 'ExtensionContent').item(0);
-            const x509Certificate = new X509Certificate(Buffer.from(await this.getDetalleCertificado(), 'base64'));
+            const x509Certificate = new X509Certificate(Buffer.from(await this.getCertificateDetail(), 'base64'));
             const signedXml = new SignedXml(documentoXml);
             const xmlSignature = signedXml.XmlSignature;
-            const signature =  await signedXml.Sign(this.algorithm, await this.getClaveCertificado(), documentoXml, {
+            const signature =  await signedXml.Sign(this._algorithm, await this.getCertificatePassword(), documentoXml, {
                 id: 'SINGATURE',
                 references: [
                     {
@@ -135,7 +135,7 @@ export class Firmador implements IFirmador {
             });
 
             const keyInfo = new KeyInfo();
-            const x509Data = new KeyInfoX509Data(new Uint8Array(Buffer.from(await this.getDetalleCertificado(), 'base64')));
+            const x509Data = new KeyInfoX509Data(new Uint8Array(Buffer.from(await this.getCertificateDetail(), 'base64')));
 
             x509Data.AddSubjectName(x509Certificate.Subject);
             keyInfo.Add(x509Data);
@@ -145,19 +145,19 @@ export class Firmador implements IFirmador {
             const reference = new Reference('ds:SignedInfo');
             if (reference.DigestValue !== null) {
                 xmlSignature.SignedInfo.References.Map((ref) => {
-                    firma.ResumenFirma = Convert.ToBase64(ref.DigestValue);
+                    sign.signatureSummary = Convert.ToBase64(ref.DigestValue);
                 });
-                firma.ValorFirma = Convert.ToBase64(signedXml.Signature);
+                sign.signatureValue = Convert.ToBase64(signedXml.Signature);
             }
             nodoFirma.appendChild(signature.GetXml());
-            firma.DocumentoXmlFirmado = new XMLSerializer().serializeToString(documentoXml);
-            firma.Exito = true;
-            return firma;
+            sign.signedXmlDocument = new XMLSerializer().serializeToString(documentoXml);
+            sign.success = true;
+            return sign;
         } catch (e) {
-            firma.Exito = false;
-            firma.MensajeError = e;
-            firma.Origen = 'firma';
-            throw firma;
+            sign.success = false;
+            sign.message = e;
+            sign.origin = 'firma';
+            throw sign;
         }
     }
 }

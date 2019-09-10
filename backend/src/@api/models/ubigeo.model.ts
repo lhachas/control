@@ -1,10 +1,10 @@
-import { Column, Entity, PrimaryColumn, OneToOne } from 'typeorm';
+import { Column, Entity, OneToOne } from 'typeorm';
 import { IsString } from 'class-validator';
 import { Type } from 'class-transformer';
 import { BaseModel } from '@control/api/models/base/base.model';
 
-import { ContactoModel } from '@control/api/models/contacto.model';
-import { EmpresaModel } from '@control/api/models/empresa.model';
+import { ContactModel } from '@control/api/models/contact.model';
+import { CompanyModel } from '@control/api/models/company.model';
 
 @Entity({ name: 'ubigeo' })
 export class UbigeoModel extends BaseModel {
@@ -13,24 +13,24 @@ export class UbigeoModel extends BaseModel {
 
     @Column()
     @IsString()
-    public departamento: string;
+    public departament: string;
 
     @Column()
     @IsString()
-    public provincia: string;
+    public province: string;
 
     @Column()
     @IsString()
-    public distrito: string;
+    public district: string;
 
-    @Column({ name: 'codigo_pais' })
+    @Column({ name: 'country_code' })
     @IsString()
-    public codigoPais: string;
+    public countryCode: string;
 
-    @OneToOne((type) => ContactoModel, (c) => c.ubigeo)
-    @Type((t) => ContactoModel)
-    contacto: ContactoModel;
+    @OneToOne((type) => ContactModel, (c) => c.ubigeo)
+    @Type((t) => ContactModel)
+    contact: ContactModel;
 
-    @OneToOne((type) => EmpresaModel, (e) => e.ubigeo)
-    empresa: EmpresaModel;
+    @OneToOne((type) => CompanyModel, (e) => e.ubigeo)
+    company: CompanyModel;
 }

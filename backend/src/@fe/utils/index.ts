@@ -1,2 +1,2 @@
-export * from './serializador';
+export * from './serializer';
 export * from './utils';

@@ -1,5 +1,5 @@
 import { Client, createClientAsync , WSSecurity } from 'soap';
-import { ConexionWS, RespuestaWS, PDocumento, ErrorWS, PEstadoCDR } from '@fe/common/exchange';
+import { ConnectionWS, ResponseWS, PDocument, ErrorWS, PStatusCDR } from '@fe/common/exchange';
 import { Utils } from '@fe/utils';
 
 export class WS {
@@ -11,99 +11,100 @@ export class WS {
     }
 
     /**
-     * @Autenticacion
-     * @param conexionWS ConexionSoap
+     * @description
+     * @auth
+     * @param connectionWS ConexionSoap
      * @return void
      *
      */
-    public async Autenticacion(conexionWS: ConexionWS): Promise<void> {
+    public async auth(connectionWS: ConnectionWS): Promise<void> {
         try {
-            this.client = await createClientAsync(conexionWS.WS, {
+            this.client = await createClientAsync(connectionWS.ws, {
                 returnFault: true,
             });
-            this.client.setSecurity(new WSSecurity(conexionWS.RUC.concat(conexionWS.UsuarioSOL), conexionWS.ClaveSOL));
-            if (conexionWS.EndPoint !== '') {
-                this.client.setEndpoint(conexionWS.EndPoint);
+            this.client.setSecurity(new WSSecurity(connectionWS.ruc.concat(connectionWS.userSOL), connectionWS.passwordSOL));
+            if (connectionWS.endPoint !== '') {
+                this.client.setEndpoint(connectionWS.endPoint);
             }
         } catch (e) {
             throw e;
         }
     }
 
-    public async EnviarDocumento(documento: PDocumento): Promise<RespuestaWS> {
-        const docRespuesta = new RespuestaWS();
+    public async sendBill(document: PDocument): Promise<ResponseWS> {
+        const responseWS = new ResponseWS();
         try {
             const [ { applicationResponse } ] = await this.client.sendBillAsync({
-                fileName: documento.NombreArchivo.concat('.zip'),
-                contentFile: documento.Zip,
+                fileName: document.fileName.concat('.zip'),
+                contentFile: document.zip,
             });
-            docRespuesta.ConstanciaDeRecepcion = applicationResponse;
-            docRespuesta.Exito = true;
+            responseWS.constancyOfRecepty = applicationResponse;
+            responseWS.success = true;
         } catch (e) {
-            docRespuesta.Exito = false;
-            docRespuesta.ErrorWS = new ErrorWS(e);
-            docRespuesta.Origen = 'EnviarComprobante';
+            responseWS.success = false;
+            responseWS.errorWS = new ErrorWS(e);
+            responseWS.origin = 'EnviarComprobante';
         }
-        return docRespuesta;
+        return responseWS;
     }
 
-    public async EnviarResumen(documento: PDocumento): Promise<RespuestaWS> {
-        const docRespuesta = new RespuestaWS();
+    public async sendSumary(document: PDocument): Promise<ResponseWS> {
+        const responseWS = new ResponseWS();
         try {
             const [ { ticket } ] = await this.client.sendSummaryAync({
-                fileName: documento.NombreArchivo.concat('.zip'),
-                contentFile: documento.Zip,
+                fileName: document.fileName.concat('.zip'),
+                contentFile: document.zip,
             });
-            docRespuesta.Ticket = ticket;
-            docRespuesta.Exito = true;
+            responseWS.ticket = ticket;
+            responseWS.success = true;
         } catch (e) {
-            docRespuesta.Exito = false;
-            docRespuesta.ErrorWS = new ErrorWS(e);
-            docRespuesta.Origen = 'EnviarResumen';
+            responseWS.success = false;
+            responseWS.errorWS = new ErrorWS(e);
+            responseWS.origin = 'EnviarResumen';
         }
-        return docRespuesta;
+        return responseWS;
     }
 
-    public async EstadoDocumento(ticket: string): Promise<RespuestaWS> {
-        const docRespuesta = new RespuestaWS();
+    public async getStatus(ticket: string): Promise<ResponseWS> {
+        const responseWS = new ResponseWS();
         try {
             const [ { status: { statusCode, content } } ] = await this.client.getSatusAsync({ ticket });
-            if(this.utils.Procesado(statusCode)) {
-                docRespuesta.ConstanciaDeRecepcion = content;
-                docRespuesta.Exito = true;
+            if(this.utils.processed(statusCode)) {
+                responseWS.constancyOfRecepty = content;
+                responseWS.success = true;
             } else {
-                docRespuesta.Exito = false;
-                docRespuesta.MensajeError = 'En proceso';
+                responseWS.success = false;
+                responseWS.message = 'En proceso';
             }
         } catch (e) {
-            docRespuesta.Exito = false;
-            docRespuesta.ErrorWS = new ErrorWS(e);
-            docRespuesta.Origen = 'EstadoDocumento';
+            responseWS.success = false;
+            responseWS.errorWS = new ErrorWS(e);
+            responseWS.origin = 'EstadoDocumento';
         }
-        return docRespuesta;
+        return responseWS;
     }
 
-    public async ConsultarCDR(estadoCDR: PEstadoCDR): Promise<RespuestaWS> {
-        const docRespuesta = new RespuestaWS();
+    public async getStatusCDR(statusCDR: PStatusCDR): Promise<ResponseWS> {
+        const responseWS = new ResponseWS();
         try {
             const [ { status: { statusCode, content } } ] = await this.client.getStatusCdrAsync({
-                rucComprobante: estadoCDR.RucComprobante,
-                tipoComprobante: estadoCDR.TipoComprobante,
-                serieComprobante: estadoCDR.SerieComprobante,
-                numeroComprobante: estadoCDR.NumeroComprobante,
+                rucComprobante: statusCDR.voucherRUC,
+                tipoComprobante: statusCDR.voucherType,
+                serieComprobante: statusCDR.voucherSerie,
+                numeroComprobante: statusCDR.voucherNumber,
             });
-            if(this.utils.Procesado(statusCode)) {
-                docRespuesta.ConstanciaDeRecepcion = content;
-                docRespuesta.Exito = true;
+            if(this.utils.processed(statusCode)) {
+                responseWS.constancyOfRecepty = content;
+                responseWS.success = true;
             } else {
-                docRespuesta.Exito = false;
-                docRespuesta.MensajeError = 'En proceso';
+                responseWS.success = false;
+                responseWS.message = 'En proceso';
             }
         } catch (e) {
-            docRespuesta.Exito = false;
-            docRespuesta.ErrorWS = new ErrorWS(e);
-            docRespuesta.Origen = 'ConsultarCDR';
+            responseWS.success = false;
+            responseWS.errorWS = new ErrorWS(e);
+            responseWS.origin = 'ConsultarCDR';
         }
-        return docRespuesta;
+        return responseWS;
     }
 }

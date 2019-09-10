@@ -1,26 +1,26 @@
 export class ErrorWS {
-    private codigo?: string;
-    private descripcion?: string;
+    private _code?: string;
+    private _description?: string;
 
-    get Codigo(): string {
-        return this.codigo;
+    get code(): string {
+        return this._code;
     }
-    set Codigo(codigo: string) {
-        this.codigo = codigo;
+    set code(_code: string) {
+        this._code = _code;
     }
 
-    get Descripcion(): string {
-        return this.descripcion;
+    get description(): string {
+        return this._description;
     }
-    set Descripcion(descripcion: string) {
-        this.descripcion = descripcion;
+    set description(_description: string) {
+        this._description = _description;
     }
 
     constructor(error: any) {
         const { root: { Envelope: { Body: { Fault } } } } = error;
         return {
-            Codigo: Fault.detail ? Fault.faultstring : Fault.faultcode,
-            Descripcion: Fault.detail ? Fault.detail.message : Fault.faultstring,
+            code: Fault.detail ? Fault.faultstring : Fault.faultcode,
+            description: Fault.detail ? Fault.detail.message : Fault.faultstring,
         } as ErrorWS;
     }
 }

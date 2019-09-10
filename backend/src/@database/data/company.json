@@ -1,0 +1,26 @@
+[
+    {
+        "ruc": "20553510661",
+        "businessName": "CONTROL S.A.",
+        "tradeName": "CONTROL S.A.",
+        "representative": "GALINDO GAL GALINDON",
+        "ubigeo": {
+            "id": 1,
+            "ubigeo": "010000",
+            "departament": "AMAZONAS",
+            "province": "",
+            "district": "",
+            "countryCode": "PE"
+        },
+        "arigv": "NO",
+        "apvi": "NO",
+        "apcl": "NO",
+        "address": "AV. LOS INKAS S/N",
+        "urbanization": "URB. LOS ANGELES.",
+        "fixedPhone": "084789632",
+        "movilePhone": "944859678",
+        "activity": "VENTA",
+        "email": "GALINDO@GOO.COM",
+        "logo": ""
+    }
+]

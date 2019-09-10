@@ -9,7 +9,7 @@ export class SunatService {
         this.sunat = new Sunat();
     }
 
-    public async consultaRuc(ruc: string): Promise<Contribuyente> {
+    public async consultRuc(ruc: string): Promise<Contribuyente> {
         return await this.sunat.consultaRuc(ruc);
     }
 }

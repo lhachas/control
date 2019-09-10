@@ -1,0 +1,9 @@
+[
+    {
+        "staff": 1,
+        "username": "administrador",
+        "password": "123456admin",
+        "token": "",
+        "state": "ACTIVO"
+    }
+]

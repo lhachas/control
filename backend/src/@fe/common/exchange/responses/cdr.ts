@@ -1,58 +1,58 @@
-import { Archivo } from './arhivo';
-import { EstadoCDR } from './estadoCDR';
+import { File } from './file';
+import { StatusCDR } from './statusCDR';
 
-export class CDR extends Archivo {
-    private zipCDR: string;
-    private descripcion: string;
-    private codigo: string;
-    private fecha: string;
-    private hora: string;
-    private estado: EstadoCDR[];
+export class CDR extends File {
+    private _zipCDR: string;
+    private _description: string;
+    private _code: string;
+    private _date: string;
+    private _time: string;
+    private _status: StatusCDR[];
 
-    get ZipCDR(): string {
-        return this.zipCDR;
+    get zipCDR(): string {
+        return this._zipCDR;
     }
-    set ZipCDR(zipCDR: string) {
-        this.zipCDR = zipCDR;
-    }
-
-    get Descripcion(): string {
-        return this.descripcion;
-    }
-    set Descripcion(descripcion: string) {
-        this.descripcion = descripcion;
+    set zipCDR(_zipCDR: string) {
+        this._zipCDR = _zipCDR;
     }
 
-    get Codigo(): string {
-        return this.codigo;
+    get description(): string {
+        return this._description;
     }
-    set Codigo(codigo: string) {
-        this.codigo = codigo;
-    }
-
-    get Fecha(): string {
-        return this.fecha;
-    }
-    set Fecha(fecha: string) {
-        this.fecha = fecha;
+    set description(_description: string) {
+        this._description = _description;
     }
 
-    get Hora(): string {
-        return this.hora;
+    get code(): string {
+        return this._code;
     }
-    set Hora(hora: string) {
-        this.hora =  hora;
+    set code(_code: string) {
+        this._code = _code;
     }
 
-    get Estado(): EstadoCDR[] {
-        return this.estado;
+    get date(): string {
+        return this._date;
     }
-    set Estado(estado: EstadoCDR[]) {
-        this.estado = estado;
+    set date(_date: string) {
+        this._date = _date;
+    }
+
+    get time(): string {
+        return this._time;
+    }
+    set time(_time: string) {
+        this._time =  _time;
+    }
+
+    get status(): StatusCDR[] {
+        return this._status;
+    }
+    set status(_status: StatusCDR[]) {
+        this._status = _status;
     }
 
     constructor() {
         super();
-        this.Estado = new Array<EstadoCDR>();
+        this.status = new Array<StatusCDR>();
     }
-}    
+}

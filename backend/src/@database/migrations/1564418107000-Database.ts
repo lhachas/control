@@ -1,5 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { database } from '@control/config/db/ormconfig';
+import { database } from '@control/config/orm.config';
 
 export class Database1564418107000 implements MigrationInterface {
 

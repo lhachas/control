@@ -1,27 +1,27 @@
 import { Controller, Get, Res, Body } from '@nestjs/common';
-import { CDR, DocumentoElectronico, RFirma, RDocumento, PDocumento } from '@fe/common';
-import { Factura } from '@fe/xml';
-import { DocumentoService } from '@control/api/services/documento.service';
+import { CDR, DocumentoElectronico, RSign, RDocument, PDocument } from '@fe/common';
+import { InvoiceXML } from '@fe/xml';
+import { CPEService } from '@control/api/services/cpe.service';
 
 @Controller('factura')
 export class FacturaController {
 
-    constructor(private readonly documentoService: DocumentoService) {
-        this.documentoService.Tipo = new Factura();
+    constructor(private readonly cpeService: CPEService) {
+        this.cpeService.type = new InvoiceXML();
     }
 
     @Get('Xml')
-    async Xml(@Body() documentoElectronico: DocumentoElectronico): Promise<RDocumento> {
-        return await this.documentoService.GenerarXml(documentoElectronico);
+    async xml(@Body() document: DocumentoElectronico): Promise<RDocument> {
+        return await this.cpeService.xmlGenerate(document);
     }
 
     @Get('Firmar')
-    async FirmarXml(@Body() documentoXml: any): Promise<RFirma> {
-        return await this.documentoService.FirmarXml(documentoXml);
+    async signedXml(@Body() documentoXml: any): Promise<RSign> {
+        return await this.cpeService.xmlSigned(documentoXml);
     }
 
     @Get('Enviar')
-    async Enviar(@Body() documento: PDocumento): Promise<CDR> {
-        return await this.documentoService.Enviar(documento);
+    async send(@Body() document: PDocument): Promise<CDR> {
+        return await this.cpeService.send(document);
     }
 }

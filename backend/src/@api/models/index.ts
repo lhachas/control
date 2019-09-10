@@ -1,32 +1,35 @@
-import { ContactoModel } from './contacto.model';
-import { TipoDocumentoModel } from './tipo-documento.model';
+import { ContactModel } from './contact.model';
+import { DocumentTypeModel } from './document-type.model';
 import { UbigeoModel } from './ubigeo.model';
-import { UsuarioModel } from './usuario.model';
-import { MedioPagoModel } from './medio-pago.model';
-import { MonedaModel } from './moneda.model';
-import { TipoAfectacionIGVModel } from './tipo-afectacion-igv.model';
-import { TipoComprobanteModel } from './tipo-comprobante.model';
-import { TipoNotaCreditoModel } from './tipo-nota-credito.model';
-import { TipoNotaDebitoModel } from './tipo-nota-debito.model';
-import { TipoOperacionModel } from './tipo-operacion.model';
-import { TipoPrecioModel } from './tipo-precio.model';
-import { UnidadMedidaModel } from './unidad-medida.model';
+import { UserModel } from './user.model';
+import { PaymentMethodModel } from './payment-method.model';
+import { CurrencyModel } from './currency.model';
+import { AffectationTypeIGVModel } from './affectation-type-igv.model';
+import { VoucherTypeModel } from './voucher-type.model';
+import { CreditNoteTypeModel } from './credit-note-type.model';
+import { DebitNoteTypeModel } from './debit-note-type.model';
+import { OperationTypeModel } from './operation-type.model';
+import { PriceTypeModel } from './price-type.model';
+import { UnitMeasureModel } from './unit-measure.model';
+import { RoleModel } from './role.model';
+import { CompanyModel } from './company.model';
+import { StaffModel } from './staff.model';
 
 export const ControlEntities = [
-    ContactoModel,
-    TipoDocumentoModel,
+    ContactModel,
+    DocumentTypeModel,
     UbigeoModel,
-    UsuarioModel,
-    MedioPagoModel,
-    MonedaModel,
-    TipoAfectacionIGVModel,
-    TipoAfectacionIGVModel,
-    TipoComprobanteModel,
-    TipoComprobanteModel,
-    TipoNotaCreditoModel,
-    TipoNotaDebitoModel,
-    TipoNotaDebitoModel,
-    TipoOperacionModel,
-    TipoPrecioModel,
-    UnidadMedidaModel,
+    UserModel,
+    PaymentMethodModel,
+    CurrencyModel,
+    AffectationTypeIGVModel,
+    VoucherTypeModel,
+    CreditNoteTypeModel,
+    DebitNoteTypeModel,
+    OperationTypeModel,
+    PriceTypeModel,
+    UnitMeasureModel,
+    RoleModel,
+    CompanyModel,
+    StaffModel,
 ];

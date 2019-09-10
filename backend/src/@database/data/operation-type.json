@@ -1,0 +1,154 @@
+﻿[
+	{
+        "operation": "VENTA",
+		"description": "VENTA NACIONAL"
+	},
+	{
+        "operation": "COMPRA",
+		"description": "COMPRA NACIONAL"
+	},
+	{
+        "operation": "CONSIG/RECIB",
+		"description": "CONSIGNACIÓN RECIBIDA"
+	},
+	{
+        "operation": "CONSIG/ENTR",
+		"description": "CONSIGNACIÓN ENTREGADA"
+	},
+	{
+        "operation": "DEV/RECIB",
+		"description": "DEVOLUCIÓN RECIBIDA"
+	},
+	{
+        "operation": "DEV/ENTR",
+		"description": "DEVOLUCIÓN ENTREGADA"
+	},
+	{
+        "operation": "BONIFICACIÓN",
+		"description": "BONIFICACIÓN"
+	},
+	{
+        "operation": "PREMIO",
+		"description": "PREMIO"
+	},
+	{
+        "operation": "DONACIÓN",
+		"description": "DONACIÓN"
+	},
+	{
+        "operation": "SALD/PROD",
+		"description": "SALIDA A PRODUCCIÓN"
+	},
+	{
+        "operation": "SLD/TRANS",
+		"description": "SALIDA POR TRANSFERENCIA ENTRE ALMACENES "
+	},
+	{
+        "operation": "RETIRO",
+		"description": "RETIRO"
+	},
+	{
+        "operation": "MERMAS",
+		"description": "MERMAS"
+	},
+	{
+        "operation": "DESMEDROS",
+		"description": "DESMEDROS"
+	},
+	{
+        "operation": "DESTRUCCIÓN",
+		"description": "DESTRUCCIÓN"
+	},
+	{
+        "operation": "SALD/INI",
+		"description": "SALDO INICIAL"
+	},
+	{
+        "operation": "EXPORTACIÓN",
+		"description": "EXPORTACIÓN"
+	},
+	{
+        "operation": "IMPORTACIÓN",
+		"description": "IMPORTACIÓN"
+	},
+	{
+        "operation": "ENTR/PROD",
+		"description": "ENTRADA DE PRODUCCIÓN"
+	},
+	{
+        "operation": "ENTR/DEV/PROD",
+		"description": "ENTRADA POR DEVOLUCIÓN DE PRODUCCIÓN"
+	},
+	{
+        "operation": "ENTR/TRANS",
+		"description": "ENTRADA POR TRANSFERENCIA ENTRE ALMACENES "
+	},
+	{
+        "operation": "ENTR/IDENT",
+		"description": "ENTRADA POR IDENTIFICACIÓN ERRONEA"
+	},
+	{
+        "operation": "SAL/IDEN",
+		"description": "SALIDA POR IDENTIFICACIÓN ERRONEA"
+	},
+	{
+        "operation": "ENTR/DEV/CLIENT",
+		"description": "ENTRADA POR DEVOLUCIÓN DEL CLIENTE"
+	},
+	{
+        "operation": "SAL/DEV",
+		"description": "SALIDA POR DEVOLUCIÓN AL PROVEEDOR"
+	},
+	{
+        "operation": "ENTR/SERV",
+		"description": "ENTRADA PARA SERVICIO DE PRODUCCIÓN"
+	},
+	{
+        "operation": "SAL/SERV",
+		"description": "SALIDA POR SERVICIO DE PRODUCCIÓN"
+	},
+	{
+        "operation": "AJUS/DIF",
+		"description": "AJUSTE POR DIFERENCIA DE INVENTARIO"
+	},
+	{
+        "operation": "ENTR/BIENES/PRES",
+		"description": "ENTRADA DE BIENES EN PRÉSTAMO"
+    },
+	{
+        "operation": "SAL/BIENES",
+		"description": "SALIDA DE BIENES EN PRÉSTAMO"
+	},
+	{
+        "operation": "ENTR/BIENES/CUST",
+		"description": "ENTRADA DE BIENES EN CUSTODIA"
+	},
+	{
+        "operation": "SAL/BIENES/CUS",
+		"description": "SALIDA DE BIENES EN CUSTODIA"
+	},
+	{
+        "operation": "MUEST/MED",
+		"description": "MUESTRAS MÉDICAS"
+	},
+	{
+        "operation": "PUBLICIDAD",
+		"description": "PUBLICIDAD"
+	},
+	{
+        "operation": "GASTOS/REPRES",
+		"description": "GASTOS DE REPRESENTACIÓN"
+	},
+	{
+        "operation": "RET/ENTR/TRAB",
+		"description": "RETIRO PARA ENTREGA A TRABAJADORES"
+	},
+	{
+        "operation": "RET/CONV",
+		"description": "RETIRO POR CONVENIO COLECTIVO"
+	},
+	{
+        "operation": "RET/SUST",
+		"description": "RETIRO POR SUSTITUCIÓN DE BIEN SINIESTRADO"
+	}
+]

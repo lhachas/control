@@ -12,10 +12,10 @@ import { AuthModule } from '@control/api/auth/auth.module';
     ConfigModule,
     DatabaseModule,
     AuthModule,
-    TypeOrmModule.forFeature([ ...ControlEntities ]),
+    TypeOrmModule.forFeature(ControlEntities),
   ],
-  controllers: [ ...ControlControllers ],
-  providers: [  ...ControlServices ],
-  exports: [ ...ControlServices ],
+  controllers: ControlControllers,
+  providers: ControlServices,
+  exports: ControlServices,
 })
 export class AppModule {}

@@ -1,0 +1,10 @@
+[
+    {
+        "code": "01",
+        "description": "PRECIO UNITARIO (INCLUYE EL IGV)"
+    },
+    {
+        "code": "02",
+        "description": "VALOR REFERENCIAL UNITARIO EN OPERACIONES NO ONEROSAS"
+    }
+]

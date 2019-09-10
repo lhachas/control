@@ -1,9 +1,0 @@
-[
-    {
-        "id_personal": 1,
-        "usuario": "administrador",
-        "clave": "123456admin",
-        "token": "",
-        "estado": "ACTIVO"
-    }
-]
