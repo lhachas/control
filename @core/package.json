@@ -1,0 +1,25 @@
+{
+  "name": "@control/core",
+  "version": "2.0.0",
+  "description": "Control/Core",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "private": true,
+  "scripts": {
+    "postinstall": "link-module-alias",
+    "start": "tsc -w -p tsconfig.build.json && link-module-alias"
+  },
+  "keywords": [
+    "Control"
+  ],
+  "author": "LeonelHS",
+  "license": "ISC",
+  "dependencies": {
+    "link-module-alias": "^1.2.0",
+    "module-alias": "^2.2.1",
+    "ts-node": "^8.3.0"
+  },
+  "_moduleAliases": {
+    "@core": "lib/"
+  }
+}

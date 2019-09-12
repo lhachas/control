@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es2016", "es6", "es2015"],
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    // "esModuleInterop": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "incremental": true,
+    "pretty": true,
+    "paths": {
+      "@fe/*": ["./src/@fe/*"],
+      "@control/config/*": ["./src/@config/*"],
+      "@control/api/*": ["./src/@api/*"],
+      "@control/db/*": ["src/@database/*"],
+      "@control/common/*": ["src/@common/*"]
+    },
+    "rootDirs": [
+      "src/cpe",
+      "src/cpe/common",
+      "src/cpe/standard",
+      "src/cpe/structures",
+      "src/cpe/signed",
+      "src/cpe/xml",
+      "src/api",
+      "src/common",
+      "src/database"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -3,8 +3,9 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "frontend",
-      "backend"
+      "@frontend",
+      "@backend",
+      "@core"
     ]
   },
   "version": "1.0.0",
@@ -19,7 +20,7 @@
     "booststrap": "npm install && npm run build && lerna run docker-pull",
     "build": "tsc --build tsconfig.json --verbose",
     "rebuild": "npm run build --force",
-    "start": "concurrently --kill-others \"lerna run start:dev --stream --scope @control/backend\" \"lerna run start --stream --scope @control/frontend\"",
+    "start": "concurrently --kill-others \"lerna run start:dev --stream --scope @control/backend\" \"lerna run start --stream --scope @control/frontend\"  \"lerna run start --stream --scope @control/core\"",
     "test": "lerna run test --stream"
   },
   "devDependencies": {

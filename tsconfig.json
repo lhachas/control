@@ -2,7 +2,8 @@
     "files": [],
     "include": [],
     "references": [
-        {"path": "frontend"},
-        {"path": "backend"}
+        { "path": "@frontend" },
+        { "path": "@backend" },
+        { "path": "@core" }
     ]
 }
