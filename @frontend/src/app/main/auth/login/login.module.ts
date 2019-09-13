@@ -5,11 +5,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ControlSharedModule } from '@control/shared.module';
-import { AuthGuard } from 'app/main/auth/login/guards/auth.guards';
+import { ControlSnackBar } from '@control/components/snackbar/snackbar.module';
+import { AuthGuard } from 'app/main/auth/login/guards/auth.guard';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
         path     : 'login',
         component: LoginComponent,
         // canActivate: [AuthGuard]
-    }
+    },
 ];
 
 @NgModule({
@@ -35,9 +35,9 @@ const routes: Routes = [
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-        MatSnackBarModule,
 
-        ControlSharedModule
+        ControlSharedModule,
+        ControlSnackBar
     ],
     providers: [
         {

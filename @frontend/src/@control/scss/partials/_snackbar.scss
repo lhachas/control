@@ -1,0 +1,35 @@
+.notif-success {
+    color: white !important;
+    background-color: #3f5c9a !important;
+    border-color: #9C27B0 !important;
+    .mat-simple-snackbar-action {
+        color: rgb(235, 235, 215) !important;
+    }
+}
+
+.notif-error {
+    color: white !important;
+    background-color: #f44336 !important;
+    border-color: #bc0005 !important;
+    .mat-simple-snackbar-action {
+        color: rgb(235, 235, 215) !important;
+    }
+}
+
+.notif-info {
+    color: white !important;
+    background-color: #448aff !important;
+    border-color: #448aff !important;
+    .mat-simple-snackbar-action {
+        color: rgb(235, 235, 215) !important;
+    }
+}
+
+.notif-warning {
+    color: white !important;
+    background-color: rgb(255, 193, 7) !important;
+    border-color: rgb(255, 193, 7) !important;
+    .mat-simple-snackbar-action {
+        color: rgb(235, 235, 215) !important;
+    }
+}

@@ -21,6 +21,7 @@ import { ContactsContactListComponent } from 'app/main/contacts/contact-list/con
 import { ContactsSelectedBarComponent } from 'app/main/contacts/selected-bar/selected-bar.component';
 import { ContactsMainSidebarComponent } from 'app/main/contacts/sidebars/main/main.component';
 import { ContactsContactFormDialogComponent } from 'app/main/contacts/contact-form/contact-form.component';
+import { AuthGuard } from 'app/main/auth/login/guards/auth.guard';
 
 const routes: Routes = [
     {
@@ -28,7 +29,8 @@ const routes: Routes = [
         component: ContactsComponent,
         resolve  : {
             contacts: ContactsService
-        }
+        },
+        canActivate: [AuthGuard]
     }
 ];
 

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ControlConfigService } from '@control/services/config.service';
+import { SnackBarService } from '@control/components/snackbar/snackbar.service';
 import { controlAnimations } from '@control/animations';
 
 import { AuthService } from 'app/main/auth/login/auth.service';
@@ -18,7 +18,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit
 {
-    loginForm: FormGroup;
+    loginForm: FormGroup; 
     loading = false;
     submitted = false;
     returnUrl: string;
@@ -36,12 +36,12 @@ export class LoginComponent implements OnInit
         private _route: ActivatedRoute,
         private _router: Router,
         private _authService: AuthService,
-        private _snackBar: MatSnackBar
+        private _snackBar: SnackBarService,
     )
     {
         // redirect to home if already logged in
         if (this._authService.currentUserValue) {
-            this._router.navigate(['/']);
+            this._router.navigate(['/sample']);
         }
 
         // Configure the layout
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit
         });
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/sample';
 
     }
 
@@ -102,10 +102,10 @@ export class LoginComponent implements OnInit
                 this._router.navigate([this.returnUrl]);
             }, error => {
                 const { error: { message } } = error;
-                this._snackBar.open(message.toString(), 'Error', {
-                    duration: 8000,
-                    verticalPosition: 'top',
-                    panelClass: 'notif-error'
+                this._snackBar.open({
+                    message: message.toString(),
+                    type: 'error',
+                    duration: 7000,
                 });
                 this.error = error;
                 this.loading = false;

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ControlSharedModule } from '@control/shared.module';
 
 import { SampleComponent } from './sample.component';
+import { AuthGuard } from 'app/main/auth/login/guards/auth.guard';
 
-const routes = [
+const routes: Routes = [
     {
         path     : 'sample',
-        component: SampleComponent
+        component: SampleComponent,
+        canActivate: [AuthGuard]
     }
 ];
 
