@@ -28,7 +28,7 @@ export class DebitNoteType1564508232629 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',

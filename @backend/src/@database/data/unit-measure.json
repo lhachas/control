@@ -2,311 +2,311 @@
 	{
 		"unit": "4A",
         "description": "BOBINAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BJ",
         "description": "BALDE",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BLL",
         "description": "BARRILES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BG",
         "description": "BOLSA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BO",
         "description": "BOTELLAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BX",
         "description": "CAJA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CT",
         "description": "CARTONES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CMK",
         "description": "CENTIMETRO CUADRADO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CMQ",
         "description": "CENTIMETRO CUBICO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CMT",
         "description": "CENTIMETRO LINEAL",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CEN",
         "description": "CIENTO DE UNIDADES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CY",
         "description": "CILINDRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CJ",
         "description": "CONOS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "DZN",
         "description": "DOCENA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "DZP",
         "description": "DOCENA POR 10**6",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "BE",
         "description": "FARDO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "GLI",
         "description": "GALON INGLES (4,545956L)",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "GRM",
         "description": "GRAMO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "GRO",
         "description": "GRUESA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "HLT",
         "description": "HECTOLITRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "LEF",
         "description": "HOJA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "SET",
         "description": "JUEGO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "KGM",
         "description": "KILOGRAMO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "KTM",
         "description": "KILOMETRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "KWH",
         "description": "KILOVATIO HORA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "KT",
         "description": "KIT",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "CA",
         "description": "LATAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "LBR",
         "description": "LIBRAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "LTR",
         "description": "LITRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MWH",
         "description": "MEGAWATT HORA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MTR",
         "description": "METRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MTK",
         "description": "METRO CUADRADO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MTQ",
         "description": "METRO CUBICO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MGM",
         "description": "MILIGRAMOS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MLT",
         "description": "MILILITRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MMT",
         "description": "MILIMETRO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MMK",
         "description": "MILIMETRO CUADRADO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MMQ",
         "description": "MILIMETRO CUBICO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "MLL",
         "description": "MILLARES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "UM",
         "description": "MILLON DE UNIDADES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "ONZ",
         "description": "ONZAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "PF",
         "description": "PALETAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "PK",
         "description": "PAQUETE",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "PR",
         "description": "PAR",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "FOT",
         "description": "PIES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "FTK",
         "description": "PIES CUADRADOS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "FTQ",
         "description": "PIES CUBICOS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "C62",
         "description": "PIEZAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "PG",
         "description": "PLACAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "ST",
         "description": "PLIEGO",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "INH",
         "description": "PULGADAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "RM",
         "description": "RESMA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "DR",
         "description": "TAMBOR",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "STN",
         "description": "TONELADA CORTA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "LTN",
         "description": "TONELADA LARGA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "TNE",
         "description": "TONELADAS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "TU",
         "description": "TUBOS",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "NIU",
         "description": "UNIDAD (BIENES)",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "ZZ",
         "description": "UNIDAD (SERVICIOS)",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "GLL",
         "description": "US GALON (3,7843 L)",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "YRD",
         "description": "YARDA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	},
 	{
 		"unit": "YDK",
         "description": "YARDA CUADRADA",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
 	}
 ]

@@ -29,7 +29,7 @@ export class AffectationTypeIGV1564526764502 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',

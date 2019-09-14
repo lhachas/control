@@ -47,7 +47,7 @@ export class Ubigeo1564427948311 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '10',
                         // default: 'ACTIVO',

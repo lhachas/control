@@ -33,7 +33,7 @@ export class VoucherType1564515958944 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',

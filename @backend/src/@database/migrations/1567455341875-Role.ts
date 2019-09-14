@@ -29,7 +29,7 @@ export class Role1567455341875 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '10',
                         comment: 'ACTIVO/INACTIVO',

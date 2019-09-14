@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatProgressButtonsModule } from 'mat-progress-buttons';
 
 import { ControlSharedModule } from '@control/shared.module';
 import { ControlSnackBar } from '@control/components/snackbar/snackbar.module';
@@ -35,7 +37,9 @@ const routes: Routes = [
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
+        MatProgressBarModule,
 
+        MatProgressButtonsModule,
         ControlSharedModule,
         ControlSnackBar
     ],

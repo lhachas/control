@@ -31,7 +31,7 @@ export class Staff1567455621373 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '10',
                         comment: 'ACTIVO/INACTIVO',

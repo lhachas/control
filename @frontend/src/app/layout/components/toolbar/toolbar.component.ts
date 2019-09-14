@@ -2,12 +2,14 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 import * as _ from 'lodash';
 
 import { ControlConfigService } from '@control/services/config.service';
 import { ControlSidebarService } from '@control/components/sidebar/sidebar.service';
 
 import { navigation } from 'app/navigation/navigation';
+import { AuthService } from 'app/main/auth/login/auth.service';
 
 @Component({
     selector     : 'toolbar',
@@ -39,7 +41,9 @@ export class ToolbarComponent implements OnInit, OnDestroy
     constructor(
         private _controlConfigService: ControlConfigService,
         private _controlSidebarService: ControlSidebarService,
-        private _translateService: TranslateService
+        private _translateService: TranslateService,
+        private _authService: AuthService,
+        private _router: Router
     )
     {
         // Set the defaults
@@ -159,5 +163,13 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
         // Use the selected language for translations
         this._translateService.use(lang.id);
+    }
+
+    /**
+     * logout
+     */
+    logout(): void {
+        this._authService.logout();
+        this._router.navigate(['/auth/login']);
     }
 }

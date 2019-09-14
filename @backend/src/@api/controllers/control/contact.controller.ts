@@ -1,11 +1,24 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
+import { Crud, CrudController } from '@nestjsx/crud';
 import { ContactService } from '@control/api/services/contact.service';
 import { ContactModel } from '@control/api/models/contact.model';
 import { ContactDto } from '@control/api/dto/contact.dto';
 
-@Controller('contact')
+@Crud({
+    model: {
+        type: ContactModel,
+    },
+    query: {
+        join:  {
+            staff: {},
+            documentType: {},
+            ubigeo: {},
+        },
+    },
+})
+@Controller('contacts')
 export class ContactController {
-    constructor(private readonly contactService: ContactService) { }
+    constructor(public service: ContactService) { }
 
     // @Post()
     // @HttpCode(HttpStatus.CREATED)

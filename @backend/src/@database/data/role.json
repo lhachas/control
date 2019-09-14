@@ -2,11 +2,11 @@
     {
         "rolename": "ADMIN",
         "image": "",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
     },
     {
         "rolename": "INVITADO",
         "image": "",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
     }
 ]

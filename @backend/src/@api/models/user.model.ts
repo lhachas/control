@@ -19,6 +19,8 @@ import { Type } from 'class-transformer';
 import { BaseModel } from '@control/api/models/base/base.model';
 
 import { StaffModel } from '@control/api/models/staff.model';
+import { UserStarredModel } from '@control/api/models/user-starred.model';
+import { UserSettingsModel } from '@control/api/models/user-settings.model';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
@@ -31,6 +33,14 @@ export class UserModel extends BaseModel {
     @OneToOne((type) => StaffModel, (p) => p.user, { cascade: true })
     @JoinColumn({ name: 'staff_id' })
     public staff: StaffModel;
+
+    @IsOptional({ groups: [UPDATE] })
+    @IsNotEmpty({ groups: [CREATE] })
+    @ValidateNested({ always: true })
+    @Type((t) => UserSettingsModel)
+    @OneToOne((type) => UserSettingsModel, (p) => p.user, { cascade: true })
+    @JoinColumn({ name: 'user_setting_id' })
+    public setting: UserSettingsModel;
 
     @IsString()
     @IsOptional({ groups: [UPDATE] })
@@ -57,6 +67,10 @@ export class UserModel extends BaseModel {
     @Column({ default: '' })
     @IsString()
     public token: string;
+
+    @OneToOne((type) => UserStarredModel, (u) => u.user)
+    @Type((t) => UserStarredModel)
+    public starred: UserStarredModel;
 
     @BeforeInsert()
     async b4register() {

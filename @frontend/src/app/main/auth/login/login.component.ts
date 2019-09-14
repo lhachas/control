@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatProgressButtonOptions } from 'mat-progress-buttons';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 import { ControlConfigService } from '@control/services/config.service';
 import { SnackBarService } from '@control/components/snackbar/snackbar.service';
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit
     submitted = false;
     returnUrl: string;
     error: '';
+    spinnerButtonOptions: MatProgressButtonOptions;
 
     /**
      * Constructor
@@ -77,7 +80,22 @@ export class LoginComponent implements OnInit
             password: ['', Validators.required]
         });
 
-        // get return url from route parameters or default to '/'
+        this.spinnerButtonOptions = {
+            active: false,
+            icon: 'error',
+            text: 'INICIAR SESION',
+            spinnerSize: 18,
+            raised: true,
+            stroked: false,
+            buttonColor: 'accent',
+            spinnerColor: 'primary',
+            fullWidth: true,
+            disabled: false,
+            mode: 'indeterminate',
+        };
+        
+
+        // obtener la URL de retorno de los parámetros de ruta o por defecto '/'
         this.returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/sample';
 
     }
@@ -94,21 +112,25 @@ export class LoginComponent implements OnInit
         if (this.loginForm.invalid) {
             return; 
         }
-
+        this.spinnerButtonOptions.active = true;
         this.loading = true;
         this._authService.login(this.f.email.value, this.f.password.value)
             .pipe(first())
             .subscribe(data => {
+                this._snackBar.open({
+                    message: 'Iniciaste sesion correctamente.',
+                    type: 'success'
+                });
                 this._router.navigate([this.returnUrl]);
             }, error => {
-                const { error: { message } } = error;
                 this._snackBar.open({
-                    message: message.toString(),
+                    message: error.toString() || error.error.message.toString(),
                     type: 'error',
                     duration: 7000,
                 });
                 this.error = error;
                 this.loading = false;
+                this.spinnerButtonOptions.active = false;
             });
     }
 }

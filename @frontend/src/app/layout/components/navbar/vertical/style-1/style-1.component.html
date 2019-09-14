@@ -1,19 +1,19 @@
 <div class="navbar-top" [ngClass]="controlConfig.layout.navbar.secondaryBackground">
 
     <div class="logo">
-        <img class="logo-icon" src="assets/images/logos/control.svg">
+        <img class="logo-icon" src="assets/icons/control/logo/logo-control-5.svg">
         <span class="logo-text secondary-text">CONTROL</span>
     </div>
 
     <div class="buttons">
 
         <button mat-icon-button class="toggle-sidebar-folded"
-                (click)="toggleSidebarFolded()" fxHide.lt-lg>
+                (click)="toggleSidebarFolded()" fx-hide.lt-lg>
             <mat-icon class="secondary-text">menu</mat-icon>
         </button>
 
         <button mat-icon-button class="toggle-sidebar-opened"
-                (click)="toggleSidebarOpened()" fxHide.gt-md>
+                (click)="toggleSidebarOpened()" fx-hide.gt-md>
             <mat-icon class="secondary-text">arrow_back</mat-icon>
         </button>
 
@@ -27,15 +27,15 @@
 
     <div class="user" fxLayout="column" [ngClass]="controlConfig.layout.navbar.secondaryBackground">
 
-        <div class="h3 username">Charlie Adams</div>
-        <div class="h5 email hint-text mt-8">adams.charlie@mail.com</div>
+        <div class="h3 username" *ngIf="currentUser">{{ currentUser.staff.contact.tradeName }}</div>
+        <div class="h5 email hint-text mt-8" *ngIf="currentUser">{{ currentUser.staff.contact.email.toLowerCase() }}</div>
         <div class="avatar-container" [ngClass]="controlConfig.layout.navbar.primaryBackground">
-            <img class="avatar" src="assets/images/avatars/Velazquez.jpg">
+            <img class="avatar" src="assets/icons/control/login/user.svg">
         </div>
 
     </div>
 
-    <div class="navbar-content">
+    <div class="navbar-content"> 
         <control-navigation class="material2" layout="vertical"></control-navigation>
     </div>
 

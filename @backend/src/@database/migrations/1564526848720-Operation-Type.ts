@@ -29,7 +29,7 @@ export class OperationType1564526848720 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',

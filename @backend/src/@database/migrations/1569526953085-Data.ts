@@ -156,7 +156,7 @@ export class Data1569526953085 implements MigrationInterface {
                                         mobilePhone: '974856245',
                                         email: 'CARLITOS_XYZ@GOOGLE.COM',
                                         observations: 'SIN OBSERVACIONES',
-                                        state: 'ACTIVO',
+                                        status: 'ACTIVO',
                                     }));
 
         /**
@@ -202,7 +202,7 @@ export class Data1569526953085 implements MigrationInterface {
                                             id: 1,
                                             ...company[0],
                                         }),
-                                        state: 'ACTIVO',
+                                        status: 'ACTIVO',
                                     }));
 
         /**
@@ -219,7 +219,7 @@ export class Data1569526953085 implements MigrationInterface {
                                         username: 'administrador',
                                         password: '123456admin',
                                         token: '',
-                                        state: 'ACTIVO',
+                                        status: 'ACTIVO',
                                     }));
 
     }

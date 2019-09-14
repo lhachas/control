@@ -29,7 +29,7 @@ export class UnitMeasure1564516310810 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         comment: 'ACTIVO/INACTIVO',

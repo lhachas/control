@@ -10,7 +10,7 @@ import { Contact } from 'app/main/contacts/contact.model';
 import { TipoDocumento } from 'app/main/tipo-documento/tipo-documento.model';
 
 
-@Injectable()
+@Injectable() 
 export class ContactsService implements Resolve<any>
 {
     onContactsChanged: BehaviorSubject<any>;
@@ -88,7 +88,7 @@ export class ContactsService implements Resolve<any>
      * @returns [Promise<any>]
      */
     async getTipoDocumentos(): Promise<TipoDocumento[]> {
-        const tipoDocumentos: any = await this._httpClient.get('api/v1/tipo-documento').toPromise();
+        const tipoDocumentos: any = await this._httpClient.get('api/v1/document-type').toPromise();
         return tipoDocumentos;
     }
 
@@ -110,7 +110,7 @@ export class ContactsService implements Resolve<any>
     getContacts(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-                this._httpClient.get('api/v1/contacto')
+                this._httpClient.get('api/v1/contacts')
                     .subscribe((response: any) => {
 
                         this.contacts = response;

@@ -4,6 +4,6 @@
         "username": "administrador",
         "password": "123456admin",
         "token": "",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
     }
 ]

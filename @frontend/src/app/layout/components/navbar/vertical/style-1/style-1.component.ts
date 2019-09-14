@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { delay, filter, take, takeUntil } from 'rxjs/operators';
@@ -7,6 +7,8 @@ import { ControlConfigService } from '@control/services/config.service';
 import { ControlNavigationService } from '@control/components/navigation/navigation.service';
 import { ControlPerfectScrollbarDirective } from '@control/directives/control-perfect-scrollbar/control-perfect-scrollbar.directive';
 import { ControlSidebarService } from '@control/components/sidebar/sidebar.service';
+
+import { IUser } from '@control/core';
 
 @Component({
     selector     : 'navbar-vertical-style-1',
@@ -18,6 +20,9 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
 {
     controlConfig: any;
     navigation: any;
+
+    @Input()
+    currentUser: IUser;
 
     // Private
     private _controlPerfectScrollbar: ControlPerfectScrollbarDirective;

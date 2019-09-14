@@ -1,4 +1,6 @@
 import { Component, ElementRef, Input, Renderer2, ViewEncapsulation } from '@angular/core';
+import { AuthService } from 'app/main/auth/login/auth.service';
+import { IUser } from '@control/core';
 
 @Component({
     selector     : 'navbar',
@@ -10,6 +12,7 @@ export class NavbarComponent
 {
     // Private
     _variant: string;
+    _currentUser: IUser;
 
     /**
      * Constructor
@@ -19,11 +22,13 @@ export class NavbarComponent
      */
     constructor(
         private _elementRef: ElementRef,
-        private _renderer: Renderer2
+        private _renderer: Renderer2,
+        private _authService: AuthService
     )
     {
         // Set the private defaults
         this._variant = 'vertical-style-1';
+        this._authService.currenUser.subscribe(user => this._currentUser = user);
     }
 
     // -----------------------------------------------------------------------------------------------------

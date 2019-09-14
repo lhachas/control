@@ -1,5 +1,4 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
-import * as DateFormat from 'dateformat';
 
 export class User1567456384061 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<any> {
@@ -17,6 +16,11 @@ export class User1567456384061 implements MigrationInterface {
                     },
                     {
                         name: 'staff_id',
+                        type: 'integer',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'user_setting_id',
                         type: 'integer',
                         isNullable: false,
                     },
@@ -41,7 +45,7 @@ export class User1567456384061 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '10',
                         comment: 'ACTIVO/INACTIVO',
@@ -82,6 +86,14 @@ export class User1567456384061 implements MigrationInterface {
                         columnNames: ['staff_id'],
                         referencedColumnNames: ['id'],
                         referencedTableName: 'staff',
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
+                    }),
+                    new TableForeignKey({
+                        name: 'FK_SETTING_USER',
+                        columnNames: ['user_setting_id'],
+                        referencedColumnNames: ['id'],
+                        referencedTableName: 'user_settings',
                         onDelete: 'CASCADE',
                         onUpdate: 'CASCADE',
                     }),

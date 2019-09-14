@@ -28,6 +28,12 @@ export class Contact1564428311705 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
+                        name: 'avatar',
+                        type: 'varchar',
+                        length: '500',
+                        isNullable: false,
+                    },
+                    {
                         name: 'type',
                         type: 'varchar',
                         length: '150',
@@ -93,7 +99,7 @@ export class Contact1564428311705 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '10',
                         // default: 'ACTIVO',

@@ -33,7 +33,7 @@ export class DocumentType1564419107901 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'state',
+                        name: 'status',
                         type: 'char',
                         length: '11',
                         // default: 'ACTIVO',

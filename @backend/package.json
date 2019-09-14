@@ -35,6 +35,7 @@
     "seed": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed --config src/config/orm.config.ts"
   },
   "dependencies": {
+    "@control/core": "file:../@core",
     "@nest-modules/mailer": "^1.1.3",
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",

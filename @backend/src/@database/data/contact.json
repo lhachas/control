@@ -9,7 +9,7 @@
             "code": "0",
             "description": "DOC.TRIB.NO.DOM.SIN.RUC",
             "abbreviation": "DOC.TRIB.NO.DOM.SIN.RUC",
-            "state": "INACTIVO"
+            "status": "INACTIVO"
         },
         "documentNumber": "12345678912",
         "ubigeo": {
@@ -26,6 +26,6 @@
         "movilePhone": "974856245",
         "email": "CARLITOS@GOOGLE.COM",
         "observations": "SIN OBSERVACIONES",
-        "state": "ACTIVO"
+        "status": "ACTIVO"
     }
 ]

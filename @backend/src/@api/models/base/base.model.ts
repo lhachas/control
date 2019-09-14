@@ -21,7 +21,7 @@ export abstract class BaseModel {
     @IsNotEmpty({ groups: [CREATE] })
     @IsString()
     @IsNotEmpty()
-    public state: string;
+    public status: string;
 
     @IsInt()
     @IsNumber()
@@ -61,11 +61,11 @@ export abstract class BaseModel {
 
     @BeforeInsert()
     async default(): Promise<void> {
-        this.state = await 'ACTIVO';
+        this.status = await 'ACTIVO';
     }
 
     @BeforeRemove()
     async b4block() {
-        this.state = 'INACTIVO';
+        this.status = 'INACTIVO';
     }
 }
