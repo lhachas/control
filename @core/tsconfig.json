@@ -11,8 +11,9 @@
         "declaration": true,
         "outDir": "./lib",
         "baseUrl": "./src",
-        "strict": true,
         "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "esModuleInterop": true,
         "pretty": true,
         "paths": {

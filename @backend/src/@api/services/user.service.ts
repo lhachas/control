@@ -3,12 +3,54 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { UserModel } from '@control/api/models/user.model';
+import { UserSettingDto } from '@control/api/dto/user-settings.dto';
+import { UserStarredDto } from '@control/api/dto/user-starred.dto';
+import { UserFrequentDto } from '@control/api/dto/user-frequent.dto';
 
 @Injectable()
 export class UserService extends TypeOrmCrudService<UserModel> {
 
     constructor(@InjectRepository(UserModel) private readonly userRepository: Repository<UserModel>) {
         super(userRepository);
+    }
+
+    async saveSettings(user: UserSettingDto): Promise<UserModel> {
+        try {
+            await this.userRepository.createQueryBuilder()
+                    .update(UserModel)
+                    .set({ settings: user.settings })
+                    .where('id=:id', { id: user.id })
+                    .execute();
+            return this.getUser('user.id', user.id.toString());
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async saveStarred(user: UserStarredDto): Promise<UserModel> {
+        try {
+            await this.userRepository.createQueryBuilder()
+                    .update(UserModel)
+                    .set({ starred: user.starred })
+                    .where('id=:id', { id: user.id })
+                    .execute();
+            return this.getUser('user.id', user.id.toString());
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async saveFrequent(user: UserFrequentDto): Promise<UserModel> {
+        try {
+            await this.userRepository.createQueryBuilder()
+                    .update(UserModel)
+                    .set({ frequent: user.frequent })
+                    .where('id=:id', { id: user.id })
+                    .execute();
+            return this.getUser('user.id', user.id.toString());
+        } catch (error) {
+            throw error;
+        }
     }
 
     /**

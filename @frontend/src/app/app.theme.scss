@@ -86,7 +86,7 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/toolbar/toolbar.theme";
 
 // auth
-@import "src/app/main/auth/login/login.theme";
+@import "src/app/main/authentication/login/login.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {

@@ -1,3 +1,12 @@
 "use strict";
 // import 'module-alias/register';
 Object.defineProperty(exports, "__esModule", { value: true });
+var dto_1 = require("@core/dto");
+exports.AuthDto = dto_1.AuthDto;
+exports.ContactDto = dto_1.ContactDto;
+exports.TipoDocumentoDto = dto_1.TipoDocumentoDto;
+exports.UbigeoDto = dto_1.UbigeoDto;
+exports.UserFrequentDto = dto_1.UserFrequentDto;
+exports.UserSettingDto = dto_1.UserSettingDto;
+exports.UserStarredDto = dto_1.UserStarredDto;
+exports.UsuarioDto = dto_1.UsuarioDto;

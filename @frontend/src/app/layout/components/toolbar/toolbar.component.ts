@@ -9,7 +9,7 @@ import { ControlConfigService } from '@control/services/config.service';
 import { ControlSidebarService } from '@control/components/sidebar/sidebar.service';
 
 import { navigation } from 'app/navigation/navigation';
-import { AuthService } from 'app/main/auth/login/auth.service';
+import { AuthService } from 'app/auth/services/auth.service';
 
 @Component({
     selector     : 'toolbar',

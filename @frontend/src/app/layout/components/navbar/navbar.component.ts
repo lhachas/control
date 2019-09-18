@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, Renderer2, ViewEncapsulation } from '@angular/core';
-import { AuthService } from 'app/main/auth/login/auth.service';
+import { AuthService } from 'app/auth/services/auth.service';
 import { IUser } from '@control/core';
 
 @Component({

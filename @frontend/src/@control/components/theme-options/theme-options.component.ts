@@ -99,7 +99,7 @@ export class ControlThemeOptionsComponent implements OnInit, OnDestroy
 
         // Subscribe to the config changes
         this._controlConfigService.config
-            .pipe(takeUntil(this._unsubscribeAll))
+            .pipe(takeUntil(this._unsubscribeAll)) 
             .subscribe((config) => {
 
                 // Update the stored config
@@ -124,7 +124,6 @@ export class ControlThemeOptionsComponent implements OnInit, OnDestroy
         this.form.valueChanges
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config) => {
-
                 // Update the config
                 this._controlConfigService.config = config;
             });

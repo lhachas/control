@@ -145,6 +145,7 @@ export class Data1569526953085 implements MigrationInterface {
                                     .save(plainToClass(ContactModel, {
                                         businessName: 'CARLOS MENDEZ PACHECO',
                                         tradeName: 'CARLOS MENDEZ PACHECO',
+                                        avatar: '',
                                         type: 'PERSONAL NATURAL',
                                         condition: 'HABIDO',
                                         documentType: ctdocumentType[0],
@@ -219,6 +220,10 @@ export class Data1569526953085 implements MigrationInterface {
                                         username: 'administrador',
                                         password: '123456admin',
                                         token: '',
+                                        settings: '',
+                                        shorcuts: '',
+                                        starred: '',
+                                        frequent: '',
                                         status: 'ACTIVO',
                                     }));
 

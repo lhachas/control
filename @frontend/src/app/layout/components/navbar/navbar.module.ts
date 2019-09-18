@@ -7,7 +7,7 @@ import { NavbarHorizontalStyle1Module } from 'app/layout/components/navbar/horiz
 import { NavbarVerticalStyle1Module } from 'app/layout/components/navbar/vertical/style-1/style-1.module';
 import { NavbarVerticalStyle2Module } from 'app/layout/components/navbar/vertical/style-2/style-2.module';
 
-import { AuthModule } from 'app/main/auth/auth.module';
+import { AuthModule } from 'app/auth/auth.module';
 
 @NgModule({
     declarations: [

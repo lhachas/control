@@ -11,3 +11,14 @@ export {
     IUser,
     IUbigeo,
 } from '@core/interfaces';
+
+export {
+    AuthDto,
+    ContactDto,
+    TipoDocumentoDto,
+    UbigeoDto,
+    UserFrequentDto,
+    UserSettingDto,
+    UserStarredDto,
+    UsuarioDto,
+} from '@core/dto';

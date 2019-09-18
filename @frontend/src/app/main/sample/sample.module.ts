@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ControlSharedModule } from '@control/shared.module';
 
 import { SampleComponent } from './sample.component';
-import { AuthGuard } from 'app/main/auth/login/guards/auth.guard';
+import { AuthGuard } from 'app/auth/guards/auth.guard';
 
 const routes: Routes = [
     {

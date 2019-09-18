@@ -41,7 +41,7 @@ import { ControlThemeOptionsComponent } from '@control/components/theme-options/
 
         ControlDirectivesModule,
         ControlMaterialColorPickerModule,
-        ControlSidebarModule
+        ControlSidebarModule,
     ],
     exports     : [
         ControlThemeOptionsComponent

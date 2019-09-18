@@ -93,6 +93,13 @@ export class Contact1564428311705 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
+                        name: 'birthday',
+                        type: 'datetime',
+                        default: 'CURRENT_TIMESTAMP',
+                        comment: 'FECHA DE REGISTRO',
+                        isNullable: false,
+                    },
+                    {
                         name: 'observations',
                         type: 'varchar',
                         length: '255',

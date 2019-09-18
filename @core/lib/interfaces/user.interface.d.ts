@@ -5,4 +5,7 @@ export interface IUser extends IBase {
     readonly username: string;
     readonly password: string;
     readonly token: string;
+    readonly settings: string;
+    readonly starred: string;
+    readonly frequent: string;
 }

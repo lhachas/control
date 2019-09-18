@@ -9,7 +9,7 @@ import { ControlSearchBarModule, ControlShortcutsModule } from '@control/compone
 import { ControlSharedModule } from '@control/shared.module';
 
 import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.component';
-import { AuthModule } from 'app/main/auth/auth.module';
+import { AuthModule } from 'app/auth/auth.module';
 
 @NgModule({
     declarations: [

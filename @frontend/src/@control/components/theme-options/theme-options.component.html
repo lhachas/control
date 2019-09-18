@@ -2,7 +2,7 @@
 
     <div class="header">
 
-        <span class="title">Theme Options</span>
+        <span class="title">Opciones de tema</span>
 
         <button mat-icon-button class="close-button" (click)="toggleSidebarOpen('themeOptionsPanel')">
             <mat-icon>close</mat-icon>
@@ -15,13 +15,13 @@
         <!-- COLOR THEME -->
         <div class="group">
 
-            <h2>Color themes</h2>
+            <h2>Temas de color</h2>
 
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="colorTheme">
-                <mat-radio-button class="mb-12" value="theme-default">Default Light</mat-radio-button>
-                <mat-radio-button class="mb-12" value="theme-yellow-light">Yellow Light</mat-radio-button>
-                <mat-radio-button class="mb-12" value="theme-blue-gray-dark">Blue-Gray Dark</mat-radio-button>
-                <mat-radio-button class="mb-12" value="theme-pink-dark">Pink Dark</mat-radio-button>
+                <mat-radio-button class="mb-12" value="theme-default">Predeterminado Claro</mat-radio-button>
+                <mat-radio-button class="mb-12" value="theme-yellow-light">Amarillo Claro</mat-radio-button>
+                <mat-radio-button class="mb-12" value="theme-blue-gray-dark">Gris-Azulado Oscuro</mat-radio-button>
+                <mat-radio-button class="mb-12" value="theme-pink-dark">Rosado Oscuro</mat-radio-button>
             </mat-radio-group>
 
         </div>
@@ -29,24 +29,24 @@
         <!-- LAYOUT STYLES -->
         <div class="group" formGroupName="layout">
 
-            <h2>Layout Styles</h2>
+            <h2>Estilos de diseño</h2>
 
             <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="style">
 
                 <mat-radio-button class="mb-12" value="vertical-layout-1">
-                    Vertical Layout #1
+                    Diseño Vertical #1
                 </mat-radio-button>
 
                 <mat-radio-button class="mb-12" value="vertical-layout-2">
-                    Vertical Layout #2
+                    Diseño Vertical #2
                 </mat-radio-button>
 
                 <mat-radio-button class="mb-12" value="vertical-layout-3">
-                    Vertical Layout #3
+                    Diseño Vertical #3
                 </mat-radio-button>
 
                 <mat-radio-button class="mb-12" value="horizontal-layout-1">
-                    Horizontal Layout #1
+                    Diseño Horizontal #1
                 </mat-radio-button>
 
             </mat-radio-group>
@@ -60,10 +60,10 @@
                     <!-- LAYOUT WIDTH -->
                     <div class="group mt-32">
 
-                        <h2>Layout Width</h2>
+                        <h2>Ancho de diseño</h2>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-                            <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="fullwidth">Ancho Completo</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="boxed">Encajonar</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -71,33 +71,33 @@
                     <!-- NAVBAR -->
                     <div class="group" formGroupName="navbar">
 
-                        <h2>Navbar</h2>
+                        <h2>Barra de navegación</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
                         <mat-slide-toggle class="mt-24" formControlName="folded">
-                            Folded
+                            Doblada
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-8">Variant:</h3>
+                        <h3 class="mt-8">Variante:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-                            <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-1">Estilo 1</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-2">Estilo 2</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-16 mb-8">Primary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo primario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="primaryBackground"></control-material-color-picker>
 
-                        <h3 class="mt-16 mb-8">Secondary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo secundario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="secondaryBackground"></control-material-color-picker>
 
@@ -106,24 +106,24 @@
                     <!-- TOOLBAR -->
                     <div class="group" formGroupName="toolbar">
 
-                        <h2>Toolbar</h2>
+                        <h2>Barra de herramientas</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above">Encima</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below-static">Abajo Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below-fixed">Abajo Fijo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
-                        <h3 class="mt-24 mb-8">Background color:</h3>
+                        <h3 class="mt-24 mb-8">Color de fondo:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="background"></control-material-color-picker>
 
@@ -132,21 +132,21 @@
                     <!-- FOOTER -->
                     <div class="group" formGroupName="footer">
 
-                        <h2>Footer</h2>
+                        <h2>Pie de página </h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above">Above</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below-static">Below Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below-fixed">Below Fixed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above">Encima</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below-static">Abajo Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below-fixed">Abajo Fijo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
                         <h3 class="mt-24 mb-8">Color:</h3>
@@ -158,16 +158,16 @@
                     <!-- SIDE PANEL -->
                     <div class="group" formGroupName="sidepanel">
 
-                        <h2>Side Panel</h2>
+                        <h2>Panel lateral</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -180,10 +180,10 @@
                     <!-- LAYOUT WIDTH -->
                     <div class="group mt-32">
 
-                        <h2>Layout Width</h2>
+                        <h2>Ancho de diseño</h2>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-                            <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="fullwidth">Ancho Completo</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="boxed">Encajonado</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -191,33 +191,33 @@
                     <!-- NAVBAR -->
                     <div class="group" formGroupName="navbar">
 
-                        <h2>Navbar</h2>
+                        <h2>Barra de navegación</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
                         <mat-slide-toggle class="mt-24" formControlName="folded">
-                            Folded
+                            Doblada
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-8">Variant:</h3>
+                        <h3 class="mt-8">Variante:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-                            <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-1">Estilo 1</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-2">Estilo 2</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-16 mb-8">Primary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo primario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="primaryBackground"></control-material-color-picker>
 
-                        <h3 class="mt-16 mb-8">Secondary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo secundario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="secondaryBackground"></control-material-color-picker>
 
@@ -226,24 +226,24 @@
                     <!-- TOOLBAR -->
                     <div class="group" formGroupName="toolbar">
 
-                        <h2>Toolbar</h2>
+                        <h2>Barra de herramientas</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below">Below</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-static">Encima Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-fixed">Encima Fijo</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below">Abajo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
-                        <h3 class="mt-24 mb-8">Background color:</h3>
+                        <h3 class="mt-24 mb-8">Color de fondo:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="background"></control-material-color-picker>
 
@@ -252,24 +252,24 @@
                     <!-- FOOTER -->
                     <div class="group" formGroupName="footer">
 
-                        <h2>Footer</h2>
+                        <h2>Pie de página</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="below">Below</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-static">Encima Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-fixed">Encima Fijo</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="below">Abajo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
-                        <h3 class="mt-24 mb-8">Background color:</h3>
+                        <h3 class="mt-24 mb-8">Color de fondo:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="background"></control-material-color-picker>
 
@@ -278,16 +278,16 @@
                     <!-- SIDE PANEL -->
                     <div class="group" formGroupName="sidepanel">
 
-                        <h2>Side Panel</h2>
+                        <h2>Panel lateral</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -300,10 +300,10 @@
                     <!-- LAYOUT WIDTH -->
                     <div class="group mt-32">
 
-                        <h2>Layout Width</h2>
+                        <h2>Ancho de diseño</h2>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="width">
-                            <mat-radio-button class="mb-12" value="fullwidth">Fullwidth</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="boxed">Boxed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="fullwidth">Ancho Completo</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="boxed">Encajonado</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -311,33 +311,33 @@
                     <!-- NAVBAR -->
                     <div class="group" formGroupName="navbar">
 
-                        <h2>Navbar</h2>
+                        <h2>Barra de navegación</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
                         <mat-slide-toggle class="mt-24" formControlName="folded">
-                            Folded
+                            Doblada
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-16" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-8">Variant:</h3>
+                        <h3 class="mt-8">Variante:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="variant">
-                            <mat-radio-button class="mb-16" value="vertical-style-1">Style 1</mat-radio-button>
-                            <mat-radio-button class="mb-16" value="vertical-style-2">Style 2</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-1">Estilo 1</mat-radio-button>
+                            <mat-radio-button class="mb-16" value="vertical-style-2">Estilo 2</mat-radio-button>
                         </mat-radio-group>
 
-                        <h3 class="mt-16 mb-8">Primary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo primario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="primaryBackground"></control-material-color-picker>
 
-                        <h3 class="mt-16 mb-8">Secondary background:</h3>
+                        <h3 class="mt-16 mb-8">Fondo secundario:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="secondaryBackground"></control-material-color-picker>
 
@@ -346,23 +346,23 @@
                     <!-- TOOLBAR -->
                     <div class="group" formGroupName="toolbar">
 
-                        <h2>Toolbar</h2>
+                        <h2>Barra de herramientas</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-static">Encima Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-fixed">Encima Fijo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
-                        <h3 class="mt-24 mb-8">Background color:</h3>
+                        <h3 class="mt-24 mb-8">Color de fondo:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="background"></control-material-color-picker>
 
@@ -371,23 +371,23 @@
                     <!-- FOOTER -->
                     <div class="group" formGroupName="footer">
 
-                        <h2>Footer</h2>
+                        <h2>Pie de página</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-static">Encima Estatico</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="above-fixed">Encima Fijo</mat-radio-button>
                         </mat-radio-group>
 
                         <mat-checkbox class="mt-24" formControlName="customBackgroundColor">
-                            Use custom background color
+                            Usar color de fondo personalizado
                         </mat-checkbox>
 
-                        <h3 class="mt-24 mb-8">Background color:</h3>
+                        <h3 class="mt-24 mb-8">Color de fondo:</h3>
                         <control-material-color-picker class="mb-16"
                                                     formControlName="background"></control-material-color-picker>
 
@@ -396,16 +396,16 @@
                     <!-- SIDE PANEL -->
                     <div class="group" formGroupName="sidepanel">
 
-                        <h2>Side Panel</h2>
+                        <h2>Panel lateral</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
-                            <mat-radio-button class="mb-12" value="left">Left</mat-radio-button>
-                            <mat-radio-button class="mb-12" value="right">Right</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="left">Izquierda</mat-radio-button>
+                            <mat-radio-button class="mb-12" value="right">Derecha</mat-radio-button>
                         </mat-radio-group>
 
                     </div>
@@ -486,13 +486,13 @@
                     <!-- FOOTER -->
                     <div class="group" formGroupName="footer">
 
-                        <h2>Footer</h2>
+                        <h2>Pie de pagina</h2>
 
                         <mat-slide-toggle formControlName="hidden">
-                            Hide
+                            Esconder
                         </mat-slide-toggle>
 
-                        <h3 class="mt-24">Position:</h3>
+                        <h3 class="mt-24">Posición:</h3>
                         <mat-radio-group fxLayout="column" fxLayoutAlign="start start" formControlName="position">
                             <mat-radio-button class="mb-12" value="above-fixed">Above Fixed</mat-radio-button>
                             <mat-radio-button class="mb-12" value="above-static">Above Static</mat-radio-button>
@@ -534,10 +534,10 @@
         <!-- CUSTOM SCROLLBARS -->
         <div class="group">
 
-            <h2>Custom scrollbars</h2>
+            <h2>Barras de desplazamiento personalizada</h2>
 
             <mat-slide-toggle class="mb-12" formControlName="customScrollbars">
-                Enable custom scrollbars
+                Habilitar
             </mat-slide-toggle>
 
         </div>

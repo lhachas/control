@@ -83,30 +83,30 @@ export class ControlConfigService
     private _init(): void
     {
         /**
-         * Disable custom scrollbars if browser is mobile
+         * Deshabilite las barras de desplazamiento personalizadas si el navegador es móvil
          */
         if ( this._platform.ANDROID || this._platform.IOS )
         {
             this._defaultConfig.customScrollbars = false;
         }
 
-        // Set the config from the default config
+        // Establecer la configuración desde la configuración predeterminada
         this._configSubject = new BehaviorSubject(_.cloneDeep(this._defaultConfig));
 
-        // Reload the default layout config on every RoutesRecognized event
-        // if the current layout config is different from the default one
+        // Vuelva a cargar la configuración de diseño predeterminada en cada evento RoutesRecognized
+        // si la configuración de diseño actual es diferente de la predeterminada
         this._router.events
             .pipe(filter(event => event instanceof ResolveEnd))
             .subscribe(() => {
                 if ( !_.isEqual(this._configSubject.getValue().layout, this._defaultConfig.layout) )
                 {
-                    // Clone the current config
+                    // Clonar la configuración actual
                     const config = _.cloneDeep(this._configSubject.getValue());
 
-                    // Reset the layout from the default config
+                    // Restablecer el diseño desde la configuración predeterminada
                     config.layout = _.cloneDeep(this._defaultConfig.layout);
 
-                    // Set the config
+                    // Establecer la configuración
                     this._configSubject.next(config);
                 }
             });

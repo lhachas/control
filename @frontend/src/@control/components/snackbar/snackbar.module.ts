@@ -23,6 +23,6 @@ import { SnackBarService } from '@control/components/snackbar/snackbar.service';
         SnackBarService
     ],
 })
-export class ControlSnackBar
+export class ControlSnackBarModule
 {
 }

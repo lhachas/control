@@ -20,11 +20,6 @@ export class User1567456384061 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'user_setting_id',
-                        type: 'integer',
-                        isNullable: false,
-                    },
-                    {
                         name: 'username',
                         type: 'char',
                         isUnique: true,
@@ -42,6 +37,26 @@ export class User1567456384061 implements MigrationInterface {
                         type: 'varchar',
                         length: '5000',
                         comment: 'TOKEN GENERADO JWT',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'settings',
+                        type: 'json',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'shorcuts',
+                        type: 'json',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'starred',
+                        type: 'json',
+                        isNullable: false,
+                    },
+                    {
+                        name: 'frequent',
+                        type: 'json',
                         isNullable: false,
                     },
                     {
@@ -86,14 +101,6 @@ export class User1567456384061 implements MigrationInterface {
                         columnNames: ['staff_id'],
                         referencedColumnNames: ['id'],
                         referencedTableName: 'staff',
-                        onDelete: 'CASCADE',
-                        onUpdate: 'CASCADE',
-                    }),
-                    new TableForeignKey({
-                        name: 'FK_SETTING_USER',
-                        columnNames: ['user_setting_id'],
-                        referencedColumnNames: ['id'],
-                        referencedTableName: 'user_settings',
                         onDelete: 'CASCADE',
                         onUpdate: 'CASCADE',
                     }),

@@ -17,6 +17,8 @@ import { controlConfig } from 'app/control-config';
 import { appRoutes } from 'app/app.routing';
 
 import { AppComponent } from 'app/app.component';
+import { AppStoreModule } from 'app/store/store.module';
+import { AuthModule } from 'app/auth/auth.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
 
@@ -49,6 +51,8 @@ import { SampleModule } from 'app/main/sample/sample.module';
 
         // App modules
         LayoutModule,
+        AppStoreModule,
+        AuthModule,
         SampleModule
     ],
     bootstrap   : [

@@ -13,14 +13,13 @@ import {
     MinLength,
     IsOptional,
     ValidateNested,
+    IsJSON,
 } from 'class-validator';
 import { CrudValidationGroups } from '@nestjsx/crud';
 import { Type } from 'class-transformer';
 import { BaseModel } from '@control/api/models/base/base.model';
 
 import { StaffModel } from '@control/api/models/staff.model';
-import { UserStarredModel } from '@control/api/models/user-starred.model';
-import { UserSettingsModel } from '@control/api/models/user-settings.model';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
@@ -33,14 +32,6 @@ export class UserModel extends BaseModel {
     @OneToOne((type) => StaffModel, (p) => p.user, { cascade: true })
     @JoinColumn({ name: 'staff_id' })
     public staff: StaffModel;
-
-    @IsOptional({ groups: [UPDATE] })
-    @IsNotEmpty({ groups: [CREATE] })
-    @ValidateNested({ always: true })
-    @Type((t) => UserSettingsModel)
-    @OneToOne((type) => UserSettingsModel, (p) => p.user, { cascade: true })
-    @JoinColumn({ name: 'user_setting_id' })
-    public setting: UserSettingsModel;
 
     @IsString()
     @IsOptional({ groups: [UPDATE] })
@@ -68,9 +59,52 @@ export class UserModel extends BaseModel {
     @IsString()
     public token: string;
 
-    @OneToOne((type) => UserStarredModel, (u) => u.user)
-    @Type((t) => UserStarredModel)
-    public starred: UserStarredModel;
+    @IsJSON()
+    @Column('json')
+    public settings: {
+        colorTheme: string;
+        customScrollbars: boolean;
+        layout: {
+            style: string,
+            width: 'fullwidth' | 'boxed',
+            navbar: {
+                primaryBackground: string,
+                secondaryBackground: string,
+                hidden: boolean,
+                folded: boolean,
+                position: 'left' | 'right' | 'top',
+                variant: string,
+            },
+            toolbar: {
+                customBackgroundColor: boolean,
+                background: string,
+                hidden: boolean,
+                position: 'above' | 'above-static' | 'above-fixed' | 'below' | 'below-static' | 'below-fixed',
+            }
+            footer: {
+                customBackgroundColor: boolean,
+                background: string,
+                hidden: boolean,
+                position: 'above' | 'above-static' | 'above-fixed' | 'below' | 'below-static' | 'below-fixed',
+            },
+            sidepanel: {
+                hidden: boolean,
+                position: 'left' | 'right',
+            },
+        }
+    };
+
+    @IsJSON()
+    @Column('json')
+    public shorcuts: { app: string[] };
+
+    @IsJSON()
+    @Column('json')
+    public starred: { contacts: string[] };
+
+    @IsJSON()
+    @Column('json')
+    public frequent: { contacts: string[] };
 
     @BeforeInsert()
     async b4register() {

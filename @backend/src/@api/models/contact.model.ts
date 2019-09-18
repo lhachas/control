@@ -1,5 +1,5 @@
-import { Column, Index, Entity, OneToOne, JoinColumn, ManyToOne } from 'typeorm';
-import { IsString, IsOptional, IsEmail, IsNotEmpty } from 'class-validator';
+import { Column, Index, Entity, OneToOne, JoinColumn, ManyToOne, CreateDateColumn } from 'typeorm';
+import { IsString, IsOptional, IsEmail, IsNotEmpty, IsDate } from 'class-validator';
 import { CrudValidationGroups } from '@nestjsx/crud';
 import { BaseModel } from '@control/api/models/base/base.model';
 
@@ -7,7 +7,6 @@ import { DocumentTypeModel } from '@control/api/models/document-type.model';
 import { UbigeoModel } from '@control/api/models/ubigeo.model';
 import { StaffModel } from '@control/api/models/staff.model';
 import { CompanyModel } from '@control/api/models/company.model';
-import { UserStarredModel } from '@control/api/models/user-starred.model';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
@@ -22,6 +21,11 @@ export class ContactModel extends BaseModel {
     @IsNotEmpty()
     @Column({ name: 'trade_name' })
     public tradeName: string;
+
+    @IsString()
+    @IsNotEmpty()
+    @Column({ name: 'avatar' })
+    public avatar: string;
 
     @IsString()
     @Column()
@@ -66,13 +70,19 @@ export class ContactModel extends BaseModel {
     @Index({ unique: true })
     public email: string;
 
+    @IsDate()
+    @CreateDateColumn({
+        name: 'birthday',
+        precision: null,
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP',
+    })
+    public birthday: Date;
+
     @IsString()
     @Column()
     public observations: string;
 
     @OneToOne((type) => StaffModel, (p) => p.contact)
     staff: StaffModel;
-
-    @OneToOne((type) => UserStarredModel, (p) => p.contact)
-    starred: UserStarredModel;
 }
