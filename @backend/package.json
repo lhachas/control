@@ -46,7 +46,7 @@
     "@nestjsx/crud": "^4.2.0",
     "@nestjsx/crud-typeorm": "^4.2.0",
     "asn1js": "^2.0.26",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cache-manager": "^2.10.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
